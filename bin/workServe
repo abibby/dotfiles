@@ -6,16 +6,31 @@ cd /home/adam/Documents/work/aqmdatalaravel
 
 
 sudo tmux new-session \;\
+
+    #split into a 2x2 grig
     split-window -v \;\
     split-window -h \;\
     selectp -t 0 \;\
     split-window -h \;\
+
+    # start server in the top left
     selectp -t 0 \;\
-    send-keys "influxd" C-m\;\
-    selectp -t 1 \;\
     send-keys "php artisan serve --port=80" C-m\;\
-    selectp -t 2 \;\
+
+    # start npm watch in the top right
+    selectp -t 1 \;\
     send-keys "npm run watch" C-m\;\
+
+    # start influx in the lower left
+    selectp -t 2 \;\
+    send-keys "influxd" C-m\;\
+
+    # start the poller in test mode in the lower right
     selectp -t 3 \;\
     send-keys "pollerd -test" C-m\;\
+
+    # select the window with npm so I can restart it if i change branches
+    selectp -t 1 \;\
+
+    # attach the session
     attach

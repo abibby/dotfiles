@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+AUTH_ID=$(cat ~/env.json | jq -r .plivo.auth_id)
+AUTH_TOKEN=$(cat ~/env.json | jq -r .plivo.auth_token)
+
+curl -i --user $AUTH_ID:$AUTH_TOKEN \
+    -H "Content-Type: application/json" \
+    -d "{\"src\": \"12263191001\",\"dst\": \"$1\", \"text\": \"$2\"}" \
+    https://api.plivo.com/v1/Account/$AUTH_ID/Message/
