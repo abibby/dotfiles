@@ -70,6 +70,7 @@ plugins=(
   docker
   web-search
   archlinux
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -140,3 +141,8 @@ PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 
 # dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+
+#server stuff
+alias zstatus="ssh frank-wan 'zpool status'"
+alias zlist="ssh frank-wan 'zpool list'"

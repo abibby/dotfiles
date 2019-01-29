@@ -1,0 +1,21 @@
+#!/bin/bash
+
+session="work"
+
+cd /home/adam/Documents/work/aqmdatalaravel
+
+
+sudo tmux new-session \;\
+    split-window -v \;\
+    split-window -h \;\
+    selectp -t 0 \;\
+    split-window -h \;\
+    selectp -t 0 \;\
+    send-keys "influxd" C-m\;\
+    selectp -t 1 \;\
+    send-keys "php artisan serve --port=80" C-m\;\
+    selectp -t 2 \;\
+    send-keys "npm run watch" C-m\;\
+    selectp -t 3 \;\
+    send-keys "pollerd -test" C-m\;\
+    attach
