@@ -17,6 +17,6 @@ sudo tmux new-session \;\
     selectp -t 2 \;\
     send-keys "influxd" C-m\;\
     selectp -t 3 \;\
-    send-keys "pollerd -test" C-m\;\
+    send-keys "mkdir /tmp/pollerd; cd /tmp/pollerd; sleep 3; sudo pollerd -test" C-m\;\
     selectp -t 1 \;\
     attach

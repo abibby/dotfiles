@@ -112,6 +112,7 @@ fi
 # go stuff
 export PATH=$PATH:~/go/bin
 alias gom="env GO111MODULE=on go"
+alias grun="go run *.go"
 
 # node stuff
 export PATH="$HOME/.node_modules/bin:$PATH"
@@ -127,6 +128,7 @@ export PATH="$HOME/.local/bin:$PATH"
 # other stuff
 alias calc="qalc"
 alias sql="sqlectron-term"
+alias ls='ls --color -h --group-directories-first'
 
 export PATH="$HOME/bin:$PATH"
 
