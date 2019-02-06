@@ -129,12 +129,13 @@ export PATH="$HOME/.local/bin:$PATH"
 alias calc="qalc"
 alias sql="sqlectron-term"
 alias ls='ls --color -h --group-directories-first'
+alias p='sudo pacman'
 
 export PATH="$HOME/bin:$PATH"
 
 alias goz="cd ~/go/src/github.com/zwzn"
 
-alias dmenu="rofi -dmenu"
+alias dmenu="rofi -dmenu -i"
 
 # work stuff
 alias work="cd ~/Documents/work/aqmdatalaravel"
@@ -148,3 +149,18 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 #server stuff
 alias zstatus="ssh frank-wan 'zpool status'"
 alias zlist="ssh frank-wan 'zpool list'"
+
+function exists { which $1 &> /dev/null }
+
+if exists percol; then
+    function percol_select_history() {
+        local tac
+        exists gtac && tac="gtac" || { exists tac && tac="tac" || { tac="tail -r" } }
+        BUFFER=$(fc -l -n 1 | eval $tac | percol --query "$LBUFFER")
+        CURSOR=$#BUFFER         # move cursor
+        zle -R -c               # refresh
+    }
+
+    zle -N percol_select_history
+    bindkey '^R' percol_select_history
+fi
