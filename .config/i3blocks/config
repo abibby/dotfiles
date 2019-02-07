@@ -1,21 +1,26 @@
+
+# Helpful links
+# FontAwesome cheatsheet https://fontawesome.com/cheatsheet
+
 [zlist]
-command=ssh frank-wan "zpool list -o name,cap,health" | grep volume1 | echo "ZSH $(awk '{ print $3="ONLINE" ? "OK" : $3 }')"
+command=ssh frank-wan "zpool list -o name,cap,health" | grep volume1 | printf '%s%s' '' $(awk '{ print $3="ONLINE" ? "OK" : $3 }')
 interval=3600
 color=#F79494
 
 # Guess the weather hourly
 [weather]
-command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
+# github.com/zwzn/weather
+command=$HOME/go/bin/weather
 interval=3600
 color=#A4C2F4
 
 # Query my default IP address only on startup
-[ip]
-command=hostname --ip-addresses | awk '{ print "IP:" $1 }'
-interval=once
-color=#91E78B
+# [ip]
+# command=hostname --ip-addresses | awk '{ print "IP:" $1 }'
+# interval=once
+# color=#91E78B
 
 # Update time every 5 seconds
 [time]
-command=date +'%a %e %l:%M %P'
-interval=5
+command=date +'%a %-e %-I:%M:%S %P'
+interval=1

@@ -130,6 +130,7 @@ alias calc="qalc"
 alias sql="sqlectron-term"
 alias ls='ls --color -h --group-directories-first'
 alias p='sudo pacman'
+alias dump='hexdump'
 
 export PATH="$HOME/bin:$PATH"
 
