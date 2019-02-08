@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-tmux new-session -d 'micro'
-tmux split-window -v 'zsh'
-tmux -2 attach-session -d

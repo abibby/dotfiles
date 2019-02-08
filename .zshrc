@@ -145,6 +145,7 @@ PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 
 # dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias cfg='config'
 
 
 #server stuff
