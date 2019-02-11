@@ -299,12 +299,6 @@ mode "quake math" {
 }
 bindsym $mod+m exec ~/bin/popup.sh open "quake math" "$quake -e qalc"
 
-
-# exec --no-startup-id $term -n math_popup -e qalc
-# for_window [instance="math_popup"] floating enable;
-# for_window [instance="math_popup"] move scratchpad; [instance="`math_popup"] scratchpad show; move position 0px 22px; resize shrink height 300px; resize grow width 683px; move scratchpad
-# bindsym $mod+m [instance="math_popup"] scratchpad show
-
 bindsym $mod+e exec /home/adam/bin/emoji
 bindsym $mod+c exec code
 bindsym $mod+b exec brave
@@ -315,7 +309,9 @@ bindsym $mod+x exec $term -e ranger
 bindsym $mod+u exec cat ~/.config/adam/bookmarks | sort | rofi -dmenu -i -p sites | xargs -r surf
 bindsym $mod+Shift+w exec find ~/Pictures/wallpapers -type f | rofi -dmenu -i -p Wallpaper > ~/.config/adam/wallpaper && feh --bg-fill "$(cat ~/.config/adam/wallpaper)"
 
-bindsym $mod+Shift+p exec "i3-nagbar -t warning -m 'Are you sure you want to power off.' -B 'Yes, power off' 'systemctl poweroff'"
+bindsym $mod+Shift+s exec sh -c "$(find ~/.screenlayout -type f | rofi -dmenu -i -p Layout)" && i3-msg restart
+
+bindsym $mod+Shift+p exec i3-nagbar -t warning -m 'Are you sure you want to power off.' -B 'Shutdown' 'systemctl poweroff' -B 'Sleep' 'systemctl hibernate'
 
 # music control
 bindsym $mod+space exec playerctl play-pause
