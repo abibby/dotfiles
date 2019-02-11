@@ -1,0 +1,3 @@
+# https://github.com/logico-dev/Xresources-themes
+#include ".Xresources.d/st"
+#include ".Xresources.d/nord"

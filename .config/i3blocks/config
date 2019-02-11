@@ -3,16 +3,16 @@
 # FontAwesome cheatsheet https://fontawesome.com/cheatsheet
 
 [zlist]
-command=printf '💾%s' $(ssh frank-wan "zpool list -o name,cap,health" | grep volume1 | awk '{ print $3="ONLINE" ? "OK" : $3 }')
+command=echo ZSH $(ssh frank-wan "zpool list -o name,cap,health" | grep volume1 | awk '{ print $3="ONLINE" ? "OK" : $3 }')
 interval=3600
-color=#F79494
+# color=#F79494
 
 # Guess the weather hourly
 [weather]
 # github.com/zwzn/weather
-command=echo ⛅$($HOME/go/bin/weather)
+command=$HOME/go/bin/weather
 interval=3600
-color=#A4C2F4
+# color=#A4C2F4
 
 # Query my default IP address only on startup
 # [ip]
@@ -24,3 +24,12 @@ color=#A4C2F4
 [time]
 command=date +'%a %-e %-I:%M:%S %P'
 interval=1
+
+# [calendar]
+# command=$HOME/bin/i3blocks/calendar
+# interval=1
+# LABEL=cal
+# DATEFMT=+%H:%M:%S
+# # SHORTFMT=+%H:%M:%S
+# HEIGHT=180
+# WIDTH=220
