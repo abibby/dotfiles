@@ -16,14 +16,35 @@
 # Mod4 = Super
 set $mod Mod4
 
-set $term tilix
-set $quake tilix --quake
+set $term xst
 
 gaps inner 10
-# gaps outer 5
+gaps outer 5
 
-for_window [class=".*"] border pixel 2
+for_window [class=".*"] border pixel 0
 hide_edge_borders both
+
+set_from_resource $background i3wm.background #ff0000
+set_from_resource $foreground i3wm.foreground #ffffff
+
+set_from_resource $black   i3wm.color0 #000000
+set_from_resource $red     i3wm.color1 #800000
+set_from_resource $green   i3wm.color2 #008000
+set_from_resource $yellow  i3wm.color3 #808000
+set_from_resource $blue    i3wm.color4 #000080
+set_from_resource $magenta i3wm.color5 #800080
+set_from_resource $cyan    i3wm.color6 #008080
+set_from_resource $white   i3wm.color7 #c0c0c0
+
+set_from_resource $bold_black   i3wm.color8 #808080
+set_from_resource $bold_red     i3wm.color9 #ff0000
+set_from_resource $bold_green   i3wm.color10 #00ff00
+set_from_resource $bold_yellow  i3wm.color11 #ffff00
+set_from_resource $bold_blue    i3wm.color12 #0000ff
+set_from_resource $bold_magenta i3wm.color13 #ff00ff
+set_from_resource $bold_cyan    i3wm.color14 #00ffff
+set_from_resource $bold_white   i3wm.color15 #ffffff
+
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
@@ -248,14 +269,14 @@ bar {
     font pango:monospace, FontAwesome 10
 
     colors {
-        background #000000
-        statusline #ffffff
+        background $background
+        statusline $foreground
         separator #666666
-
-        focused_workspace  #4c7899 #285577 #ffffff
-        active_workspace   #333333 #5f676a #ffffff
-        inactive_workspace #333333 #222222 #888888
-        urgent_workspace   #2f343a #900000 #ffffff
+                           #border #back       #text
+        focused_workspace  $grey   $blue       $black
+        active_workspace   $grey   $background $white
+        inactive_workspace $grey   $background $white
+        urgent_workspace   $grey   $red        $white
         binding_mode       #2f343a #900000 #ffffff
     }  
 } 
@@ -263,15 +284,38 @@ bar {
 
 # adams stuff
 
+## quick terminal
+for_window [instance="quake_term"] floating enable;
+set $quake xst -n quake_term
+mode "quake" {
+    bindsym Escape     exec ~/bin/popup.sh close "$quake"
+    bindsym $mod+grave exec ~/bin/popup.sh close "$quake"
+}
+bindsym $mod+grave exec ~/bin/popup.sh open quake "$quake"
+
+mode "quake math" {
+    bindsym Escape     exec ~/bin/popup.sh close "$quake"
+    bindsym $mod+m exec ~/bin/popup.sh close "$quake"
+}
+bindsym $mod+m exec ~/bin/popup.sh open "quake math" "$quake -e qalc"
+
+
+# exec --no-startup-id $term -n math_popup -e qalc
+# for_window [instance="math_popup"] floating enable;
+# for_window [instance="math_popup"] move scratchpad; [instance="`math_popup"] scratchpad show; move position 0px 22px; resize shrink height 300px; resize grow width 683px; move scratchpad
+# bindsym $mod+m [instance="math_popup"] scratchpad show
+
 bindsym $mod+e exec /home/adam/bin/emoji
 bindsym $mod+c exec code
 bindsym $mod+b exec brave
 bindsym $mod+t exec --no-startup-id $term -e htop
 bindsym $mod+x exec $term -e ranger
-bindsym $mod+m exec $quake -e qalc
-bindsym $mod+grave exec $quake
 
 
+bindsym $mod+u exec cat ~/.config/adam/bookmarks | sort | rofi -dmenu -i -p sites | xargs -r surf
+bindsym $mod+Shift+w exec find ~/Pictures/wallpapers -type f | rofi -dmenu -i -p Wallpaper > ~/.config/adam/wallpaper && feh --bg-fill "$(cat ~/.config/adam/wallpaper)"
+
+bindsym $mod+Shift+p exec "i3-nagbar -t warning -m 'Are you sure you want to power off.' -B 'Yes, power off' 'systemctl poweroff'"
 
 # music control
 bindsym $mod+space exec playerctl play-pause
@@ -279,5 +323,5 @@ bindsym $mod+comma exec playerctl previous
 bindsym $mod+period exec playerctl next
 
 # AUTOSTART
-exec_always --no-startup-id feh --bg-fill /home/adam/Pictures/canada1.jpg
-exec --no-startup-id compton &
+exec_always --no-startup-id feh --bg-fill "$(cat ~/.config/adam/wallpaper)"
+exec --no-startup-id compton -b

@@ -131,6 +131,7 @@ alias sql="sqlectron-term"
 alias ls='ls --color -h --group-directories-first'
 alias p='sudo pacman'
 alias dump='hexdump'
+alias text='surf https://messages.android.com/'
 
 export PATH="$HOME/bin:$PATH"
 

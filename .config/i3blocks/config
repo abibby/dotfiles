@@ -3,14 +3,14 @@
 # FontAwesome cheatsheet https://fontawesome.com/cheatsheet
 
 [zlist]
-command=ssh frank-wan "zpool list -o name,cap,health" | grep volume1 | printf '%s%s' '' $(awk '{ print $3="ONLINE" ? "OK" : $3 }')
+command=printf '💾%s' $(ssh frank-wan "zpool list -o name,cap,health" | grep volume1 | awk '{ print $3="ONLINE" ? "OK" : $3 }')
 interval=3600
 color=#F79494
 
 # Guess the weather hourly
 [weather]
 # github.com/zwzn/weather
-command=$HOME/go/bin/weather
+command=echo ⛅$($HOME/go/bin/weather)
 interval=3600
 color=#A4C2F4
 

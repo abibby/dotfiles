@@ -1,0 +1,35 @@
+#!/bin/bash
+#
+# Start a composition manager.
+# (compton in this case)
+
+comphelp() {
+    echo "Composition Manager:"
+    echo "   (re)start: COMP"
+    echo "   stop:      COMP -s"
+    echo "   query:     COMP -q"
+    echo "              returns 0 if composition manager is running, else 1"
+    exit
+}
+
+checkcomp() {
+    pgrep compton &>/dev/null
+}
+
+stopcomp() {
+    checkcomp && killall compton
+}
+
+startcomp() {
+    stopcomp
+    # Example settings only. Replace with your own.
+    compton -b
+    exit
+}
+
+case "$1" in
+    "")   startcomp ;;
+    "-q") checkcomp ;;
+    "-s") stopcomp; exit ;;
+    *)    comphelp ;;
+esac
