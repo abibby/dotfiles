@@ -24,39 +24,7 @@ gaps outer 5
 for_window [class=".*"] border pixel 4
 hide_edge_borders both
 
-set_from_resource $background i3wm.background #000000
-set_from_resource $foreground i3wm.foreground #ffffff
-
-set_from_resource $black   i3wm.color0 #000000
-set_from_resource $red     i3wm.color1 #800000
-set_from_resource $green   i3wm.color2 #008000
-set_from_resource $yellow  i3wm.color3 #808000
-set_from_resource $blue    i3wm.color4 #000080
-set_from_resource $magenta i3wm.color5 #800080
-set_from_resource $cyan    i3wm.color6 #008080
-set_from_resource $white   i3wm.color7 #c0c0c0
-
-set_from_resource $bold_black   i3wm.color8 #808080
-set_from_resource $bold_red     i3wm.color9 #ff0000
-set_from_resource $bold_green   i3wm.color10 #00ff00
-set_from_resource $bold_yellow  i3wm.color11 #ffff00
-set_from_resource $bold_blue    i3wm.color12 #0000ff
-set_from_resource $bold_magenta i3wm.color13 #ff00ff
-set_from_resource $bold_cyan    i3wm.color14 #00ffff
-set_from_resource $bold_white   i3wm.color15 #ffffff
-
-
-# class                 border  backgr. text    indicator   child_border
-# the thing you are looking at
-client.focused          #4c7899 #285577 #ffffff $blue       $blue
-# focuesd on another monitor
-client.focused_inactive #ff0000 #0ff000 #00ff00 $background $background
-# unfocused on any screen
-client.unfocused        #0000ff #222222 #888888 $background $background
-client.urgent           #2f343a #900000 #ffffff $red        $red
-client.placeholder      #000000 #0c0c0c #ffffff #000000     #0c0c0c
-
-client.background       #ffffff
+include(`color.i3')
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -136,101 +104,10 @@ bindsym $mod+q layout toggle split
 # focus the child container
 #bindsym $mod+d focus child
 
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
-set $ws1  "1"
-set $ws2  "2"
-set $ws3  "3"
-set $ws4  "4"
-set $ws5  "5"
-set $ws6  "6"
-set $ws7  "7"
-set $ws8  "8"
-set $ws9  "9"
-set $ws10 "10"
-set $ws11 "11"
-set $ws12 "12"
-
-
-workspace $ws1  output eDP1 eDP1
-workspace $ws2  output eDP1 eDP1
-workspace $ws3  output eDP1 eDP1
-workspace $ws4  output eDP1 eDP1
-
-workspace $ws5  output DP1  eDP1
-workspace $ws6  output DP1  eDP1
-workspace $ws7  output DP1  eDP1
-workspace $ws8  output DP1  eDP1
-
-workspace $ws9  output DP2  eDP1
-workspace $ws10 output DP2  eDP1
-workspace $ws11 output DP2  eDP1
-workspace $ws12 output DP2  eDP1
-
-# switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
-
-bindsym $mod+F1  workspace $ws1
-bindsym $mod+F2  workspace $ws2
-bindsym $mod+F3  workspace $ws3
-bindsym $mod+F4  workspace $ws4
-bindsym $mod+F5  workspace $ws5
-bindsym $mod+F6  workspace $ws6
-bindsym $mod+F7  workspace $ws7
-bindsym $mod+F8  workspace $ws8
-bindsym $mod+F9  workspace $ws9
-bindsym $mod+F10 workspace $ws10
-bindsym $mod+F11 workspace $ws11
-bindsym $mod+F12 workspace $ws12
-
-# move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1  
-bindsym $mod+Shift+2 move container to workspace $ws2  
-bindsym $mod+Shift+3 move container to workspace $ws3  
-bindsym $mod+Shift+4 move container to workspace $ws4  
-bindsym $mod+Shift+5 move container to workspace $ws5  
-bindsym $mod+Shift+6 move container to workspace $ws6  
-bindsym $mod+Shift+7 move container to workspace $ws7  
-bindsym $mod+Shift+8 move container to workspace $ws8  
-bindsym $mod+Shift+9 move container to workspace $ws9  
-bindsym $mod+Shift+0 move container to workspace $ws10 
-
-bindsym $mod+Shift+F1  move container to workspace $ws1
-bindsym $mod+Shift+F2  move container to workspace $ws2
-bindsym $mod+Shift+F3  move container to workspace $ws3
-bindsym $mod+Shift+F4  move container to workspace $ws4
-bindsym $mod+Shift+F5  move container to workspace $ws5
-bindsym $mod+Shift+F6  move container to workspace $ws6
-bindsym $mod+Shift+F7  move container to workspace $ws7
-bindsym $mod+Shift+F8  move container to workspace $ws8
-bindsym $mod+Shift+F9  move container to workspace $ws9
-bindsym $mod+Shift+F10 move container to workspace $ws10
-bindsym $mod+Shift+F11 move container to workspace $ws11
-bindsym $mod+Shift+F12 move container to workspace $ws12
-
-# set $i3move $HOME/go/bin/i3move
-# bindsym $mod+Control+Up    exec --no-startup-id $i3move -up
-# bindsym $mod+Control+Down  exec --no-startup-id $i3move -down
-# bindsym $mod+Control+Left  exec --no-startup-id $i3move -left
-# bindsym $mod+Control+Right exec --no-startup-id $i3move -right
-
-bindsym $mod+Control+Shift+Left  move container to workspace prev; workspace prev
-bindsym $mod+Control+Shift+Right move container to workspace next; workspace next
-
-bindsym $mod+Control+Shift+Up    move container to workspace prev; workspace prev
-bindsym $mod+Control+Shift+Down  move container to workspace next; workspace next
+include(`workspace.i3')
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+c exec "make -C ~/.config/i3 && i3-msg reload"
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r exec "make -C ~/.config/i3 && i3-msg restart"
 # exit i3 (logs you out of your X session)
@@ -263,34 +140,15 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-    position top
-    status_command i3blocks
-
-    font pango:Liberation Mono 10
-
-    colors {
-        background $background
-        statusline $foreground
-        separator #666666
-                           #border #back       #text
-        focused_workspace  $grey   $blue       $black
-        active_workspace   $grey   $background $white
-        inactive_workspace $grey   $background $white
-        urgent_workspace   $grey   $red        $black
-        binding_mode       #2f343a #900000 #ffffff
-    }  
-} 
-
+include(`bar.i3')
 
 # adams stuff
 include(`quake.i3')
 
 QUAKE(zsh, $mod+grave)
 QUAKE(math, $mod+m, `qalc')
-QUAKE(math, $mod+p, `php -a')
+QUAKE(php, $mod+p, `php -a')
+QUAKE(cal, $mod+j, `calcurse')
 
 bindsym $mod+e exec /home/adam/bin/emoji
 bindsym $mod+c exec code

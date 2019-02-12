@@ -24,6 +24,7 @@ gaps outer 5
 for_window [class=".*"] border pixel 4
 hide_edge_borders both
 
+
 set_from_resource $background i3wm.background #000000
 set_from_resource $foreground i3wm.foreground #ffffff
 
@@ -136,6 +137,7 @@ bindsym $mod+q layout toggle split
 # focus the child container
 #bindsym $mod+d focus child
 
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1  "1"
@@ -217,20 +219,8 @@ bindsym $mod+Shift+F10 move container to workspace $ws10
 bindsym $mod+Shift+F11 move container to workspace $ws11
 bindsym $mod+Shift+F12 move container to workspace $ws12
 
-# set $i3move $HOME/go/bin/i3move
-# bindsym $mod+Control+Up    exec --no-startup-id $i3move -up
-# bindsym $mod+Control+Down  exec --no-startup-id $i3move -down
-# bindsym $mod+Control+Left  exec --no-startup-id $i3move -left
-# bindsym $mod+Control+Right exec --no-startup-id $i3move -right
-
-bindsym $mod+Control+Shift+Left  move container to workspace prev; workspace prev
-bindsym $mod+Control+Shift+Right move container to workspace next; workspace next
-
-bindsym $mod+Control+Shift+Up    move container to workspace prev; workspace prev
-bindsym $mod+Control+Shift+Down  move container to workspace next; workspace next
-
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+c exec "make -C ~/.config/i3 && i3-msg reload"
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r exec "make -C ~/.config/i3 && i3-msg restart"
 # exit i3 (logs you out of your X session)
@@ -284,7 +274,6 @@ bar {
     }  
 } 
 
-
 # adams stuff
 
 
@@ -293,21 +282,26 @@ bar {
 for_window [instance="quake_term"] floating enable;
 set $quake xst -n quake_term
 
-mode "quake_zsh" {
+mode "quake zsh" {
     bindsym Escape exec ~/bin/popup.sh close "$quake"
     bindsym $mod+grave     exec ~/bin/popup.sh close "$quake"
 }
-bindsym $mod+grave exec ~/bin/popup.sh open "quake_zsh" "$quake"
-mode "quake_math" {
+bindsym $mod+grave exec ~/bin/popup.sh open "quake zsh" "$quake"
+mode "quake math" {
     bindsym Escape exec ~/bin/popup.sh close "$quake"
     bindsym $mod+m     exec ~/bin/popup.sh close "$quake"
 }
-bindsym $mod+m exec ~/bin/popup.sh open "quake_math" "$quake -e qalc"
-mode "quake_math" {
+bindsym $mod+m exec ~/bin/popup.sh open "quake math" "$quake -e qalc"
+mode "quake php" {
     bindsym Escape exec ~/bin/popup.sh close "$quake"
     bindsym $mod+p     exec ~/bin/popup.sh close "$quake"
 }
-bindsym $mod+p exec ~/bin/popup.sh open "quake_math" "$quake -e php -a"
+bindsym $mod+p exec ~/bin/popup.sh open "quake php" "$quake -e php -a"
+mode "quake cal" {
+    bindsym Escape exec ~/bin/popup.sh close "$quake"
+    bindsym $mod+j     exec ~/bin/popup.sh close "$quake"
+}
+bindsym $mod+j exec ~/bin/popup.sh open "quake cal" "$quake -e calcurse"
 
 bindsym $mod+e exec /home/adam/bin/emoji
 bindsym $mod+c exec code
