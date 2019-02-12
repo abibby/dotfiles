@@ -286,28 +286,11 @@ bar {
 
 
 # adams stuff
+include(`quake.i3')
 
-
-
-## quick terminal
-for_window [instance="quake_term"] floating enable;
-set $quake xst -n quake_term
-
-mode "quake_zsh" {
-    bindsym Escape exec ~/bin/popup.sh close "$quake"
-    bindsym $mod+grave     exec ~/bin/popup.sh close "$quake"
-}
-bindsym $mod+grave exec ~/bin/popup.sh open "quake_zsh" "$quake"
-mode "quake_math" {
-    bindsym Escape exec ~/bin/popup.sh close "$quake"
-    bindsym $mod+m     exec ~/bin/popup.sh close "$quake"
-}
-bindsym $mod+m exec ~/bin/popup.sh open "quake_math" "$quake -e qalc"
-mode "quake_math" {
-    bindsym Escape exec ~/bin/popup.sh close "$quake"
-    bindsym $mod+p     exec ~/bin/popup.sh close "$quake"
-}
-bindsym $mod+p exec ~/bin/popup.sh open "quake_math" "$quake -e php -a"
+QUAKE(zsh, $mod+grave)
+QUAKE(math, $mod+m, `qalc')
+QUAKE(math, $mod+p, `php -a')
 
 bindsym $mod+e exec /home/adam/bin/emoji
 bindsym $mod+c exec code
