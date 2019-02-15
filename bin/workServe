@@ -4,6 +4,7 @@ session="work"
 
 cd /home/adam/Documents/work/aqmdatalaravel
 
+sudo systemctl start mysqld
 
 sudo tmux new-session \;\
     split-window -v \;\

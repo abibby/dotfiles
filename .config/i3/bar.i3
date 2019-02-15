@@ -1,20 +1,21 @@
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+
+# for cal
+for_window [class="Yad"] floating enable
+
 bar {
     position top
     status_command i3blocks
 
-    font pango:Liberation Mono 10
-
     colors {
         background $background
         statusline $foreground
-        separator #666666
-                           #border #back       #text
-        focused_workspace  $grey   $blue       $black
-        active_workspace   $grey   $background $white
-        inactive_workspace $grey   $background $white
-        urgent_workspace   $grey   $red        $black
-        binding_mode       #2f343a #900000 #ffffff
+        separator  $blue
+                           #border     #back       #text
+        focused_workspace  $blue       $blue       $background
+        active_workspace   $blue       $background $foreground
+        inactive_workspace $background $background $foreground
+        urgent_workspace   $red        $red        $background
     }  
 } 

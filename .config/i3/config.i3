@@ -26,13 +26,15 @@ hide_edge_borders both
 
 include(`color.i3')
 
+focus_follows_mouse no
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 10
+# font pango:monospace 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 11
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -148,7 +150,7 @@ include(`quake.i3')
 QUAKE(zsh, $mod+grave)
 QUAKE(math, $mod+m, `qalc')
 QUAKE(php, $mod+p, `php -a')
-QUAKE(cal, $mod+j, `calcurse')
+QUAKE(cal, $mod+j, `~/bin/calpause')
 
 bindsym $mod+e exec /home/adam/bin/emoji
 bindsym $mod+c exec code
@@ -165,10 +167,12 @@ bindsym $mod+Shift+l exec find ~/.screenlayout -type f | rofi -dmenu -i -p Layou
 bindsym $mod+Shift+p exec i3-nagbar -t warning -m 'Are you sure you want to power off.' -B 'Shutdown' 'systemctl poweroff' -B 'Sleep' 'systemctl hibernate'
 
 # music control
-bindsym $mod+space exec playerctl play-pause
+# bindsym $mod+space exec playerctl play-pause
 bindsym $mod+comma exec playerctl previous
 bindsym $mod+period exec playerctl next
 
 # AUTOSTART
 exec_always --no-startup-id feh --bg-fill "$(cat ~/.config/adam/wallpaper)"
+exec_always --no-startup-id numlockx on &
 exec --no-startup-id compton -b
+

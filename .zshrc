@@ -66,8 +66,6 @@ plugins=(
   git
   npm
   go
-  sudo
-  docker
   web-search
   archlinux
   zsh-syntax-highlighting

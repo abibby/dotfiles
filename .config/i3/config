@@ -37,8 +37,8 @@ set_from_resource $magenta i3wm.color5 #800080
 set_from_resource $cyan    i3wm.color6 #008080
 set_from_resource $white   i3wm.color7 #c0c0c0
 
-set_from_resource $bold_black   i3wm.color8 #808080
-set_from_resource $bold_red     i3wm.color9 #ff0000
+set_from_resource $bold_black   i3wm.color8  #808080
+set_from_resource $bold_red     i3wm.color9  #ff0000
 set_from_resource $bold_green   i3wm.color10 #00ff00
 set_from_resource $bold_yellow  i3wm.color11 #ffff00
 set_from_resource $bold_blue    i3wm.color12 #0000ff
@@ -49,23 +49,25 @@ set_from_resource $bold_white   i3wm.color15 #ffffff
 
 # class                 border  backgr. text    indicator   child_border
 # the thing you are looking at
-client.focused          #4c7899 #285577 #ffffff $blue       $blue
+client.focused          $blue       $blue       $blue       $blue       $blue
 # focuesd on another monitor
-client.focused_inactive #ff0000 #0ff000 #00ff00 $background $background
+client.focused_inactive $background $background $background $background $background
 # unfocused on any screen
-client.unfocused        #0000ff #222222 #888888 $background $background
-client.urgent           #2f343a #900000 #ffffff $red        $red
-client.placeholder      #000000 #0c0c0c #ffffff #000000     #0c0c0c
+client.unfocused        $background $background $background $background $background
+client.urgent           $red        $red        $red        $red        $red
+client.placeholder      $green      $green      $green      $green      $green
 
-client.background       #ffffff
+client.background       $background
+
+focus_follows_mouse no
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 10
+# font pango:monospace 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 11
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -255,22 +257,23 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+
+# for cal
+for_window [class="Yad"] floating enable
+
 bar {
     position top
     status_command i3blocks
 
-    font pango:Liberation Mono 10
-
     colors {
         background $background
         statusline $foreground
-        separator #666666
-                           #border #back       #text
-        focused_workspace  $grey   $blue       $black
-        active_workspace   $grey   $background $white
-        inactive_workspace $grey   $background $white
-        urgent_workspace   $grey   $red        $black
-        binding_mode       #2f343a #900000 #ffffff
+        separator  $blue
+                           #border     #back       #text
+        focused_workspace  $blue       $blue       $background
+        active_workspace   $blue       $background $foreground
+        inactive_workspace $background $background $foreground
+        urgent_workspace   $red        $red        $background
     }  
 } 
 
@@ -301,7 +304,7 @@ mode "quake cal" {
     bindsym Escape exec ~/bin/popup.sh close "$quake"
     bindsym $mod+j     exec ~/bin/popup.sh close "$quake"
 }
-bindsym $mod+j exec ~/bin/popup.sh open "quake cal" "$quake -e calcurse"
+bindsym $mod+j exec ~/bin/popup.sh open "quake cal" "$quake -e ~/bin/calpause"
 
 bindsym $mod+e exec /home/adam/bin/emoji
 bindsym $mod+c exec code
@@ -318,10 +321,12 @@ bindsym $mod+Shift+l exec find ~/.screenlayout -type f | rofi -dmenu -i -p Layou
 bindsym $mod+Shift+p exec i3-nagbar -t warning -m 'Are you sure you want to power off.' -B 'Shutdown' 'systemctl poweroff' -B 'Sleep' 'systemctl hibernate'
 
 # music control
-bindsym $mod+space exec playerctl play-pause
+# bindsym $mod+space exec playerctl play-pause
 bindsym $mod+comma exec playerctl previous
 bindsym $mod+period exec playerctl next
 
 # AUTOSTART
 exec_always --no-startup-id feh --bg-fill "$(cat ~/.config/adam/wallpaper)"
+exec_always --no-startup-id numlockx on &
 exec --no-startup-id compton -b
+
