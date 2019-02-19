@@ -19,10 +19,12 @@ set $mod Mod4
 set $term xst
 
 gaps inner 10
-gaps outer 5
+# gaps outer 5
 
 for_window [class=".*"] border pixel 4
 hide_edge_borders both
+
+for_window [class="albert"] border pixel 0
 
 include(`color.i3')
 
@@ -54,7 +56,8 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+l exec rofi -show drun
+# bindsym $mod+l exec rofi -show drun
+bindsym $mod+l exec albert show
 
 # change focus
 bindsym $mod+a focus left
@@ -150,13 +153,15 @@ include(`quake.i3')
 QUAKE(zsh, $mod+grave)
 QUAKE(math, $mod+m, `qalc')
 QUAKE(php, $mod+p, `php -a')
-QUAKE(cal, $mod+j, `~/bin/calpause')
+QUAKE(cal, $mod+j, `node')
+QUAKE(cal, $mod+k, `~/bin/calpause')
 
 bindsym $mod+e exec /home/adam/bin/emoji
 bindsym $mod+c exec code
 bindsym $mod+b exec brave
 bindsym $mod+t exec --no-startup-id $term -e htop
-bindsym $mod+x exec $term -e ranger
+# bindsym $mod+x exec $term -e ranger
+bindsym $mod+x exec pcmanfm
 
 
 bindsym $mod+u exec cat ~/.config/adam/bookmarks | sort | rofi -dmenu -i -p sites | xargs -r surf
@@ -170,9 +175,15 @@ bindsym $mod+Shift+p exec i3-nagbar -t warning -m 'Are you sure you want to powe
 # bindsym $mod+space exec playerctl play-pause
 bindsym $mod+comma exec playerctl previous
 bindsym $mod+period exec playerctl next
+bindsym $mod+minus exec pactl set-sink-volume 0 -5%
+bindsym $mod+equal exec pactl set-sink-volume 0 +5%
+
+bindsym $mod+Shift+minus exec xbacklight -dec 10
+bindsym $mod+Shift+equal exec xbacklight -inc 10
 
 # AUTOSTART
 exec_always --no-startup-id feh --bg-fill "$(cat ~/.config/adam/wallpaper)"
-exec_always --no-startup-id numlockx on &
-exec --no-startup-id compton -b
+exec --no-startup-id numlockx on &
+exec --no-startup-id ~/bin/comp
+exec --no-startup-id albert &
 

@@ -23,7 +23,7 @@ set_from_resource $bold_white   i3wm.color15 #ffffff
 
 # class                 border  backgr. text    indicator   child_border
 # the thing you are looking at
-client.focused          $blue       $blue       $blue       $blue       $blue
+client.focused          $blue $blue $blue $blue $blue
 # focuesd on another monitor
 client.focused_inactive $background $background $background $background $background
 # unfocused on any screen

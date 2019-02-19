@@ -19,10 +19,12 @@ set $mod Mod4
 set $term xst
 
 gaps inner 10
-gaps outer 5
+# gaps outer 5
 
 for_window [class=".*"] border pixel 4
 hide_edge_borders both
+
+for_window [class="albert"] border pixel 0
 
 
 set_from_resource $background i3wm.background #000000
@@ -49,7 +51,7 @@ set_from_resource $bold_white   i3wm.color15 #ffffff
 
 # class                 border  backgr. text    indicator   child_border
 # the thing you are looking at
-client.focused          $blue       $blue       $blue       $blue       $blue
+client.focused          $blue $blue $blue $blue $blue
 # focuesd on another monitor
 client.focused_inactive $background $background $background $background $background
 # unfocused on any screen
@@ -87,7 +89,8 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+l exec rofi -show drun
+# bindsym $mod+l exec rofi -show drun
+bindsym $mod+l exec albert show
 
 # change focus
 bindsym $mod+a focus left
@@ -146,10 +149,12 @@ set $ws1  "1"
 set $ws2  "2"
 set $ws3  "3"
 set $ws4  "4"
+
 set $ws5  "5"
 set $ws6  "6"
 set $ws7  "7"
 set $ws8  "8"
+
 set $ws9  "9"
 set $ws10 "10"
 set $ws11 "11"
@@ -268,8 +273,10 @@ bar {
     colors {
         background $background
         statusline $foreground
-        separator  $blue
+        separator  $foreground
                            #border     #back       #text
+        # focused_workspace  $foreground $foreground $background
+        # active_workspace   $foreground $background $foreground
         focused_workspace  $blue       $blue       $background
         active_workspace   $blue       $background $foreground
         inactive_workspace $background $background $foreground
@@ -304,13 +311,19 @@ mode "quake cal" {
     bindsym Escape exec ~/bin/popup.sh close "$quake"
     bindsym $mod+j     exec ~/bin/popup.sh close "$quake"
 }
-bindsym $mod+j exec ~/bin/popup.sh open "quake cal" "$quake -e ~/bin/calpause"
+bindsym $mod+j exec ~/bin/popup.sh open "quake cal" "$quake -e node"
+mode "quake cal" {
+    bindsym Escape exec ~/bin/popup.sh close "$quake"
+    bindsym $mod+k     exec ~/bin/popup.sh close "$quake"
+}
+bindsym $mod+k exec ~/bin/popup.sh open "quake cal" "$quake -e ~/bin/calpause"
 
 bindsym $mod+e exec /home/adam/bin/emoji
 bindsym $mod+c exec code
 bindsym $mod+b exec brave
 bindsym $mod+t exec --no-startup-id $term -e htop
-bindsym $mod+x exec $term -e ranger
+# bindsym $mod+x exec $term -e ranger
+bindsym $mod+x exec pcmanfm
 
 
 bindsym $mod+u exec cat ~/.config/adam/bookmarks | sort | rofi -dmenu -i -p sites | xargs -r surf
@@ -324,9 +337,15 @@ bindsym $mod+Shift+p exec i3-nagbar -t warning -m 'Are you sure you want to powe
 # bindsym $mod+space exec playerctl play-pause
 bindsym $mod+comma exec playerctl previous
 bindsym $mod+period exec playerctl next
+bindsym $mod+minus exec pactl set-sink-volume 0 -5%
+bindsym $mod+equal exec pactl set-sink-volume 0 +5%
+
+bindsym $mod+Shift+minus exec xbacklight -dec 10
+bindsym $mod+Shift+equal exec xbacklight -inc 10
 
 # AUTOSTART
 exec_always --no-startup-id feh --bg-fill "$(cat ~/.config/adam/wallpaper)"
-exec_always --no-startup-id numlockx on &
-exec --no-startup-id compton -b
+exec --no-startup-id numlockx on &
+exec --no-startup-id ~/bin/comp
+exec --no-startup-id albert &
 

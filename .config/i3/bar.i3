@@ -11,8 +11,10 @@ bar {
     colors {
         background $background
         statusline $foreground
-        separator  $blue
+        separator  $foreground
                            #border     #back       #text
+        # focused_workspace  $foreground $foreground $background
+        # active_workspace   $foreground $background $foreground
         focused_workspace  $blue       $blue       $background
         active_workspace   $blue       $background $foreground
         inactive_workspace $background $background $foreground

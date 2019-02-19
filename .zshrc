@@ -120,7 +120,7 @@ export npm_config_prefix=~/.node_modules
 export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 alias as80="sudo php artisan serve --port=80"
 
-# python
+# pythony
 export PATH="$HOME/.local/bin:$PATH"
 
 # other stuff
@@ -135,10 +135,9 @@ export PATH="$HOME/bin:$PATH"
 
 alias goz="cd ~/go/src/github.com/zwzn"
 
-alias dmenu="rofi -dmenu -i"
-
 # work stuff
-alias work="cd ~/Documents/work/aqmdatalaravel"
+alias work="cd ~/Documents/work/aqmdata2"
+alias gow="cd ~/go/src/gitlab.com/automac"
 
 PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 

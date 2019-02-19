@@ -2,7 +2,7 @@
 
 session="work"
 
-cd /home/adam/Documents/work/aqmdatalaravel
+cd /home/adam/Documents/work/aqmdata2
 
 sudo systemctl start mysqld
 
@@ -18,6 +18,6 @@ sudo tmux new-session \;\
     selectp -t 2 \;\
     send-keys "influxd" C-m\;\
     selectp -t 3 \;\
-    send-keys "mkdir /tmp/pollerd; cd /tmp/pollerd; sleep 3; sudo pollerd -test" C-m\;\
+    send-keys "mkdir /tmp/pollerd; cd /tmp/pollerd; sleep 3; pollerd -test" C-m\;\
     selectp -t 1 \;\
     attach
