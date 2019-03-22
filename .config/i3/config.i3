@@ -17,6 +17,7 @@
 set $mod Mod4
 
 set $term xst
+# set $term kitty
 
 gaps inner 10
 # gaps outer 5
@@ -56,8 +57,9 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-# bindsym $mod+l exec rofi -show drun
-bindsym $mod+l exec albert show
+bindsym $mod+r exec rofi -show drun
+# bindsym $mod+r exec albert show
+
 
 # change focus
 bindsym $mod+a focus left
@@ -118,32 +120,16 @@ bindsym $mod+Shift+r exec "make -C ~/.config/i3 && i3-msg restart"
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
-mode "resize" {
-    # These bindings trigger as soon as you enter the resize mode
+bindsym $mod+Ctrl+a resize shrink width 10 px or 10 ppt
+bindsym $mod+Ctrl+s resize grow height 10 px or 10 ppt
+bindsym $mod+Ctrl+w resize shrink height 10 px or 10 ppt
+bindsym $mod+Ctrl+d resize grow width 10 px or 10 ppt
 
-    # Pressing left will shrink the window’s width.
-    # Pressing right will grow the window’s width.
-    # Pressing up will shrink the window’s height.
-    # Pressing down will grow the window’s height.
-    bindsym a resize shrink width 10 px or 10 ppt
-    bindsym s resize grow height 10 px or 10 ppt
-    bindsym w resize shrink height 10 px or 10 ppt
-    bindsym d resize grow width 10 px or 10 ppt
+bindsym $mod+Ctrl+Left resize shrink width 10 px or 10 ppt
+bindsym $mod+Ctrl+Down resize grow height 10 px or 10 ppt
+bindsym $mod+Ctrl+Up resize shrink height 10 px or 10 ppt
+bindsym $mod+Ctrl+Right resize grow width 10 px or 10 ppt
 
-    # same bindings, but for the arrow keys
-    bindsym Left resize shrink width 10 px or 10 ppt
-    bindsym Down resize grow height 10 px or 10 ppt
-    bindsym Up resize shrink height 10 px or 10 ppt
-    bindsym Right resize grow width 10 px or 10 ppt
-
-    # back to normal: Enter or Escape or $mod+r
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-    bindsym $mod+r mode "default"
-}
-
-bindsym $mod+r mode "resize"
 
 include(`bar.i3')
 
@@ -159,6 +145,7 @@ QUAKE(cal, $mod+k, `~/bin/calpause')
 bindsym $mod+e exec /home/adam/bin/emoji
 bindsym $mod+c exec code
 bindsym $mod+b exec brave
+# bindsym $mod+b exec firefox
 bindsym $mod+t exec --no-startup-id $term -e htop
 # bindsym $mod+x exec $term -e ranger
 bindsym $mod+x exec pcmanfm
@@ -172,7 +159,7 @@ bindsym $mod+Shift+l exec find ~/.screenlayout -type f | rofi -dmenu -i -p Layou
 bindsym $mod+Shift+p exec i3-nagbar -t warning -m 'Are you sure you want to power off.' -B 'Shutdown' 'systemctl poweroff' -B 'Sleep' 'systemctl hibernate'
 
 # music control
-# bindsym $mod+space exec playerctl play-pause
+bindsym $mod+space exec playerctl play-pause
 bindsym $mod+comma exec playerctl previous
 bindsym $mod+period exec playerctl next
 bindsym $mod+minus exec pactl set-sink-volume 0 -5%
@@ -185,5 +172,4 @@ bindsym $mod+Shift+equal exec xbacklight -inc 10
 exec_always --no-startup-id feh --bg-fill "$(cat ~/.config/adam/wallpaper)"
 exec --no-startup-id numlockx on &
 exec --no-startup-id ~/bin/comp
-exec --no-startup-id albert &
-
+# exec --no-startup-id albert &

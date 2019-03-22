@@ -7,4 +7,5 @@ bindsym $2 exec ~/bin/popup.sh open "quake $1" "ifelse($3, , `$quake', `$quake -
 
 ## quick terminal
 for_window [instance="quake_term"] floating enable;
+# set $quake kitty --name quake_term
 set $quake xst -n quake_term

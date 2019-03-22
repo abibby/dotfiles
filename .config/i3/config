@@ -17,6 +17,7 @@
 set $mod Mod4
 
 set $term xst
+# set $term kitty
 
 gaps inner 10
 # gaps outer 5
@@ -89,8 +90,9 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-# bindsym $mod+l exec rofi -show drun
-bindsym $mod+l exec albert show
+bindsym $mod+r exec rofi -show drun
+# bindsym $mod+r exec albert show
+
 
 # change focus
 bindsym $mod+a focus left
@@ -233,32 +235,16 @@ bindsym $mod+Shift+r exec "make -C ~/.config/i3 && i3-msg restart"
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
-mode "resize" {
-    # These bindings trigger as soon as you enter the resize mode
+bindsym $mod+Ctrl+a resize shrink width 10 px or 10 ppt
+bindsym $mod+Ctrl+s resize grow height 10 px or 10 ppt
+bindsym $mod+Ctrl+w resize shrink height 10 px or 10 ppt
+bindsym $mod+Ctrl+d resize grow width 10 px or 10 ppt
 
-    # Pressing left will shrink the window’s width.
-    # Pressing right will grow the window’s width.
-    # Pressing up will shrink the window’s height.
-    # Pressing down will grow the window’s height.
-    bindsym a resize shrink width 10 px or 10 ppt
-    bindsym s resize grow height 10 px or 10 ppt
-    bindsym w resize shrink height 10 px or 10 ppt
-    bindsym d resize grow width 10 px or 10 ppt
+bindsym $mod+Ctrl+Left resize shrink width 10 px or 10 ppt
+bindsym $mod+Ctrl+Down resize grow height 10 px or 10 ppt
+bindsym $mod+Ctrl+Up resize shrink height 10 px or 10 ppt
+bindsym $mod+Ctrl+Right resize grow width 10 px or 10 ppt
 
-    # same bindings, but for the arrow keys
-    bindsym Left resize shrink width 10 px or 10 ppt
-    bindsym Down resize grow height 10 px or 10 ppt
-    bindsym Up resize shrink height 10 px or 10 ppt
-    bindsym Right resize grow width 10 px or 10 ppt
-
-    # back to normal: Enter or Escape or $mod+r
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-    bindsym $mod+r mode "default"
-}
-
-bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -268,7 +254,10 @@ for_window [class="Yad"] floating enable
 
 bar {
     position top
-    status_command i3blocks
+    
+    status_command $HOME/go/bin/i3gobar
+    # status_command i3blocks
+    
 
     colors {
         background $background
@@ -290,6 +279,7 @@ bar {
 
 ## quick terminal
 for_window [instance="quake_term"] floating enable;
+# set $quake kitty --name quake_term
 set $quake xst -n quake_term
 
 mode "quake zsh" {
@@ -321,6 +311,7 @@ bindsym $mod+k exec ~/bin/popup.sh open "quake cal" "$quake -e ~/bin/calpause"
 bindsym $mod+e exec /home/adam/bin/emoji
 bindsym $mod+c exec code
 bindsym $mod+b exec brave
+# bindsym $mod+b exec firefox
 bindsym $mod+t exec --no-startup-id $term -e htop
 # bindsym $mod+x exec $term -e ranger
 bindsym $mod+x exec pcmanfm
@@ -334,7 +325,7 @@ bindsym $mod+Shift+l exec find ~/.screenlayout -type f | rofi -dmenu -i -p Layou
 bindsym $mod+Shift+p exec i3-nagbar -t warning -m 'Are you sure you want to power off.' -B 'Shutdown' 'systemctl poweroff' -B 'Sleep' 'systemctl hibernate'
 
 # music control
-# bindsym $mod+space exec playerctl play-pause
+bindsym $mod+space exec playerctl play-pause
 bindsym $mod+comma exec playerctl previous
 bindsym $mod+period exec playerctl next
 bindsym $mod+minus exec pactl set-sink-volume 0 -5%
@@ -347,5 +338,107 @@ bindsym $mod+Shift+equal exec xbacklight -inc 10
 exec_always --no-startup-id feh --bg-fill "$(cat ~/.config/adam/wallpaper)"
 exec --no-startup-id numlockx on &
 exec --no-startup-id ~/bin/comp
-exec --no-startup-id albert &
-
+# exec --no-startup-id albert &
+mode "NORMAL" {
+    bindsym Return exec $term
+    bindsym Shift+q kill
+    bindsym r exec rofi -show drun
+    bindsym a focus left
+    bindsym s focus down
+    bindsym w focus up
+    bindsym d focus right
+    bindsym Left focus left
+    bindsym Down focus down
+    bindsym Up focus up
+    bindsym Right focus right
+    bindsym Shift+a move left
+    bindsym Shift+s move down
+    bindsym Shift+w move up
+    bindsym Shift+d move right
+    bindsym Shift+Left move left
+    bindsym Shift+Down move down
+    bindsym Shift+Up move up
+    bindsym Shift+Right move right
+    bindsym h split h
+    bindsym v split v
+    bindsym f fullscreen toggle
+    bindsym q layout toggle split
+    bindsym 1 workspace $ws1
+    bindsym 2 workspace $ws2
+    bindsym 3 workspace $ws3
+    bindsym 4 workspace $ws4
+    bindsym 5 workspace $ws5
+    bindsym 6 workspace $ws6
+    bindsym 7 workspace $ws7
+    bindsym 8 workspace $ws8
+    bindsym 9 workspace $ws9
+    bindsym 0 workspace $ws10
+    bindsym F1  workspace $ws1
+    bindsym F2  workspace $ws2
+    bindsym F3  workspace $ws3
+    bindsym F4  workspace $ws4
+    bindsym F5  workspace $ws5
+    bindsym F6  workspace $ws6
+    bindsym F7  workspace $ws7
+    bindsym F8  workspace $ws8
+    bindsym F9  workspace $ws9
+    bindsym F10 workspace $ws10
+    bindsym F11 workspace $ws11
+    bindsym F12 workspace $ws12
+    bindsym Shift+1 move container to workspace $ws1  
+    bindsym Shift+2 move container to workspace $ws2  
+    bindsym Shift+3 move container to workspace $ws3  
+    bindsym Shift+4 move container to workspace $ws4  
+    bindsym Shift+5 move container to workspace $ws5  
+    bindsym Shift+6 move container to workspace $ws6  
+    bindsym Shift+7 move container to workspace $ws7  
+    bindsym Shift+8 move container to workspace $ws8  
+    bindsym Shift+9 move container to workspace $ws9  
+    bindsym Shift+0 move container to workspace $ws10 
+    bindsym Shift+F1  move container to workspace $ws1
+    bindsym Shift+F2  move container to workspace $ws2
+    bindsym Shift+F3  move container to workspace $ws3
+    bindsym Shift+F4  move container to workspace $ws4
+    bindsym Shift+F5  move container to workspace $ws5
+    bindsym Shift+F6  move container to workspace $ws6
+    bindsym Shift+F7  move container to workspace $ws7
+    bindsym Shift+F8  move container to workspace $ws8
+    bindsym Shift+F9  move container to workspace $ws9
+    bindsym Shift+F10 move container to workspace $ws10
+    bindsym Shift+F11 move container to workspace $ws11
+    bindsym Shift+F12 move container to workspace $ws12
+    bindsym Shift+c exec "make -C ~/.config/i3 && i3-msg reload"
+    bindsym Shift+r exec "make -C ~/.config/i3 && i3-msg restart"
+    bindsym Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+    bindsym Ctrl+a resize shrink width 10 px or 10 ppt
+    bindsym Ctrl+s resize grow height 10 px or 10 ppt
+    bindsym Ctrl+w resize shrink height 10 px or 10 ppt
+    bindsym Ctrl+d resize grow width 10 px or 10 ppt
+    bindsym Ctrl+Left resize shrink width 10 px or 10 ppt
+    bindsym Ctrl+Down resize grow height 10 px or 10 ppt
+    bindsym Ctrl+Up resize shrink height 10 px or 10 ppt
+    bindsym Ctrl+Right resize grow width 10 px or 10 ppt
+    bindsym grave exec ~/bin/popup.sh open "quake zsh" "$quake"
+    bindsym m exec ~/bin/popup.sh open "quake math" "$quake -e qalc"
+    bindsym p exec ~/bin/popup.sh open "quake php" "$quake -e php -a"
+    bindsym j exec ~/bin/popup.sh open "quake cal" "$quake -e node"
+    bindsym k exec ~/bin/popup.sh open "quake cal" "$quake -e ~/bin/calpause"
+    bindsym e exec /home/adam/bin/emoji
+    bindsym c exec code
+    bindsym b exec brave
+    bindsym t exec --no-startup-id $term -e htop
+    bindsym x exec pcmanfm
+    bindsym u exec cat ~/.config/adam/bookmarks | sort | rofi -dmenu -i -p sites | xargs -r surf
+    bindsym Shift+b exec find ~/Pictures/wallpapers -type f | rofi -dmenu -i -p Wallpaper > ~/.config/adam/wallpaper && feh --bg-fill "$(cat ~/.config/adam/wallpaper)"
+    bindsym Shift+l exec find ~/.screenlayout -type f | rofi -dmenu -i -p Layout | xargs -r sh && i3-msg restart
+    bindsym Shift+p exec i3-nagbar -t warning -m 'Are you sure you want to power off.' -B 'Shutdown' 'systemctl poweroff' -B 'Sleep' 'systemctl hibernate'
+    bindsym space exec playerctl play-pause
+    bindsym comma exec playerctl previous
+    bindsym period exec playerctl next
+    bindsym minus exec pactl set-sink-volume 0 -5%
+    bindsym equal exec pactl set-sink-volume 0 +5%
+    bindsym Shift+minus exec xbacklight -dec 10
+    bindsym Shift+equal exec xbacklight -inc 10
+    bindsym Escape mode "default"
+}
+bindsym $mod+Escape mode "NORMAL"

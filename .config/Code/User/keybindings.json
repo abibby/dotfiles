@@ -113,5 +113,15 @@
             "value": 10
         },
         "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+enter",
+        "command": "editor.action.marker.next",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "alt+f8",
+        "command": "-editor.action.marker.next",
+        "when": "editorTextFocus && !editorReadonly"
     }
 ]

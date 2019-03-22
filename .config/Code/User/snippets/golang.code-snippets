@@ -31,5 +31,15 @@
             "os.Exit(1)"
         ],
         "description": "add a new error type"
+    },
+    "init new test": {
+        "scope": "go",
+        "prefix": "test",
+        "body": [
+            "func Test${1:Name}(t *testing.T){",
+            "\t${2://content}",
+            "}"
+        ],
+        "description": "add a new error type"
     }
 }

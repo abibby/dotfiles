@@ -5,11 +5,9 @@
 # [test]
 # command=$HOME/bin/i3blocklet echo "test"
 # interval=3600
-
-[zlist]
-command=echo ZSH $(ssh frank-wan "zpool list -o name,cap,health" | grep volume1 | awk '{ print $3="ONLINE" ? "OK" : $3 }')
-interval=3600
-# color=#F79494
+# [window]
+# command=xtitle -s
+# interval=persist
 
 # Guess the weather hourly
 [weather]
@@ -18,6 +16,17 @@ command=$HOME/go/bin/weather
 interval=3600
 # color=#A4C2F4
 
+[updates]
+command=echo "<span font='Font Awesome'></span>" $(pamac checkupdates -q | wc -l)
+markup=pango
+interval=3600
+
+[zlist]
+command=echo "<span font='Font Awesome'></span>" $(ssh frank-wan "zpool list -o name,cap,health" | grep volume1 | awk '{ print $3="ONLINE" ? "OK" : $3 }')
+markup=pango
+interval=3600
+# color=#F79494
+
 [battery]
 command=$HOME/bin/i3blocks-contrib/battery2/battery2
 markup=pango
@@ -25,5 +34,10 @@ interval=30
 
 # Update time every 5 seconds
 [time]
-command=date +'%a %-e %-I:%M:%S %P'
+command=echo "<span font='Font Awesome'></span>" $(date +'%a %-e %-I:%M:%S %P')
+markup=pango
 interval=1
+
+# [timeEST]
+# command=env TZ=":America/Toronto" date +'%-I:%M %P'
+# interval=1

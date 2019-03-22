@@ -69,6 +69,7 @@ plugins=(
   web-search
   archlinux
   zsh-syntax-highlighting
+  cargo
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -102,10 +103,13 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-#tilix stuff
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
+if [ "$(tty)" = "/dev/tty1" ]; then
+	startx
+	exit 0
 fi
+
+# export EDITOR='emacsclient -nw'
+export EDITOR='code -w'
 
 # go stuff
 export PATH=$PATH:~/go/bin
@@ -123,6 +127,9 @@ alias as80="sudo php artisan serve --port=80"
 # pythony
 export PATH="$HOME/.local/bin:$PATH"
 
+# rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # other stuff
 alias calc="qalc"
 alias sql="sqlectron-term"
@@ -130,6 +137,10 @@ alias ls='ls --color -h --group-directories-first'
 alias p='sudo pacman'
 alias dump='hexdump'
 alias text='surf https://messages.android.com/'
+alias todo='git grep TODO:'
+alias e="$EDITOR"
+alias se="sudo $EDITOR"
+alias ungzip="tar -xvzf"
 
 export PATH="$HOME/bin:$PATH"
 
@@ -138,6 +149,8 @@ alias goz="cd ~/go/src/github.com/zwzn"
 # work stuff
 alias work="cd ~/Documents/work/aqmdata2"
 alias gow="cd ~/go/src/gitlab.com/automac"
+alias wtime="sudo timedatectl set-timezone America/Phoenix"
+alias htime="sudo timedatectl set-timezone America/Toronto"
 
 PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 

@@ -6,7 +6,10 @@ for_window [class="Yad"] floating enable
 
 bar {
     position top
-    status_command i3blocks
+    
+    status_command $HOME/go/bin/i3gobar
+    # status_command i3blocks
+    
 
     colors {
         background $background
