@@ -172,4 +172,3 @@ bindsym $mod+Shift+equal exec xbacklight -inc 10
 exec_always --no-startup-id feh --bg-fill "$(cat ~/.config/adam/wallpaper)"
 exec --no-startup-id numlockx on &
 exec --no-startup-id ~/bin/comp
-# exec --no-startup-id albert &
