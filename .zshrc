@@ -169,7 +169,8 @@ function updateCfg() {
     done
 
     # commit
-    config commit -m "dotfile updates on $(date)" 
+    config commit -m "dotfile updates on $(date)"
+    config push 
 }
 
 #server stuff
