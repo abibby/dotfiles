@@ -160,7 +160,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias cfg='config'
 function updateCfg() {
     # remove all files from git
-    config rm -r --cached -f .
+    config rm -r --cached -f /home/adam
     
     # add all the files using the .dotfiles.list file
     IFS=$'\n'       # make newlines the only separator
