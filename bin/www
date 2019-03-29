@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-surf $(cat ~/.config/www/search | awk "{ if ( \$1 == \"$1\" ) printf \$2, \"$2\" }")

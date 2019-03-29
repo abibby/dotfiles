@@ -152,6 +152,7 @@ alias work="cd ~/Documents/work/aqmdata2"
 alias gow="cd ~/go/src/gitlab.com/automac"
 alias wtime="sudo timedatectl set-timezone America/Phoenix"
 alias htime="sudo timedatectl set-timezone America/Toronto"
+alias 2flux='influx -username "admin" -password "$(pass influx.aqmdata2.ca)" -precision "rfc3339" -database "aqmdata" -host "aqmdata2.ca"'
 
 PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 
@@ -167,7 +168,7 @@ function updateCfg() {
     for i in $(cat < "/home/adam/.dotfiles.list"); do
         config add "$i"
     done
-
+    
     # commit
     config commit -m "dotfile updates on $(date)"
     config push 

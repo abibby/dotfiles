@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-cal -n 6 && read
+cal -n 6
+read
