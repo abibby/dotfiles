@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/adam/.oh-my-zsh"
+export ZSH="/home/adam/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -63,13 +63,13 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
-  npm
-  go
-  web-search
-  archlinux
-  zsh-syntax-highlighting
-  cargo
+    git
+    npm
+    go
+    web-search
+    archlinux
+    zsh-syntax-highlighting
+    cargo
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -103,6 +103,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+
 if [ "$(tty)" = "/dev/tty1" ]; then
 	startx
 	exit 0
@@ -135,7 +136,7 @@ alias calc="qalc"
 alias sql="sqlectron-term"
 alias ls='ls --color -h --group-directories-first'
 alias p='sudo pacman'
-alias dump='hexdump'
+alias dump='hexdump -C'
 alias text='surf https://messages.android.com/'
 alias todo='git grep TODO:'
 alias e="$EDITOR"
@@ -157,7 +158,19 @@ PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 # dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias cfg='config'
+function updateCfg() {
+    # remove all files from git
+    config rm -r --cached -f .
+    
+    # add all the files using the .dotfiles.list file
+    IFS=$'\n'       # make newlines the only separator
+    for i in $(cat < "/home/adam/.dotfiles.list"); do
+        config add "$i"
+    done
 
+    # commit
+    config commit -m "dotfile updates on $(date)" 
+}
 
 #server stuff
 alias zstatus="ssh frank-wan 'zpool status'"

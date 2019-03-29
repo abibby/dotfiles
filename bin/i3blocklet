@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+case "$BLOCK_BUTTON" in
+    1) exit ;;
+    2) exit ;;
+    3) exit ;;
+    4) exit ;;
+    5) exit ;;
+esac
+echo $($@)

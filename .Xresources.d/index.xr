@@ -1,0 +1,4 @@
+// https://github.com/logico-dev/Xresources-themes
+#include "st.xr"
+// #include "cobalt2.xr"
+#include "nord.xr"
