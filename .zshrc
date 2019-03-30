@@ -159,17 +159,18 @@ PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 # dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias cfg='config'
-function updateCfg() {
+function cfgadd() {
     # remove all files from git
-    config rm -r --cached -f /home/adam
+    config rm -r --cached -f $HOME
     
     # add all the files using the .dotfiles.list file
     IFS=$'\n'       # make newlines the only separator
-    for i in $(cat < "/home/adam/.dotfiles.list"); do
+    for i in $(cat < "$HOME/.dotfiles.list"); do
         config add "$i"
     done
-    
-    # commit
+}
+
+function cfgpush() {
     config commit -m "dotfile updates on $(date)"
     config push 
 }
