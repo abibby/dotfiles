@@ -252,9 +252,12 @@ bindsym $mod+Ctrl+Right resize grow width 10 px or 10 ppt
 # for cal
 for_window [class="Yad"] floating enable
 
+
 bar {
+    tray_output primary
     position top
     
+    # github.com/zwzn/i3/i3gobar
     status_command $HOME/go/bin/i3gobar
     # status_command i3blocks
     
@@ -283,38 +286,38 @@ for_window [instance="quake_term"] floating enable;
 set $quake xst -n quake_term
 
 mode "quake zsh" {
-    bindsym Escape exec ~/bin/popup.sh close "$quake"
-    bindsym $mod+grave     exec ~/bin/popup.sh close "$quake"
+    bindsym Escape exec popup.sh close "$quake"
+    bindsym $mod+grave     exec popup.sh close "$quake"
 }
-bindsym $mod+grave exec ~/bin/popup.sh open "quake zsh" "$quake"
+bindsym $mod+grave exec popup.sh open "quake zsh" "$quake"
 mode "quake math" {
-    bindsym Escape exec ~/bin/popup.sh close "$quake"
-    bindsym $mod+m     exec ~/bin/popup.sh close "$quake"
+    bindsym Escape exec popup.sh close "$quake"
+    bindsym $mod+m     exec popup.sh close "$quake"
 }
-bindsym $mod+m exec ~/bin/popup.sh open "quake math" "$quake -e qalc"
+bindsym $mod+m exec popup.sh open "quake math" "$quake -e qalc"
 mode "quake php" {
-    bindsym Escape exec ~/bin/popup.sh close "$quake"
-    bindsym $mod+p     exec ~/bin/popup.sh close "$quake"
+    bindsym Escape exec popup.sh close "$quake"
+    bindsym $mod+p     exec popup.sh close "$quake"
 }
-bindsym $mod+p exec ~/bin/popup.sh open "quake php" "$quake -e php -a"
+bindsym $mod+p exec popup.sh open "quake php" "$quake -e php -a"
 mode "quake cal" {
-    bindsym Escape exec ~/bin/popup.sh close "$quake"
-    bindsym $mod+j     exec ~/bin/popup.sh close "$quake"
+    bindsym Escape exec popup.sh close "$quake"
+    bindsym $mod+j     exec popup.sh close "$quake"
 }
-bindsym $mod+j exec ~/bin/popup.sh open "quake cal" "$quake -e node"
+bindsym $mod+j exec popup.sh open "quake cal" "$quake -e node"
 mode "quake cal" {
-    bindsym Escape exec ~/bin/popup.sh close "$quake"
-    bindsym $mod+k     exec ~/bin/popup.sh close "$quake"
+    bindsym Escape exec popup.sh close "$quake"
+    bindsym $mod+k     exec popup.sh close "$quake"
 }
-bindsym $mod+k exec ~/bin/popup.sh open "quake cal" "$quake -e ~/bin/calpause"
+bindsym $mod+k exec popup.sh open "quake cal" "$quake -e calread"
 
-bindsym $mod+e exec /home/adam/bin/emoji
+bindsym $mod+e exec emoji
 bindsym $mod+c exec code
 bindsym $mod+b exec brave
 # bindsym $mod+b exec firefox
 bindsym $mod+t exec --no-startup-id $term -e htop
 # bindsym $mod+x exec $term -e ranger
-bindsym $mod+x exec pcmanfm
+bindsym $mod+x exec nautilus
 
 
 bindsym $mod+u exec cat ~/.config/adam/bookmarks | sort | rofi -dmenu -i -p sites | xargs -r surf
@@ -328,13 +331,14 @@ bindsym $mod+Shift+p exec i3-nagbar -t warning -m 'Are you sure you want to powe
 bindsym $mod+space exec playerctl play-pause
 bindsym $mod+comma exec playerctl previous
 bindsym $mod+period exec playerctl next
-bindsym $mod+minus exec pactl set-sink-volume 0 -5%
-bindsym $mod+equal exec pactl set-sink-volume 0 +5%
+bindsym $mod+minus exec changeVolume 2dB- unmute
+bindsym $mod+equal exec changeVolume 2dB+ unmute
 
-bindsym $mod+Shift+minus exec xbacklight -dec 10
-bindsym $mod+Shift+equal exec xbacklight -inc 10
+bindsym $mod+Shift+minus exec changeBrightness -dec 10
+bindsym $mod+Shift+equal exec changeBrightness -inc 10
 
 # AUTOSTART
 exec_always --no-startup-id feh --bg-fill "$(cat ~/.config/adam/wallpaper)"
 exec --no-startup-id numlockx on &
 exec --no-startup-id ~/bin/comp
+exec --no-startup-id xrdb ~/.Xresources

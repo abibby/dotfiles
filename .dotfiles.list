@@ -6,6 +6,7 @@
 /home/adam/.config/i3/*
 /home/adam/.config/rofi/*
 /home/adam/.dotfiles.list
+/home/adam/.profile
 /home/adam/.screenlayout/*
 /home/adam/.ssh/config
 /home/adam/.Xresources

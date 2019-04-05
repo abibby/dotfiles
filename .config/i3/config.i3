@@ -140,15 +140,15 @@ QUAKE(zsh, $mod+grave)
 QUAKE(math, $mod+m, `qalc')
 QUAKE(php, $mod+p, `php -a')
 QUAKE(cal, $mod+j, `node')
-QUAKE(cal, $mod+k, `~/bin/calpause')
+QUAKE(cal, $mod+k, `calread')
 
-bindsym $mod+e exec /home/adam/bin/emoji
+bindsym $mod+e exec emoji
 bindsym $mod+c exec code
 bindsym $mod+b exec brave
 # bindsym $mod+b exec firefox
 bindsym $mod+t exec --no-startup-id $term -e htop
 # bindsym $mod+x exec $term -e ranger
-bindsym $mod+x exec pcmanfm
+bindsym $mod+x exec nautilus
 
 
 bindsym $mod+u exec cat ~/.config/adam/bookmarks | sort | rofi -dmenu -i -p sites | xargs -r surf
@@ -162,13 +162,14 @@ bindsym $mod+Shift+p exec i3-nagbar -t warning -m 'Are you sure you want to powe
 bindsym $mod+space exec playerctl play-pause
 bindsym $mod+comma exec playerctl previous
 bindsym $mod+period exec playerctl next
-bindsym $mod+minus exec pactl set-sink-volume 0 -5%
-bindsym $mod+equal exec pactl set-sink-volume 0 +5%
+bindsym $mod+minus exec changeVolume 2dB- unmute
+bindsym $mod+equal exec changeVolume 2dB+ unmute
 
-bindsym $mod+Shift+minus exec xbacklight -dec 10
-bindsym $mod+Shift+equal exec xbacklight -inc 10
+bindsym $mod+Shift+minus exec changeBrightness -dec 10
+bindsym $mod+Shift+equal exec changeBrightness -inc 10
 
 # AUTOSTART
 exec_always --no-startup-id feh --bg-fill "$(cat ~/.config/adam/wallpaper)"
 exec --no-startup-id numlockx on &
 exec --no-startup-id ~/bin/comp
+exec --no-startup-id xrdb ~/.Xresources

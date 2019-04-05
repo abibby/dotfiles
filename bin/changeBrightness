@@ -1,0 +1,15 @@
+#!/bin/bash
+# changeVolume
+
+# Arbitrary but unique message id
+msgId="991050"
+
+# Change the volume using alsa(might differ if you use pulseaudio)
+xbacklight $@ > /dev/null
+
+# Query amixer for the current volume and whether or not the speaker is muted
+volume="$(printf "%d" $(xbacklight))"
+
+# Show the volume notification
+dunstify -a "Brightness" -u low -i audio-volume-high -r "$msgId" \
+"${volume}%" "$(getProgressString 20 "█" "░" $volume)"

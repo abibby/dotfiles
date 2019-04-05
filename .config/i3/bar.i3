@@ -4,9 +4,12 @@
 # for cal
 for_window [class="Yad"] floating enable
 
+
 bar {
+    tray_output primary
     position top
     
+    # github.com/zwzn/i3/i3gobar
     status_command $HOME/go/bin/i3gobar
     # status_command i3blocks
     
