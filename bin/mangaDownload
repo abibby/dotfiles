@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+ssh frank-wan /home/adam/download.sh

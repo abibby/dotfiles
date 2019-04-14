@@ -1,6 +1,5 @@
 #!/bin/bash
 
 sudo systemctl stop mysqld
-sudo systemctl stop influxdb
 
 sudo pkill -f "tmux new-session"

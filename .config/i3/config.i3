@@ -20,7 +20,7 @@ set $term xst
 # set $term kitty
 
 gaps inner 10
-# gaps outer 5
+# gaps outer 15
 
 for_window [class=".*"] border pixel 4
 hide_edge_borders both
@@ -138,7 +138,7 @@ include(`quake.i3')
 
 QUAKE(zsh, $mod+grave)
 QUAKE(math, $mod+m, `qalc')
-QUAKE(php, $mod+p, `php -a')
+QUAKE(php, $mod+p, `psysh')
 QUAKE(cal, $mod+j, `node')
 QUAKE(cal, $mod+k, `calread')
 

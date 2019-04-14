@@ -20,7 +20,7 @@ set $term xst
 # set $term kitty
 
 gaps inner 10
-# gaps outer 5
+# gaps outer 15
 
 for_window [class=".*"] border pixel 4
 hide_edge_borders both
@@ -299,7 +299,7 @@ mode "quake php" {
     bindsym Escape exec popup.sh close "$quake"
     bindsym $mod+p     exec popup.sh close "$quake"
 }
-bindsym $mod+p exec popup.sh open "quake php" "$quake -e php -a"
+bindsym $mod+p exec popup.sh open "quake php" "$quake -e psysh"
 mode "quake cal" {
     bindsym Escape exec popup.sh close "$quake"
     bindsym $mod+j     exec popup.sh close "$quake"

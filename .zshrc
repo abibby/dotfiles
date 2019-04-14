@@ -135,10 +135,10 @@ export PATH="$HOME/.cargo/bin:$PATH"
 alias calc="qalc"
 alias sql="sqlectron-term"
 alias ls='ls --color -h --group-directories-first'
+alias mkd='mkdir -p'
 alias p='sudo pacman'
 alias dump='hexdump -C'
 alias text='surf https://messages.android.com/'
-alias todo='git grep TODO:'
 alias e="$EDITOR"
 alias se="sudo $EDITOR"
 alias ungzip="tar -xvzf"
@@ -203,8 +203,9 @@ ex ()
     case $1 in
       *.tar.bz2)   tar xjf $1   ;;
       *.tar.gz)    tar xzf $1   ;;
+      *.tar.xz)    tar xvf $1   ;;
       *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1     ;;
+      *.rar)       unrar x $1   ;;
       *.gz)        gunzip $1    ;;
       *.tar)       tar xf $1    ;;
       *.tbz2)      tar xjf $1   ;;
