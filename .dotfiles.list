@@ -9,6 +9,7 @@
 /home/adam/.profile
 /home/adam/.screenlayout/*
 /home/adam/.ssh/config
+/home/adam/.Xmodmap
 /home/adam/.Xresources
 /home/adam/.Xresources.d/*
 /home/adam/.zshrc
