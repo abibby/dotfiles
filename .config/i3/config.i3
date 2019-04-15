@@ -22,6 +22,8 @@ set $term xst
 gaps inner 10
 # gaps outer 15
 
+smart_gaps on 
+
 for_window [class=".*"] border pixel 4
 hide_edge_borders both
 
