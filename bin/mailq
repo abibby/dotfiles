@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+DB=$HOME/.config/Mailspring/edgehill.db
+
+query() {
+    echo "select $1 from Message where unread=1 and remoteFolderId in (select id from Folder where role='inbox' or role='all') order by date desc limit 10"
+}
+
+mailqcount() {
+    sqlite3 $DB "$(query "count(*)")"
+}
+mailqlist () {
+    sqlite3 $DB "$(query "subject, datetime(date, 'unixepoch')")"
+}
+mailqhelp () {
+    echo "mailq [count|list]"
+}
+
+case "$1" in
+    "count") mailqcount ;;
+    "list")  mailqlist ;;
+    *)       mailqhelp ;;
+esac
