@@ -4,5 +4,5 @@ I store all my dotfiles in a git bare repo as described [here](https://www.atlas
 
 to restore run 
 ``` sh
-bash -c "$(curl https://raw.githubusercontent.com/zwzn/dotfiles/master/bin/restore)"
+bash <(curl https://raw.githubusercontent.com/zwzn/dotfiles/master/bin/restore)
 ```
