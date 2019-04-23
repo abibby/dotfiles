@@ -103,10 +103,19 @@ export LANG=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+git_prompt_info () {
+    local ref
+    if [[ "$(command git config --get oh-my-zsh.hide-status 2>/dev/null)" != "1" ]]
+    then
+        ref=$(command git symbolic-ref HEAD 2> /dev/null)  || ref=$(command git rev-parse --short HEAD 2> /dev/null)  || return 0
+        ref=$(echo $ref | awk 'length > 40{$0 = substr($0, 1, 40) "…"} {print $0}')
+        echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_SUFFIX"
+    fi
+}
 
 if [ "$(tty)" = "/dev/tty1" ]; then
-	startx
-	exit 0
+    startx
+    exit 0
 fi
 
 # export EDITOR='emacsclient -nw'

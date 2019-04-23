@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New Tab</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <style>
+        body {
+            background: #2E3440;
+            color: #D8DEE9;
+        }
+    </style>
+</head>
+
+<body>
+    <section><time id="time"></time></section>
+    <section>
+        <h1>PHP Docs</h1>
+        <form action="https://www.php.net/manual-lookup.php" method="get">
+            <input type="text" name="pattern" />
+            <input type="hidden" name="scope" value="quick" />
+            <button type="submit">Search</button>
+        </form>
+    </section>
+    <section>
+        <h1>Laravel API</h1>
+        <form action="https://laravel.com/api/5.7/search.html" method="get">
+            <input type="text" name="search" />
+            <button type="submit">Search</button>
+        </form>
+    </section>
+    <section>
+        <h1>GoDoc</h1>
+        <form action="https://godoc.org/" method="get">
+            <input type="text" name="q" />
+            <button type="submit">Search</button>
+        </form>
+    </section>
+    <script>
+        function pad(n, width, z = '0') {
+            n = n + '';
+            return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+        }
+
+        function setTime() {
+            const now = new Date()
+            time.innerText = `${now.getHours()}:${pad(now.getMinutes(), 2)}`
+        }
+
+        const time = document.getElementById('time')
+        setTime()
+        setInterval(setTime, 1000)
+    </script>
+</body>
+
+</html>

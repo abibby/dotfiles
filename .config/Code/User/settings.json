@@ -46,6 +46,7 @@
         "polyfill",
         "preact",
         "proficiencies",
+        "reddit",
         "repolling",
         "serie",
         "sprintf",
@@ -75,13 +76,6 @@
     "explorer.confirmDragAndDrop": false,
     "editor.fontLigatures": true,
     "extensions.showRecommendationsOnlyOnDemand": true,
-    "phpformatter.composer": true,
-    // "phpformatter.logging": false,
-    "phpformatter.arguments": [
-        // "--level=psr2",
-        "--rules=@PSR2",
-        // "--custom-config=/home/adam/Documents/work/config.php_cs"
-    ],
     "emmet.triggerExpansionOnTab": true, // if you would like to enable blade format
     "gitlens.advanced.messages": {
         "suppressShowKeyBindingsNotice": true
@@ -115,10 +109,19 @@
     "window.menuBarVisibility": "toggle",
     "cSpell.language": "en",
     "[shellscript]": {},
-    "tslint.autoFixOnSave": true,
     "editor.formatOnSave": true,
     "workbench.sideBar.location": "left",
     "workbench.activityBar.visible": true,
     "markdown.extension.toc.githubCompatibility": true,
-    "phpstan.path": "/home/adam/.config/composer/vendor/bin/phpstan"
+    "phpstan.path": "/home/adam/.config/composer/vendor/bin/phpstan",
+    "[php]": {
+        "editor.defaultFormatter": "junstyle.php-cs-fixer"
+    },
+    "editor.renderWhitespace": "boundary",
+    "files.autoSave": "off",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.tslint": true
+    },
+    "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+    "php-cs-fixer.lastDownload": 1555961065791
 }
