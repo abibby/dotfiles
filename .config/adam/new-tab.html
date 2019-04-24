@@ -10,9 +10,72 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <style>
+        :root {
+            --nord0: #2E3440;
+            --nord1: #3B4252;
+            --nord2: #434C5E;
+            --nord3: #4C566A;
+            --nord4: #D8DEE9;
+            --nord5: #E5E9F0;
+            --nord6: #ECEFF4;
+            --nord7: #8FBCBB;
+            --nord8: #88C0D0;
+            --nord9: #81A1C1;
+            --nord10: #5E81AC;
+            --nord11: #BF616A;
+            --nord12: #D08770;
+            --nord13: #EBCB8B;
+            --nord14: #A3BE8C;
+            --nord15: #B48EAD;
+        }
+
         body {
-            background: #2E3440;
-            color: #D8DEE9;
+            background: var(--nord0);
+            color: var(--nord4);
+        }
+
+        button,
+        input[type="submit"] {
+            border: solid 1px var(--nord8);
+            color: var(--nord8);
+            background: none;
+        }
+
+        button:hover,
+        input[type="submit"]:hover {
+            color: var(--nord0);
+            background: var(--nord8);
+        }
+
+
+        input[type="text"],
+        input[type="number"] {
+            border: solid 1px var(--nord8);
+            color: var(--nord8);
+            background: none;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus {
+            color: var(--nord4);
+            outline: none;
+        }
+
+        #lorem-ipsum input[type="number"] {
+            width: 6ch;
+        }
+
+        #lorem-ipsum input[type="radio"] {
+            display: none;
+        }
+
+        #lorem-ipsum input[type="radio"]+label {
+            padding: 0 2px 2px 2px;
+        }
+
+        #lorem-ipsum input[type="radio"]:checked+label {
+            color: var(--nord0);
+            background: var(--nord8);
         }
     </style>
 </head>
@@ -39,6 +102,27 @@
         <form action="https://godoc.org/" method="get">
             <input type="text" name="q" />
             <button type="submit">Search</button>
+        </form>
+    </section>
+    <section id="lorem-ipsum">
+        <h1>Lorem Ipsum</h1>
+        <form method="post" action="https://lipsum.com/feed/html">
+            <input type="number" name="amount" value="5" id="amount">
+
+            <input type="radio" name="what" value="paras" id="paras" checked="checked">
+            <label for="paras">paragraphs</label>
+
+            <input type="radio" name="what" value="words" id="words">
+            <label for="words">words</label>
+
+            <input type="radio" name="what" value="bytes" id="bytes">
+            <label for="bytes">bytes</label>
+
+            <input type="radio" name="what" value="lists" id="lists">
+            <label for="lists">lists</label>
+
+            <input type="hidden" name="start" id="start" value="yes" checked="checked">
+            <input type="submit" name="generate" id="generate" value="Generate Lorem Ipsum">
         </form>
     </section>
     <script>

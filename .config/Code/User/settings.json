@@ -53,6 +53,7 @@
         "sprintf",
         "sqlite",
         "systemd",
+        "taggable",
         "todos",
         "unmarshaling",
         "uuid",
