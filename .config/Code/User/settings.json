@@ -24,6 +24,7 @@
         "autobind",
         "bitbucket",
         "canvasjs",
+        "datactl",
         "debgen",
         "devtool",
         "dotfiles",
@@ -90,7 +91,7 @@
     "diffEditor.ignoreTrimWhitespace": true,
     "editor.rulers": [
         80,
-        100
+        120
     ],
     "terminal.integrated.fontFamily": "monospace, 'Noto Color Emoji'",
     "explorer.confirmDelete": false,

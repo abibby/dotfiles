@@ -6,7 +6,6 @@
 /home/adam/.config/dunst/*
 /home/adam/.config/i3/*
 /home/adam/.config/rofi/*
-/home/adam/.dotfiles.list
 /home/adam/.profile
 /home/adam/.screenlayout/*
 /home/adam/.ssh/config
@@ -15,4 +14,5 @@
 /home/adam/.Xresources.d/*
 /home/adam/.zshrc
 /home/adam/bin/*
+/home/adam/configs.code-workspace
 /home/adam/README.md

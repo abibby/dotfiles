@@ -1,0 +1,32 @@
+{
+	"folders": [
+		{
+			"path": ".config/i3"
+		},
+		{
+			"path": ".config/i3blocks"
+		},
+		{
+			"path": ".config/rofi"
+		},
+		{
+			"path": "bin"
+		},
+		{
+			"path": ".Xresources.d"
+		},
+		{
+			"path": ".screenlayout"
+		},
+		{
+			"path": ".config/kitty"
+		},
+		{
+			"path": ".config/dunst"
+		},
+		{
+			"path": ".config/adam"
+		}
+	],
+	"settings": {}
+}
