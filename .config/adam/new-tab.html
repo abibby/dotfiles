@@ -32,13 +32,33 @@
         body {
             background: var(--nord0);
             color: var(--nord4);
+            font-family: "Fira Code";
+        }
+
+        h1::before {
+            content: "#";
+        }
+
+        h2::before {
+            content: "##";
+        }
+
+        h3::before {
+            content: "###";
+        }
+
+        h4::before {
+            content: "####";
         }
 
         button,
-        input[type="submit"] {
+        input[type="submit"],
+        input[type="text"],
+        input[type="number"] {
             border: solid 1px var(--nord8);
             color: var(--nord8);
             background: none;
+            padding: 2px 4px;
         }
 
         button:hover,
@@ -48,34 +68,27 @@
         }
 
 
-        input[type="text"],
-        input[type="number"] {
-            border: solid 1px var(--nord8);
-            color: var(--nord8);
-            background: none;
-        }
-
         input[type="text"]:focus,
         input[type="number"]:focus {
             color: var(--nord4);
             outline: none;
         }
 
-        #lorem-ipsum input[type="number"] {
-            width: 6ch;
-        }
-
-        #lorem-ipsum input[type="radio"] {
+        input[type="radio"] {
             display: none;
         }
 
-        #lorem-ipsum input[type="radio"]+label {
+        input[type="radio"]+label {
             padding: 0 2px 2px 2px;
         }
 
-        #lorem-ipsum input[type="radio"]:checked+label {
+        input[type="radio"]:checked+label {
             color: var(--nord0);
             background: var(--nord8);
+        }
+
+        #lorem-ipsum input[type="number"] {
+            width: 6ch;
         }
     </style>
 </head>
@@ -101,6 +114,38 @@
         <h1>GoDoc</h1>
         <form action="https://godoc.org/" method="get">
             <input type="text" name="q" />
+            <button type="submit">Search</button>
+        </form>
+    </section>
+    <section>
+        <h1>Glyph Search</h1>
+        <form action="https://glyphsearch.com/" method="get">
+            <input type="text" name="query" />
+
+            <input type="radio" name="library" value="" id="all" checked="checked">
+            <label for="all">all</label>
+
+            <input type="radio" name="library" value="font-awesome" id="font-awesome">
+            <label for="font-awesome">font-awesome</label>
+
+            <input type="radio" name="library" value="foundation" id="foundation">
+            <label for="foundation">foundation</label>
+
+            <input type="radio" name="library" value="glyphicons" id="glyphicons">
+            <label for="glyphicons">glyphicons</label>
+
+            <input type="radio" name="library" value="icomoon" id="icomoon">
+            <label for="icomoon">icomoon</label>
+
+            <input type="radio" name="library" value="ionicons" id="ionicons">
+            <label for="ionicons">ionicons</label>
+
+            <input type="radio" name="library" value="material" id="material">
+            <label for="material">material</label>
+
+            <input type="radio" name="library" value="octicons" id="octicons">
+            <label for="octicons">octicons</label>
+
             <button type="submit">Search</button>
         </form>
     </section>
