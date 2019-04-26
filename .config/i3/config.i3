@@ -16,8 +16,8 @@
 # Mod4 = Super
 set $mod Mod4
 
-set $term xst
-# set $term kitty
+# set $term xst
+set $term alacritty
 
 gaps inner 10
 # gaps outer 15

@@ -10,9 +10,81 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <style>
+        :root {
+            --nord0: #2E3440;
+            --nord1: #3B4252;
+            --nord2: #434C5E;
+            --nord3: #4C566A;
+            --nord4: #D8DEE9;
+            --nord5: #E5E9F0;
+            --nord6: #ECEFF4;
+            --nord7: #8FBCBB;
+            --nord8: #88C0D0;
+            --nord9: #81A1C1;
+            --nord10: #5E81AC;
+            --nord11: #BF616A;
+            --nord12: #D08770;
+            --nord13: #EBCB8B;
+            --nord14: #A3BE8C;
+            --nord15: #B48EAD;
+        }
+
         body {
-            background: #2E3440;
-            color: #D8DEE9;
+            background: var(--nord0);
+            color: var(--nord4);
+            font-family: "Fira Code";
+        }
+
+        h1::before {
+            content: "#";
+        }
+
+        h2::before {
+            content: "##";
+        }
+
+        h3::before {
+            content: "###";
+        }
+
+        h4::before {
+            content: "####";
+        }
+
+        button,
+        input[type="submit"],
+        input[type="text"],
+        input[type="number"] {
+            border: solid 1px var(--nord8);
+            color: var(--nord8);
+            background: none;
+            padding: 2px 4px;
+        }
+
+        button:hover,
+        input[type="submit"]:hover {
+            color: var(--nord0);
+            background: var(--nord8);
+        }
+
+
+        input[type="text"]:focus,
+        input[type="number"]:focus {
+            color: var(--nord4);
+            outline: none;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        input[type="radio"]+label {
+            padding: 0 2px 2px 2px;
+        }
+
+        input[type="radio"]:checked+label {
+            color: var(--nord0);
+            background: var(--nord8);
         }
     </style>
 </head>
@@ -39,6 +111,65 @@
         <form action="https://godoc.org/" method="get">
             <input type="text" name="q" />
             <button type="submit">Search</button>
+        </form>
+    </section>
+    <section>
+        <h1>Glyph Search</h1>
+        <form action="https://glyphsearch.com/" method="get">
+            <p>
+                <input type="text" name="query" />
+    
+                <button type="submit">Search</button>
+            </p>
+            <p>
+                <input type="radio" name="library" value="" id="all" checked="checked">
+                <label for="all">all</label>
+
+                <input type="radio" name="library" value="font-awesome" id="font-awesome">
+                <label for="font-awesome">font-awesome</label>
+
+                <input type="radio" name="library" value="foundation" id="foundation">
+                <label for="foundation">foundation</label>
+
+                <input type="radio" name="library" value="glyphicons" id="glyphicons">
+                <label for="glyphicons">glyphicons</label>
+
+                <input type="radio" name="library" value="icomoon" id="icomoon">
+                <label for="icomoon">icomoon</label>
+
+                <input type="radio" name="library" value="ionicons" id="ionicons">
+                <label for="ionicons">ionicons</label>
+
+                <input type="radio" name="library" value="material" id="material">
+                <label for="material">material</label>
+
+                <input type="radio" name="library" value="octicons" id="octicons">
+                <label for="octicons">octicons</label>
+            </p>
+        </form>
+    </section>
+    <section id="lorem-ipsum">
+        <h1>Lorem Ipsum</h1>
+        <form method="post" action="https://lipsum.com/feed/html">
+            <p>
+                <input type="number" name="amount" value="5" id="amount">
+
+                <input type="hidden" name="start" id="start" value="yes" checked="checked">
+                <button type="submit" name="generate" id="generate" value="Generate Lorem Ipsum">Generate</button>
+            </p>
+            <p>
+                <input type="radio" name="what" value="paras" id="paras" checked="checked">
+                <label for="paras">paragraphs</label>
+
+                <input type="radio" name="what" value="words" id="words">
+                <label for="words">words</label>
+
+                <input type="radio" name="what" value="bytes" id="bytes">
+                <label for="bytes">bytes</label>
+
+                <input type="radio" name="what" value="lists" id="lists">
+                <label for="lists">lists</label>
+            </p>
         </form>
     </section>
     <script>
