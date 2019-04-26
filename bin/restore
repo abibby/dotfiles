@@ -4,8 +4,10 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 echo ".dotfiles" >> .gitignore
 git clone --bare git@github.com:zwzn/dotfiles.git $HOME/.dotfiles
 
-if !$(config checkout)
+if $(config checkout)
 then
+    echo "setup complete"
+else
     mkdir -p .config-backup
 
     config checkout 2>&1 | \

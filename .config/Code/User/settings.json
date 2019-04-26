@@ -73,7 +73,8 @@
         "*.i3": "i3",
         "*.ms": "troff",
         "dunstrc": "ini",
-        "*.jmd": "markdown"
+        "*.jmd": "markdown",
+        "*.ggo": "go"
     },
     "extensions.ignoreRecommendations": true,
     "explorer.confirmDragAndDrop": false,
