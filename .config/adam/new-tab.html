@@ -86,10 +86,6 @@
             color: var(--nord0);
             background: var(--nord8);
         }
-
-        #lorem-ipsum input[type="number"] {
-            width: 6ch;
-        }
     </style>
 </head>
 
@@ -120,54 +116,60 @@
     <section>
         <h1>Glyph Search</h1>
         <form action="https://glyphsearch.com/" method="get">
-            <input type="text" name="query" />
+            <p>
+                <input type="text" name="query" />
+    
+                <button type="submit">Search</button>
+            </p>
+            <p>
+                <input type="radio" name="library" value="" id="all" checked="checked">
+                <label for="all">all</label>
 
-            <input type="radio" name="library" value="" id="all" checked="checked">
-            <label for="all">all</label>
+                <input type="radio" name="library" value="font-awesome" id="font-awesome">
+                <label for="font-awesome">font-awesome</label>
 
-            <input type="radio" name="library" value="font-awesome" id="font-awesome">
-            <label for="font-awesome">font-awesome</label>
+                <input type="radio" name="library" value="foundation" id="foundation">
+                <label for="foundation">foundation</label>
 
-            <input type="radio" name="library" value="foundation" id="foundation">
-            <label for="foundation">foundation</label>
+                <input type="radio" name="library" value="glyphicons" id="glyphicons">
+                <label for="glyphicons">glyphicons</label>
 
-            <input type="radio" name="library" value="glyphicons" id="glyphicons">
-            <label for="glyphicons">glyphicons</label>
+                <input type="radio" name="library" value="icomoon" id="icomoon">
+                <label for="icomoon">icomoon</label>
 
-            <input type="radio" name="library" value="icomoon" id="icomoon">
-            <label for="icomoon">icomoon</label>
+                <input type="radio" name="library" value="ionicons" id="ionicons">
+                <label for="ionicons">ionicons</label>
 
-            <input type="radio" name="library" value="ionicons" id="ionicons">
-            <label for="ionicons">ionicons</label>
+                <input type="radio" name="library" value="material" id="material">
+                <label for="material">material</label>
 
-            <input type="radio" name="library" value="material" id="material">
-            <label for="material">material</label>
-
-            <input type="radio" name="library" value="octicons" id="octicons">
-            <label for="octicons">octicons</label>
-
-            <button type="submit">Search</button>
+                <input type="radio" name="library" value="octicons" id="octicons">
+                <label for="octicons">octicons</label>
+            </p>
         </form>
     </section>
     <section id="lorem-ipsum">
         <h1>Lorem Ipsum</h1>
         <form method="post" action="https://lipsum.com/feed/html">
-            <input type="number" name="amount" value="5" id="amount">
+            <p>
+                <input type="number" name="amount" value="5" id="amount">
 
-            <input type="radio" name="what" value="paras" id="paras" checked="checked">
-            <label for="paras">paragraphs</label>
+                <input type="hidden" name="start" id="start" value="yes" checked="checked">
+                <button type="submit" name="generate" id="generate" value="Generate Lorem Ipsum">Generate</button>
+            </p>
+            <p>
+                <input type="radio" name="what" value="paras" id="paras" checked="checked">
+                <label for="paras">paragraphs</label>
 
-            <input type="radio" name="what" value="words" id="words">
-            <label for="words">words</label>
+                <input type="radio" name="what" value="words" id="words">
+                <label for="words">words</label>
 
-            <input type="radio" name="what" value="bytes" id="bytes">
-            <label for="bytes">bytes</label>
+                <input type="radio" name="what" value="bytes" id="bytes">
+                <label for="bytes">bytes</label>
 
-            <input type="radio" name="what" value="lists" id="lists">
-            <label for="lists">lists</label>
-
-            <input type="hidden" name="start" id="start" value="yes" checked="checked">
-            <input type="submit" name="generate" id="generate" value="Generate Lorem Ipsum">
+                <input type="radio" name="what" value="lists" id="lists">
+                <label for="lists">lists</label>
+            </p>
         </form>
     </section>
     <script>
