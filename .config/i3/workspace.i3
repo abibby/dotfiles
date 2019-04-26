@@ -17,20 +17,20 @@ set $ws11 "11"
 set $ws12 "12"
 
 
-workspace $ws1  output eDP1 eDP1
-workspace $ws2  output eDP1 eDP1
-workspace $ws3  output eDP1 eDP1
-workspace $ws4  output eDP1 eDP1
-
-workspace $ws5  output DP2  eDP1
-workspace $ws6  output DP2  eDP1
-workspace $ws7  output DP2  eDP1
-workspace $ws8  output DP2  eDP1
-
-workspace $ws9  output DP1  eDP1
-workspace $ws10 output DP1  eDP1
-workspace $ws11 output DP1  eDP1
-workspace $ws12 output DP1  eDP1
+workspace $ws1  output eDP1 DVI-0  eDP1
+workspace $ws2  output eDP1 DVI-0  eDP1
+workspace $ws3  output eDP1 DVI-0  eDP1
+workspace $ws4  output eDP1 DVI-0  eDP1
+ 
+workspace $ws5  output DP2  DVI-0  eDP1
+workspace $ws6  output DP2  DVI-0  eDP1
+workspace $ws7  output DP2  DVI-0  eDP1
+workspace $ws8  output DP2  DVI-0  eDP1
+ 
+workspace $ws9  output DP1  HDMI-0 eDP1
+workspace $ws10 output DP1  HDMI-0 eDP1
+workspace $ws11 output DP1  HDMI-0 eDP1
+workspace $ws12 output DP1  HDMI-0 eDP1
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
