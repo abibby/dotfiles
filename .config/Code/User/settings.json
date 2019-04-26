@@ -126,5 +126,7 @@
         "source.fixAll.tslint": true
     },
     "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
-    "php-cs-fixer.lastDownload": 1555961065791
+    "php-cs-fixer.lastDownload": 1555961065791,
+    "rewrap.autoWrap.enabled": true,
+    "rewrap.wrappingColumn": 80
 }
