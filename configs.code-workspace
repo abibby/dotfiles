@@ -26,6 +26,9 @@
 		},
 		{
 			"path": ".config/adam"
+		},
+		{
+			"path": ".config/alacritty"
 		}
 	],
 	"settings": {}

@@ -16,8 +16,8 @@
 # Mod4 = Super
 set $mod Mod4
 
-set $term xst
-# set $term kitty
+# set $term xst
+set $term alacritty
 
 gaps inner 10
 # gaps outer 15
@@ -285,7 +285,8 @@ bar {
 ## quick terminal
 for_window [instance="quake_term"] floating enable;
 # set $quake kitty --name quake_term
-set $quake xst -n quake_term
+# set $quake xst -n quake_term
+set $quake alacritty --class quake_term
 
 mode "quake zsh" {
     bindsym Escape exec popup.sh close "$quake"
