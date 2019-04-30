@@ -117,10 +117,10 @@ git_prompt_info () {
     fi
 }
 
-if [ "$(tty)" = "/dev/tty1" ]; then
-    startx
-    exit 0
-fi
+# if [ "$(tty)" = "/dev/tty1" ]; then
+#     startx
+#     exit 0
+# fi
 
 # export EDITOR='emacsclient -nw'
 export EDITOR='code -w'

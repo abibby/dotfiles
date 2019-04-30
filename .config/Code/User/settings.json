@@ -100,7 +100,6 @@
     "explorer.confirmDelete": false,
     "terminal.integrated.rendererType": "dom",
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "breadcrumbs.enabled": true,
     "explorer.enableDragAndDrop": false,
     "graphqlForVSCode.nodePath": "~/.node_modules",
     "window.titleBarStyle": "native",
@@ -115,7 +114,7 @@
     "[shellscript]": {},
     "editor.formatOnSave": true,
     "workbench.sideBar.location": "left",
-    "workbench.activityBar.visible": true,
+    "workbench.activityBar.visible": false,
     "markdown.extension.toc.githubCompatibility": true,
     "phpstan.path": "/home/adam/.config/composer/vendor/bin/phpstan",
     "[php]": {
@@ -129,5 +128,6 @@
     "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
     "php-cs-fixer.lastDownload": 1555961065791,
     "rewrap.autoWrap.enabled": true,
-    "rewrap.wrappingColumn": 80
+    "rewrap.wrappingColumn": 80,
+    "editor.minimap.renderCharacters": false
 }
