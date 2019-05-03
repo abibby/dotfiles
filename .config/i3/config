@@ -322,13 +322,12 @@ bindsym $mod+t exec --no-startup-id $term -e htop
 # bindsym $mod+x exec $term -e ranger
 bindsym $mod+x exec nautilus
 
+bindsym $mod+Shift+p exec gnome-screenshot -a -c
 
 bindsym $mod+u exec cat ~/.config/adam/bookmarks | sort | rofi -dmenu -i -p sites | xargs -r surf
 bindsym $mod+Shift+b exec find ~/Pictures/wallpapers -type f | rofi -dmenu -i -p Wallpaper > ~/.config/adam/wallpaper && feh --bg-fill "$(cat ~/.config/adam/wallpaper)"
 
 bindsym $mod+Shift+l exec find ~/.screenlayout -type f | rofi -dmenu -i -p Layout | xargs -r sh && i3-msg restart
-
-bindsym $mod+Shift+p exec i3-nagbar -t warning -m 'Are you sure you want to power off.' -B 'Shutdown' 'systemctl poweroff' -B 'Sleep' 'systemctl hibernate'
 
 # music control
 bindsym $mod+space exec playerctl play-pause

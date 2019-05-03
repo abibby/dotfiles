@@ -155,6 +155,7 @@ alias text='surf https://messages.android.com/'
 alias e="$EDITOR"
 alias se="sudo $EDITOR"
 alias ungzip="tar -xvzf"
+alias dnd="go-dnd"
 
 export PATH="$HOME/bin:$PATH"
 
