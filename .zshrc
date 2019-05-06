@@ -144,6 +144,7 @@ export PATH="$HOME/.local/bin:$PATH"
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
 
+mkdir -p $HOME/.config/adam/touch
 toucher() {
     echo "touch $HOME/.config/adam/touch/$1;"
 }
