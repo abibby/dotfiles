@@ -130,5 +130,7 @@
     "rewrap.autoWrap.enabled": true,
     "rewrap.wrappingColumn": 80,
     "editor.minimap.renderCharacters": false,
-    "go.useLanguageServer": true
+    "go.useLanguageServer": true,
+    "editor.minimap.enabled": false,
+    "workbench.editor.enablePreview": false
 }
