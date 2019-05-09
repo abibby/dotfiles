@@ -129,5 +129,8 @@
     "php-cs-fixer.lastDownload": 1555961065791,
     "rewrap.autoWrap.enabled": true,
     "rewrap.wrappingColumn": 80,
-    "editor.minimap.renderCharacters": false
+    "editor.minimap.renderCharacters": false,
+    "go.useLanguageServer": true,
+    "editor.minimap.enabled": false,
+    "workbench.editor.enablePreview": false
 }

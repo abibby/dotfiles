@@ -144,17 +144,25 @@ export PATH="$HOME/.local/bin:$PATH"
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
 
+mkdir -p $HOME/.config/adam/touch
+toucher() {
+    echo "touch $HOME/.config/adam/touch/$1;"
+}
+
 # other stuff
+alias pamac="$(toucher pamac) pamac"
+alias pacman="$(toucher pacman) pacman"
+alias p="$(toucher pacman) sudo pacman"
 alias calc="qalc"
 alias sql="sqlectron-term"
 alias ls='ls --color -h --group-directories-first'
 alias mkd='mkdir -p'
-alias p='sudo pacman'
 alias dump='hexdump -C'
 alias text='surf https://messages.android.com/'
 alias e="$EDITOR"
 alias se="sudo $EDITOR"
 alias ungzip="tar -xvzf"
+alias dnd="go-dnd"
 
 export PATH="$HOME/bin:$PATH"
 
