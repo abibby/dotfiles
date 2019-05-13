@@ -165,10 +165,10 @@ set $ws11 "11"
 set $ws12 "12"
 
 
-workspace $ws1  output eDP1 DVI-0  eDP1
-workspace $ws2  output eDP1 DVI-0  eDP1
-workspace $ws3  output eDP1 DVI-0  eDP1
-workspace $ws4  output eDP1 DVI-0  eDP1
+workspace $ws1  output eDP1 DP-0  eDP1
+workspace $ws2  output eDP1 DP-0  eDP1
+workspace $ws3  output eDP1 DP-0  eDP1
+workspace $ws4  output eDP1 DP-0  eDP1
  
 workspace $ws5  output DP2  DVI-0  eDP1
 workspace $ws6  output DP2  DVI-0  eDP1
