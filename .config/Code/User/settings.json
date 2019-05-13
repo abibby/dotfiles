@@ -13,6 +13,7 @@
         "Laravel",
         "Nable",
         "Puerkito",
+        "Serializable",
         "Tableable",
         "Unmount",
         "Valadatable",
@@ -132,5 +133,8 @@
     "editor.minimap.renderCharacters": false,
     "go.useLanguageServer": true,
     "editor.minimap.enabled": false,
-    "workbench.editor.enablePreview": false
+    "workbench.editor.enablePreview": false,
+    "[markdown]": {
+        "editor.quickSuggestions": true
+    }
 }
