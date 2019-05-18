@@ -22,10 +22,10 @@ workspace $ws2  output eDP1 DP-0  eDP1
 workspace $ws3  output eDP1 DP-0  eDP1
 workspace $ws4  output eDP1 DP-0  eDP1
  
-workspace $ws5  output DP2  DVI-0  eDP1
-workspace $ws6  output DP2  DVI-0  eDP1
-workspace $ws7  output DP2  DVI-0  eDP1
-workspace $ws8  output DP2  DVI-0  eDP1
+workspace $ws5  output DP2  DVI-D-0  eDP1
+workspace $ws6  output DP2  DVI-D-0  eDP1
+workspace $ws7  output DP2  DVI-D-0  eDP1
+workspace $ws8  output DP2  DVI-D-0  eDP1
  
 workspace $ws9  output DP1  HDMI-0 eDP1
 workspace $ws10 output DP1  HDMI-0 eDP1

@@ -132,5 +132,8 @@
     "editor.minimap.renderCharacters": false,
     "go.useLanguageServer": true,
     "editor.minimap.enabled": false,
-    "workbench.editor.enablePreview": false
+    "workbench.editor.enablePreview": false,
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    }
 }
