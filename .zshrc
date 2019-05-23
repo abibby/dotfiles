@@ -123,7 +123,7 @@ git_prompt_info () {
 # fi
 
 # export EDITOR='emacsclient -nw'
-export EDITOR='code -w'
+export EDITOR='code -w --user-data-dir "/home/adam/.config/Code"'
 
 # go stuff
 export PATH=$PATH:~/go/bin
@@ -146,13 +146,13 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 mkdir -p $HOME/.config/adam/touch
 toucher() {
-    echo "touch $HOME/.config/adam/touch/$1;"
+    echo "; touch $HOME/.config/adam/touch/$1"
 }
 
 # other stuff
-alias pamac="$(toucher pamac) pamac"
-alias pacman="$(toucher pacman) pacman"
-alias p="$(toucher pacman) sudo pacman"
+alias pamac="pamac $(toucher pamac)"
+alias pacman="pacman $(toucher pacman)"
+alias p="sudo pacman $(toucher pacman)"
 alias calc="qalc"
 alias sql="sqlectron-term"
 alias ls='ls --color -h --group-directories-first'

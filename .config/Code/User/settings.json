@@ -101,7 +101,6 @@
   "explorer.enableDragAndDrop": false,
   "graphqlForVSCode.nodePath": "~/.node_modules",
   "window.titleBarStyle": "native",
-  "workbench.colorTheme": "Cobalt2",
   "blade.format.enable": true,
   "phpstan.level": "5",
   "editor.fontFamily": "'Fira Code',  'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback', 'Noto Color Emoji'",
@@ -124,17 +123,18 @@
     "source.fixAll.tslint": true
   },
   "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
-  "php-cs-fixer.lastDownload": 1555961065791,
+  "php-cs-fixer.lastDownload": 1558463661801,
   "rewrap.autoWrap.enabled": true,
   "rewrap.wrappingColumn": 80,
   "editor.minimap.renderCharacters": false,
   "go.useLanguageServer": true,
-  "editor.minimap.enabled": false,
   "workbench.editor.enablePreview": false,
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[markdown]": {
     "editor.quickSuggestions": true
-  }
+  },
+  "workbench.colorTheme": "Cobalt2",
+  "editor.minimap.enabled": false
 }
