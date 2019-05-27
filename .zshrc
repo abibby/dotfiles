@@ -146,13 +146,14 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 mkdir -p $HOME/.config/adam/touch
 toucher() {
-    echo "; touch $HOME/.config/adam/touch/$1"
+    $@
+    touch "$HOME/.config/adam/touch/$1"
 }
 
 # other stuff
-alias pamac="pamac $(toucher pamac)"
-alias pacman="pacman $(toucher pacman)"
-alias p="sudo pacman $(toucher pacman)"
+alias pamac="toucher pamac"
+alias pacman="toucher pacman"
+alias p="sudo toucher pacman"
 alias calc="qalc"
 alias sql="sqlectron-term"
 alias ls='ls --color -h --group-directories-first'
