@@ -164,6 +164,8 @@ alias e="$EDITOR"
 alias se="sudo $EDITOR"
 alias ungzip="tar -xvzf"
 alias dnd="go-dnd"
+alias copy="xclip -in -selection clipboard"
+alias paste="xclip -out -selection clipboard"
 
 export PATH="$HOME/bin:$PATH"
 
