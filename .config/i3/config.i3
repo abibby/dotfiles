@@ -141,7 +141,7 @@ include(`quake.i3')
 QUAKE(zsh, $mod+grave)
 QUAKE(math, $mod+m, `qalc')
 QUAKE(php, $mod+p, `psysh')
-QUAKE(cal, $mod+j, `node')
+QUAKE(js, $mod+j, `node')
 QUAKE(cal, $mod+k, `calread')
 
 bindsym $mod+e exec emoji
@@ -165,6 +165,7 @@ bindsym $mod+comma exec playerctl previous
 bindsym $mod+period exec playerctl next
 bindsym $mod+minus exec changeVolume 2dB- unmute
 bindsym $mod+equal exec changeVolume 2dB+ unmute
+bindsym $mod+l exec listAudioOutputs > ~/lao.log 2>&1
 
 bindsym $mod+Shift+minus exec changeBrightness -dec 10
 bindsym $mod+Shift+equal exec changeBrightness -inc 10

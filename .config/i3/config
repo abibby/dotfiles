@@ -303,11 +303,11 @@ mode "quake php" {
     bindsym $mod+p     exec popup.sh close "$quake"
 }
 bindsym $mod+p exec popup.sh open "quake php" "$quake -e psysh"
-mode "quake cal" {
+mode "quake js" {
     bindsym Escape exec popup.sh close "$quake"
     bindsym $mod+j     exec popup.sh close "$quake"
 }
-bindsym $mod+j exec popup.sh open "quake cal" "$quake -e node"
+bindsym $mod+j exec popup.sh open "quake js" "$quake -e node"
 mode "quake cal" {
     bindsym Escape exec popup.sh close "$quake"
     bindsym $mod+k     exec popup.sh close "$quake"
@@ -335,6 +335,7 @@ bindsym $mod+comma exec playerctl previous
 bindsym $mod+period exec playerctl next
 bindsym $mod+minus exec changeVolume 2dB- unmute
 bindsym $mod+equal exec changeVolume 2dB+ unmute
+bindsym $mod+l exec listAudioOutputs > ~/lao.log 2>&1
 
 bindsym $mod+Shift+minus exec changeBrightness -dec 10
 bindsym $mod+Shift+equal exec changeBrightness -inc 10

@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-gorun $HOME/bin/listAudioOutputs.go
+/home/adam/go/bin/gorun $HOME/bin/listAudioOutputs.go
 
