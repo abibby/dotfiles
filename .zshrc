@@ -149,11 +149,15 @@ toucher() {
     $@
     touch "$HOME/.config/adam/touch/$1"
 }
+sudo-toucher() {
+    $@
+    sudo touch "$HOME/.config/adam/touch/$1"
+}
 
 # other stuff
 alias pamac="toucher pamac"
 alias pacman="toucher pacman"
-alias p="sudo toucher pacman"
+alias p="sudo-toucher pacman"
 alias calc="qalc"
 alias sql="sqlectron-term"
 alias ls='ls --color -h --group-directories-first'
