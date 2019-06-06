@@ -150,8 +150,8 @@ toucher() {
     touch "$HOME/.config/adam/touch/$1"
 }
 sudo-toucher() {
-    $@
-    sudo touch "$HOME/.config/adam/touch/$1"
+    sudo $@
+    touch "$HOME/.config/adam/touch/$1"
 }
 
 # other stuff
