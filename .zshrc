@@ -70,6 +70,7 @@ plugins=(
     archlinux
     zsh-syntax-highlighting
     cargo
+    docker
 )
 
 source $ZSH/oh-my-zsh.sh
