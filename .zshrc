@@ -177,7 +177,7 @@ export PATH="$HOME/bin:$PATH"
 alias goz="cd ~/go/src/github.com/zwzn"
 
 # work stuff
-alias work="cd ~/Documents/work/aqmdata2"
+alias work="cd ~/work/aqmdata2"
 alias gow="cd ~/go/src/gitlab.com/automac"
 alias wtime="sudo timedatectl set-timezone America/Phoenix"
 alias htime="sudo timedatectl set-timezone America/Toronto"
