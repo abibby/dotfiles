@@ -35,6 +35,9 @@
 		},
 		{
 			"path": ".mozilla/firefox"
+		},
+		{
+			"path": ".config/systemd"
 		}
 	],
 	"settings": {}
