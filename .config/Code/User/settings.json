@@ -138,5 +138,9 @@
   },
   "workbench.colorTheme": "Cobalt2",
   "editor.minimap.enabled": false,
-  "breadcrumbs.enabled": false
+  "breadcrumbs.enabled": false,
+  "go.lintTool": "golangci-lint",
+  "go.lintFlags": [
+    "--fast"
+  ]
 }
