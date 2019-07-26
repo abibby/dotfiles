@@ -42,6 +42,7 @@
     "minmax",
     "modbus",
     "paginator",
+    "pell",
     "pflag",
     "phpstan",
     "pollerctl",
