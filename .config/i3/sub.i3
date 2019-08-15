@@ -1,16 +1,32 @@
-bindsym $mod+Shift+z mode "subscript"
+bindsym $mod+Shift+z mode "script"
 
-mode "subscript" {
-    bindsym --release 0 exec --no-startup-id xdotool type "₀"
-    bindsym --release 1 exec --no-startup-id xdotool type "₁"
-    bindsym --release 2 exec --no-startup-id xdotool type "₂"
-    bindsym --release 3 exec --no-startup-id xdotool type "₃"
-    bindsym --release 4 exec --no-startup-id xdotool type "₄"
-    bindsym --release 5 exec --no-startup-id xdotool type "₅"
-    bindsym --release 6 exec --no-startup-id xdotool type "₆"
-    bindsym --release 7 exec --no-startup-id xdotool type "₇"
-    bindsym --release 8 exec --no-startup-id xdotool type "₈"
-    bindsym --release 9 exec --no-startup-id xdotool type "₉"
+mode "script" {
+    bindsym --release Shift+0 exec --no-startup-id xdotool type "₀"
+    bindsym --release Shift+1 exec --no-startup-id xdotool type "₁"
+    bindsym --release Shift+2 exec --no-startup-id xdotool type "₂"
+    bindsym --release Shift+3 exec --no-startup-id xdotool type "₃"
+    bindsym --release Shift+4 exec --no-startup-id xdotool type "₄"
+    bindsym --release Shift+5 exec --no-startup-id xdotool type "₅"
+    bindsym --release Shift+6 exec --no-startup-id xdotool type "₆"
+    bindsym --release Shift+7 exec --no-startup-id xdotool type "₇"
+    bindsym --release Shift+8 exec --no-startup-id xdotool type "₈"
+    bindsym --release Shift+9 exec --no-startup-id xdotool type "₉"
+
+    bindsym --release 0 exec --no-startup-id xdotool type "⁰"
+    bindsym --release 1 exec --no-startup-id xdotool type "¹"
+    bindsym --release 2 exec --no-startup-id xdotool type "²"
+    bindsym --release 3 exec --no-startup-id xdotool type "³"
+    bindsym --release 4 exec --no-startup-id xdotool type "⁴"
+    bindsym --release 5 exec --no-startup-id xdotool type "⁵"
+    bindsym --release 6 exec --no-startup-id xdotool type "⁶"
+    bindsym --release 7 exec --no-startup-id xdotool type "⁷"
+    bindsym --release 8 exec --no-startup-id xdotool type "⁸"
+    bindsym --release 9 exec --no-startup-id xdotool type "⁹"
 
     bindsym Escape mode "default"
 }
+
+
+
+
+

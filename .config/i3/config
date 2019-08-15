@@ -293,8 +293,24 @@ mode "subscript" {
     bindsym --release 8 exec --no-startup-id xdotool type "₈"
     bindsym --release 9 exec --no-startup-id xdotool type "₉"
 
+    bindsym --release Shift+0 exec --no-startup-id xdotool type "⁰"
+    bindsym --release Shift+1 exec --no-startup-id xdotool type "¹"
+    bindsym --release Shift+2 exec --no-startup-id xdotool type "²"
+    bindsym --release Shift+3 exec --no-startup-id xdotool type "³"
+    bindsym --release Shift+4 exec --no-startup-id xdotool type "⁴"
+    bindsym --release Shift+5 exec --no-startup-id xdotool type "⁵"
+    bindsym --release Shift+6 exec --no-startup-id xdotool type "⁶"
+    bindsym --release Shift+7 exec --no-startup-id xdotool type "⁷"
+    bindsym --release Shift+8 exec --no-startup-id xdotool type "⁸"
+    bindsym --release Shift+9 exec --no-startup-id xdotool type "⁹"
+
     bindsym Escape mode "default"
 }
+
+
+
+
+
 
 
 
