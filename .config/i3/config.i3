@@ -136,6 +136,7 @@ bindsym $mod+Ctrl+Right resize grow width 10 px or 10 ppt
 include(`bar.i3')
 
 # adams stuff
+include(`sub.i3')
 include(`quake.i3')
 
 QUAKE(zsh, $mod+grave)
