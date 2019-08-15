@@ -26,7 +26,11 @@ mode "script" {
     bindsym Escape mode "default"
 }
 
-
+#	A	B	C	D	E	F	G	H	I	J	K	L	M	N	O	P	Q	R	S	T	U	V	W	X	Y	Z
+#	ᴬ	ᴮ		ᴰ	ᴱ		ᴳ	ᴴ	ᴵ	ᴶ	ᴷ	ᴸ	ᴹ	ᴺ	ᴼ	ᴾ		ᴿ		ᵀ	ᵁ	ⱽ	ᵂ			
+#									ᶦ			ᶫ		ᶰ							ᶸ					
+#	ᵃ	ᵇ	ᶜ	ᵈ	ᵉ	ᶠ	ᵍ	ʰ	ⁱ	ʲ	ᵏ	ˡ	ᵐ	ⁿ	ᵒ	ᵖ		ʳ	ˢ	ᵗ	ᵘ	ᵛ	ʷ	ˣ	ʸ	ᶻ
+#	ₐ				ₑ			ₕ	ᵢ	ⱼ	ₖ	ₗ	ₘ	ₙ	ₒ	ₚ		ᵣ	ₛ	ₜ	ᵤ	ᵥ		ₓ		
 
 
 
