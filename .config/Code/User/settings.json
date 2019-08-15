@@ -43,6 +43,7 @@
     "modbus",
     "paginator",
     "pell",
+    "performant",
     "pflag",
     "phpstan",
     "pollerctl",
@@ -125,7 +126,7 @@
     "source.fixAll.tslint": true
   },
   "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
-  "php-cs-fixer.lastDownload": 1563281581957,
+  "php-cs-fixer.lastDownload": 1564684726088,
   "rewrap.autoWrap.enabled": true,
   "rewrap.wrappingColumn": 80,
   "editor.minimap.renderCharacters": false,
@@ -139,7 +140,7 @@
   },
   "workbench.colorTheme": "Cobalt2",
   "editor.minimap.enabled": false,
-  "breadcrumbs.enabled": false,
+  "breadcrumbs.enabled": true,
   "go.lintTool": "golangci-lint",
   "go.lintFlags": [
     "--fast"

@@ -176,3 +176,4 @@ exec_always --no-startup-id comp
 exec --no-startup-id numlockx on &
 exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id pasystray &
+exec --no-startup-id systemctl enable --user --now polkit.service
