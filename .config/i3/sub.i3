@@ -11,6 +11,7 @@ mode "script" {
     bindsym --release Shift+7 exec --no-startup-id xdotool type "₇"
     bindsym --release Shift+8 exec --no-startup-id xdotool type "₈"
     bindsym --release Shift+9 exec --no-startup-id xdotool type "₉"
+    bindsym --release Shift+x exec --no-startup-id xdotool type "ₓ"
 
     bindsym --release 0 exec --no-startup-id xdotool type "⁰"
     bindsym --release 1 exec --no-startup-id xdotool type "¹"
@@ -22,6 +23,7 @@ mode "script" {
     bindsym --release 7 exec --no-startup-id xdotool type "⁷"
     bindsym --release 8 exec --no-startup-id xdotool type "⁸"
     bindsym --release 9 exec --no-startup-id xdotool type "⁹"
+    bindsym --release x exec --no-startup-id xdotool type "ˣ"
 
     bindsym Escape mode "default"
 }
