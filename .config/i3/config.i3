@@ -153,7 +153,8 @@ bindsym $mod+t exec --no-startup-id $term -e htop
 # bindsym $mod+x exec $term -e ranger
 bindsym $mod+x exec nautilus
 
-bindsym $mod+Shift+p exec gnome-screenshot -a -c
+bindsym $mod+Shift+p exec gnome-screenshot --area --clipboard
+bindsym Print exec gnome-screenshot --window --clipboard --include-pointer
 
 bindsym $mod+u exec cat ~/.config/adam/bookmarks | sort | rofi -dmenu -i -p sites | xargs -r surf
 bindsym $mod+Shift+b exec find ~/Pictures/wallpapers -type f | rofi -dmenu -i -p Wallpaper > ~/.config/adam/wallpaper && feh --bg-fill "$(cat ~/.config/adam/wallpaper)"
