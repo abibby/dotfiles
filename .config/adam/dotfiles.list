@@ -18,6 +18,7 @@
 /home/adam/.Xresources
 /home/adam/.Xresources.d/*
 /home/adam/.zshrc
+/home/adam/.gitconfig
 /home/adam/bin/*
 /home/adam/configs.code-workspace
 /home/adam/README.md
