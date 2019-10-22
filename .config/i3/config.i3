@@ -175,6 +175,7 @@ bindsym $mod+Shift+equal exec changeBrightness -inc 10
 # AUTOSTART
 exec_always --no-startup-id feh --bg-fill "$(cat ~/.config/adam/wallpaper)"
 exec_always --no-startup-id comp
+exec_always --no-startup-id nm-applet &
 exec --no-startup-id numlockx on &
 exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id pasystray &
