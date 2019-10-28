@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
-cal --months 12
+cal --months 6
+gcalcli calw now 2
 read
