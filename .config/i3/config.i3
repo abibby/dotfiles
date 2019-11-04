@@ -147,13 +147,13 @@ QUAKE(cal, $mod+k, `calread')
 
 bindsym $mod+e exec emoji
 bindsym $mod+c exec code
-# bindsym $mod+b exec brave
+# bindsym $mod+b exec chromium
 bindsym $mod+b exec firefox
 bindsym $mod+t exec --no-startup-id $term -e htop
 # bindsym $mod+x exec $term -e ranger
 bindsym $mod+x exec nautilus
 
-bindsym $mod+Shift+p exec gnome-screenshot --area --clipboard
+bindsym $mod+Shift+p exec maim -s --format=png /dev/stdout | xclip -selection clipboard -t image/png -i
 bindsym Print exec gnome-screenshot --window --clipboard --include-pointer
 
 bindsym $mod+u exec cat ~/.config/adam/bookmarks | sort | rofi -dmenu -i -p sites | xargs -r surf
