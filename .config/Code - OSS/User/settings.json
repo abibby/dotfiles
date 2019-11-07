@@ -181,5 +181,6 @@
     "typescriptreact",
     "yaml",
     "yml"
-  ]
+  ],
+  "scssFormatter.tabWidth": 4
 }
