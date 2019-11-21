@@ -19,9 +19,6 @@
 			"path": ".screenlayout"
 		},
 		{
-			"path": ".config/kitty"
-		},
-		{
 			"path": ".config/dunst"
 		},
 		{

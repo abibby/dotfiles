@@ -44,6 +44,7 @@
     "millilitre",
     "minmax",
     "modbus",
+    "neverthrow",
     "paginator",
     "pell",
     "performant",
@@ -129,7 +130,7 @@
     "source.fixAll.tslint": true
   },
   "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
-  "php-cs-fixer.lastDownload": 1564684726088,
+  "php-cs-fixer.lastDownload": 1573499642328,
   "rewrap.autoWrap.enabled": true,
   "rewrap.wrappingColumn": 80,
   "editor.minimap.renderCharacters": false,
@@ -181,5 +182,9 @@
     "typescriptreact",
     "yaml",
     "yml"
-  ]
+  ],
+  "workbench.iconTheme": "vscode-icons",
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  }
 }
