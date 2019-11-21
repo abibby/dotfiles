@@ -8,6 +8,8 @@
 /home/adam/.config/i3/*
 /home/adam/.config/rofi/*
 /home/adam/.config/systemd/*
+/home/adam/.gitconfig
+/home/adam/.npmrc
 /home/adam/.profile
 /home/adam/.screenlayout/*
 /home/adam/.ssh/config
@@ -15,7 +17,6 @@
 /home/adam/.Xresources
 /home/adam/.Xresources.d/*
 /home/adam/.zshrc
-/home/adam/.gitconfig
 /home/adam/bin/*
 /home/adam/configs.code-workspace
 /home/adam/README.md

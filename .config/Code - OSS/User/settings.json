@@ -100,7 +100,10 @@
   "gitlens.codeLens.enabled": false,
   "gitlens.currentLine.enabled": false,
   "diffEditor.ignoreTrimWhitespace": true,
-  "editor.rulers": [80, 120],
+  "editor.rulers": [
+    80,
+    120
+  ],
   "terminal.integrated.fontFamily": "monospace, 'Noto Color Emoji'",
   "explorer.confirmDelete": false,
   "terminal.integrated.rendererType": "dom",
@@ -186,5 +189,6 @@
   "workbench.iconTheme": "vscode-icons",
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
-  }
+  },
+  "scssFormatter.tabWidth": 4
 }
