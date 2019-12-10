@@ -133,7 +133,7 @@
     "source.fixAll.tslint": true
   },
   "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
-  "php-cs-fixer.lastDownload": 1573499642328,
+  "php-cs-fixer.lastDownload": 1574780598200,
   "rewrap.autoWrap.enabled": true,
   "rewrap.wrappingColumn": 80,
   "editor.minimap.renderCharacters": false,
@@ -153,7 +153,6 @@
     "--fast"
   ],
   "editor.formatOnSaveTimeout": 5000,
-  "intelephense.licenceKey": "000EFHIRQB0AAK9",
   "cSpell.enabledLanguageIds": [
     "asciidoc",
     "c",
