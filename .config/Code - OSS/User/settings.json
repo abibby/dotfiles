@@ -56,6 +56,7 @@
     "preact",
     "proficiencies",
     "reddit",
+    "refetch",
     "repo",
     "repolling",
     "serie",
@@ -104,7 +105,7 @@
     80,
     120
   ],
-  "terminal.integrated.fontFamily": "monospace, 'Noto Color Emoji'",
+  "terminal.integrated.fontFamily": "'Fira Code', 'monospace', 'Noto Color Emoji'",
   "explorer.confirmDelete": false,
   "terminal.integrated.rendererType": "dom",
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -133,12 +134,7 @@
     "source.fixAll.tslint": true
   },
   "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
-<<<<<<< HEAD
-  "php-cs-fixer.lastDownload": 1574780598200,
-=======
-  "php-cs-fixer.lastDownload": 1574453336778,
->>>>>>> ca6090acb6119d09d5dd4d259791fc6b0f0c7ded
-  "rewrap.autoWrap.enabled": true,
+  "php-cs-fixer.lastDownload": 1576848952253,
   "rewrap.wrappingColumn": 80,
   "editor.minimap.renderCharacters": false,
   "go.useLanguageServer": true,
@@ -193,5 +189,8 @@
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-  "scssFormatter.tabWidth": 4
+  "scssFormatter.tabWidth": 4,
+  "code-runner.executorMap": {
+    "typescript": "/home/adam/.node_modules/bin/ts-node",
+  }
 }

@@ -2,8 +2,8 @@
 	email = adam_bibby@hotmail.com
 	name = Adam Bibby
 	
-[url "ssh://git@github.com/"]
-	insteadOf = https://github.com/
+# [url "ssh://git@github.com/"]
+# 	insteadOf = https://github.com/
 
 [url "ssh://git@gitlab.com/"]
 	insteadOf = https://gitlab.com/
