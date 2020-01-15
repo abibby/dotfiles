@@ -137,7 +137,6 @@
   "php-cs-fixer.lastDownload": 1576848952253,
   "rewrap.wrappingColumn": 80,
   "editor.minimap.renderCharacters": false,
-  "go.useLanguageServer": true,
   "workbench.editor.enablePreview": false,
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
@@ -148,7 +147,6 @@
   "workbench.colorTheme": "Cobalt2",
   "editor.minimap.enabled": false,
   "breadcrumbs.enabled": true,
-  "go.lintTool": "golangci-lint",
   "go.lintFlags": [
     "--fast"
   ],
@@ -192,5 +190,7 @@
   "scssFormatter.tabWidth": 4,
   "code-runner.executorMap": {
     "typescript": "/home/adam/.node_modules/bin/ts-node",
-  }
+  },
+  "go.formatTool": "goimports",
+  "vsicons.dontShowNewVersionMessage": true
 }
