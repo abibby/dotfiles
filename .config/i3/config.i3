@@ -147,8 +147,8 @@ QUAKE(cal, $mod+k, `calread')
 
 bindsym $mod+e exec emoji
 bindsym $mod+c exec code
-# bindsym $mod+b exec chromium
-bindsym $mod+b exec firefox
+bindsym $mod+b exec chromium
+# bindsym $mod+b exec firefox
 bindsym $mod+t exec --no-startup-id $term -e htop
 # bindsym $mod+x exec $term -e ranger
 bindsym $mod+x exec nautilus
