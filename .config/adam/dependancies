@@ -9,7 +9,7 @@ xdotool
 chromium
 nautilus
 feh
-compton
+picom
 network-manager-applet
 pasystray
 pollkit
