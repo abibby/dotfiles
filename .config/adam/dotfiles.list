@@ -10,7 +10,6 @@
 /home/adam/.config/systemd/*
 /home/adam/.gitconfig
 /home/adam/.profile
-/home/adam/.screenlayout/*
 /home/adam/.ssh/config
 /home/adam/.Xmodmap
 /home/adam/.Xresources
