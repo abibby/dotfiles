@@ -32,27 +32,43 @@ hide_edge_borders both
 for_window [class="albert"] border pixel 0
 
 
-set_from_resource $background i3wm.background #000000
-set_from_resource $foreground i3wm.foreground #ffffff
+set $nord0 #2e3440
+set $nord1 #3b4252
+set $nord2 #434c5e
+set $nord3 #4c566a
+set $nord4 #d8dee9
+set $nord5 #e5e9f0
+set $nord6 #eceff4
+set $nord7 #8fbcbb
+set $nord8 #88c0d0
+set $nord9 #81a1c1
+set $nord10 #5e81ac
+set $nord11 #bf616a
+set $nord12 #d08770
+set $nord13 #ebcb8b
+set $nord14 #a3be8c
+set $nord15 #b48ead
 
-set_from_resource $black   i3wm.color0 #000000
-set_from_resource $red     i3wm.color1 #800000
-set_from_resource $green   i3wm.color2 #008000
-set_from_resource $yellow  i3wm.color3 #808000
-set_from_resource $blue    i3wm.color4 #000080
-set_from_resource $magenta i3wm.color5 #800080
-set_from_resource $cyan    i3wm.color6 #008080
-set_from_resource $white   i3wm.color7 #c0c0c0
+set $background #2e3440
+set $foreground #d8dee9
 
-set_from_resource $bold_black   i3wm.color8  #808080
-set_from_resource $bold_red     i3wm.color9  #ff0000
-set_from_resource $bold_green   i3wm.color10 #00ff00
-set_from_resource $bold_yellow  i3wm.color11 #ffff00
-set_from_resource $bold_blue    i3wm.color12 #0000ff
-set_from_resource $bold_magenta i3wm.color13 #ff00ff
-set_from_resource $bold_cyan    i3wm.color14 #00ffff
-set_from_resource $bold_white   i3wm.color15 #ffffff
+set $black   #3b4252
+set $red     #bf616a
+set $green   #a3be8c
+set $yellow  #ebcb8b
+set $blue    #81a1c1
+set $magenta #b48ead
+set $cyan    #88c0d0
+set $white   #e5e9f0
 
+set $bold_black   #3b4252
+set $bold_red     #bf616a
+set $bold_green   #a3be8c
+set $bold_yellow  #ebcb8b
+set $bold_blue    #81a1c1
+set $bold_magenta #b48ead
+set $bold_cyan    #88c0d0
+set $bold_white   #e5e9f0
 
 # class                 border  backgr. text    indicator   child_border
 # the thing you are looking at
