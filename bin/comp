@@ -13,17 +13,17 @@ comphelp() {
 }
 
 checkcomp() {
-    pgrep picom &>/dev/null
+    pgrep compton &>/dev/null
 }
 
 stopcomp() {
-    checkcomp && killall picom
+    checkcomp && killall compton
 }
 
 startcomp() {
     stopcomp
     # Example settings only. Replace with your own.
-    picom -b
+    compton -b
     exit
 }
 

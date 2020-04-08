@@ -18,6 +18,8 @@ set $mod Mod4
 
 # set $term xst
 set $term alacritty
+set $browser "chromium || chromium-browser"
+set $editor code
 
 gaps inner 10
 # gaps outer 15
@@ -146,8 +148,8 @@ QUAKE(js, $mod+j, `node')
 QUAKE(cal, $mod+k, `calread')
 
 bindsym $mod+e exec emoji
-bindsym $mod+c exec code
-bindsym $mod+b exec chromium
+bindsym $mod+c exec $editor
+bindsym $mod+b exec $browser
 # bindsym $mod+b exec firefox
 bindsym $mod+t exec --no-startup-id $term -e htop
 # bindsym $mod+x exec $term -e ranger
