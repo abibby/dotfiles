@@ -67,6 +67,7 @@ plugins=(
     npm
     go
     web-search
+    ubuntu
     archlinux
     zsh-syntax-highlighting
     cargo
