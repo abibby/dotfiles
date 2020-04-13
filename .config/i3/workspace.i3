@@ -22,15 +22,15 @@ workspace $ws2  output eDP-1   HDMI-0  eDP1 eDP-1
 workspace $ws3  output eDP-1   HDMI-0  eDP1 eDP-1
 workspace $ws4  output eDP-1   HDMI-0  eDP1 eDP-1
  
-workspace $ws5  output DP-2   DVI-D-0  eDP1 eDP-1
-workspace $ws6  output DP-2   DVI-D-0  eDP1 eDP-1
-workspace $ws7  output DP-2   DVI-D-0  eDP1 eDP-1
-workspace $ws8  output DP-2   DVI-D-0  eDP1 eDP-1
+workspace $ws5  output DP-1   DVI-D-0  eDP1 eDP-1
+workspace $ws6  output DP-1   DVI-D-0  eDP1 eDP-1
+workspace $ws7  output DP-1   DVI-D-0  eDP1 eDP-1
+workspace $ws8  output DP-1   DVI-D-0  eDP1 eDP-1
  
-workspace $ws9  output DP-1  DP-0     eDP1 eDP-1
-workspace $ws10 output DP-1  DP-0     eDP1 eDP-1
-workspace $ws11 output DP-1  DP-0     eDP1 eDP-1
-workspace $ws12 output DP-1  DP-0     eDP1 eDP-1
+workspace $ws9  output DP-2  DP-0     eDP1 eDP-1
+workspace $ws10 output DP-2  DP-0     eDP1 eDP-1
+workspace $ws11 output DP-2  DP-0     eDP1 eDP-1
+workspace $ws12 output DP-2  DP-0     eDP1 eDP-1
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
