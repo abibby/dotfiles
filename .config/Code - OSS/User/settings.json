@@ -115,7 +115,6 @@
   "explorer.enableDragAndDrop": false,
   "graphqlForVSCode.nodePath": "~/.node_modules",
   "window.titleBarStyle": "native",
-  "blade.format.enable": true,
   "phpstan.level": "5",
   "editor.fontFamily": "'Fira Code',  'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback', 'Noto Color Emoji'",
   "gitlens.keymap": "none",
@@ -137,7 +136,7 @@
     "source.fixAll.tslint": true
   },
   "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
-  "php-cs-fixer.lastDownload": 1584639620643,
+  "php-cs-fixer.lastDownload": 1586177904969,
   "rewrap.wrappingColumn": 80,
   "editor.minimap.renderCharacters": false,
   "workbench.editor.enablePreview": false,
