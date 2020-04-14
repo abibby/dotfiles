@@ -197,5 +197,11 @@
   "go.formatTool": "goimports",
   "vsicons.dontShowNewVersionMessage": true,
   "go.useLanguageServer": true,
-  "javascript.updateImportsOnFileMove.enabled": "always"
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[blade]": {
+    "editor.formatOnSave": false
+  }
 }
