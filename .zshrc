@@ -189,8 +189,8 @@ alias gow="cd ~/go/src/gitlab.com/automac"
 alias wtime="sudo timedatectl set-timezone America/Phoenix"
 alias htime="sudo timedatectl set-timezone America/Toronto"
 alias 2flux='influx -username "admin" -password "$(pass influx.aqmdata2.ca)" -precision "rfc3339" -database "aqmdata" -host "aqmdata2.ca"'
-alias pmp='composer install && npm install'
 alias pa='php artisan'
+alias pmp='composer install && pa migrate && npm install'
 alias cb='git pull && pmp && npm run watch'
 
 PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
