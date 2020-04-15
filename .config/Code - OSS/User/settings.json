@@ -128,7 +128,7 @@
   "markdown.extension.toc.githubCompatibility": true,
   "phpstan.path": "/home/adam/.config/composer/vendor/bin/phpstan",
   "[php]": {
-    "editor.defaultFormatter": "junstyle.php-cs-fixer"
+    "editor.defaultFormatter": "ikappas.phpcs"
   },
   "editor.renderWhitespace": "boundary",
   "files.autoSave": "off",
