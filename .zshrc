@@ -193,6 +193,16 @@ alias pa='php artisan'
 alias pmp='composer install && pa migrate && npm install'
 alias cb='git pull && pmp && npm run watch'
 
+function query-log() {
+    tail -f /var/log/mysql/mysql.log -n 0 | grep --color=never -Po '(?<=^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d.\d{6}Z.{6} Execute\s).*'
+}
+function  schedule-run () {
+    while true; do
+        pa schedule:run &
+        sleep 60
+    done
+}
+
 PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 
 # dotfiles
