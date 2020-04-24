@@ -186,9 +186,6 @@
     "yml"
   ],
   "workbench.iconTheme": "vscode-icons",
-  "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
   "scssFormatter.tabWidth": 4,
   "code-runner.executorMap": {
     "typescript": "/home/adam/.node_modules/bin/ts-node",

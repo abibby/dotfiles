@@ -125,7 +125,7 @@ git_prompt_info () {
 # fi
 
 # export EDITOR='emacsclient -nw'
-export EDITOR='code -w --user-data-dir "/home/adam/.config/Code"'
+export EDITOR='code -w --user-data-dir "/home/adam/.config/Code - OSS"'
 
 # go stuff
 export PATH=$PATH:~/go/bin
