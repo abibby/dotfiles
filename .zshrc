@@ -130,6 +130,7 @@ export EDITOR='code -w --user-data-dir "/home/adam/.config/Code - OSS"'
 # go stuff
 export PATH=$PATH:~/go/bin
 alias gom="env GO111MODULE=on go"
+alias go="govm exec --"
 alias grun="go run *.go"
 
 # node stuff
