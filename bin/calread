@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-cal --months 6
+cal -B 1 -A 7
 read

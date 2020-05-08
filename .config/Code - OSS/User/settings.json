@@ -3,7 +3,6 @@
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
   "git.autofetch": true,
-  "window.zoomLevel": 0,
   "liveServer.settings.donotShowInfoMsg": true,
   "cSpell.userWords": [
     "Automac",
@@ -195,9 +194,22 @@
   "go.useLanguageServer": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    // "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.formatOnSave": false,
   },
   "[blade]": {
     "editor.formatOnSave": false
-  }
+  },
+  "cSpell.enableFiletypes": [
+    "php"
+  ],
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  "prettier.disableLanguages": [
+    "vue"
+  ]
 }
