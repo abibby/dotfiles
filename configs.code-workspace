@@ -1,41 +1,41 @@
 {
-	"folders": [
-		{
-			"path": ".config/i3"
-		},
-		{
-			"path": ".config/i3blocks"
-		},
-		{
-			"path": ".config/rofi"
-		},
-		{
-			"path": "bin"
-		},
-		{
-			"path": ".Xresources.d"
-		},
-		{
-			"path": ".screenlayout"
-		},
-		{
-			"path": ".config/dunst"
-		},
-		{
-			"path": ".config/adam"
-		},
-		{
-			"path": ".config/alacritty"
-		},
-		{
-			"path": ".local/share/applications"
-		},
-		{
-			"path": ".mozilla/firefox"
-		},
-		{
-			"path": ".config/systemd"
-		}
-	],
-	"settings": {}
+  "folders": [
+    {
+      "path": ".config/i3"
+    },
+    {
+      "path": ".config/rofi"
+    },
+    {
+      "path": "bin"
+    },
+    {
+      "path": ".Xresources.d"
+    },
+    {
+      "path": ".screenlayout"
+    },
+    {
+      "path": ".config/dunst"
+    },
+    {
+      "path": ".config/adam"
+    },
+    {
+      "path": ".config/alacritty"
+    },
+    {
+      "path": ".local/share/applications"
+    },
+    {
+      "path": ".mozilla/firefox"
+    },
+    {
+      "path": ".config/systemd"
+    },
+    {
+      "path": ".ssh"
+    }
+  ],
+  "settings": {}
 }

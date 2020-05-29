@@ -147,7 +147,7 @@
   },
   "workbench.colorTheme": "Nord",
   "editor.minimap.enabled": false,
-  "breadcrumbs.enabled": false,
+  "breadcrumbs.enabled": true,
   "go.lintFlags": [
     "--fast"
   ],
@@ -207,9 +207,35 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[scss]": {
-    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+    // "editor.defaultFormatter": "stylelint.vscode-stylelint",
+    "editor.formatOnSave": false
   },
   "prettier.disableLanguages": [
     "vue"
-  ]
+  ],
+  "window.zoomLevel": 0,
+  "vetur.experimental.templateInterpolationService": true,
+  "yaml.schemas": {
+    "file:///home/adam/.vscode/extensions/atlassian.atlascode-2.6.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  },
+  "atlascode.bitbucket.enabled": false,
+  "atlascode.jira.jqlList": [
+    {
+      "enabled": true,
+      "id": "3daeabd3-62a3-4c7a-9cef-15bae35e51d8",
+      "monitor": true,
+      "name": "My merotechnologies Issues",
+      "query": "assignee = currentUser() AND status != Done ORDER BY lastViewed DESC",
+      "siteId": "ee838988-cd60-4563-a11d-5a96a378969a"
+    },
+    {
+      "enabled": true,
+      "id": "7f4687a1-e242-4073-8214-77519d75d6d1",
+      "monitor": true,
+      "name": "All incomplete issues",
+      "query": "sprint in openSprints() AND status != Done ORDER BY lastViewed DESC",
+      "siteId": "ee838988-cd60-4563-a11d-5a96a378969a"
+    }
+  ],
+  "atlascode.jira.statusbar.enabled": true
 }
