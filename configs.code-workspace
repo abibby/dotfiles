@@ -35,6 +35,9 @@
     },
     {
       "path": ".ssh"
+    },
+    {
+      "path": ".config/spotifyd"
     }
   ],
   "settings": {}
