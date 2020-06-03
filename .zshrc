@@ -65,12 +65,11 @@ ZSH_THEME="robbyrussell"
 plugins=(
     git
     npm
-    go
+    golang
     web-search
     ubuntu
     archlinux
     zsh-syntax-highlighting
-    cargo
     docker
 )
 
@@ -196,6 +195,7 @@ alias cb='git pull && pmp && npm run watch'
 alias phpunit="$HOME/Documents/work/web-dashboard/vendor/bin/phpunit"
 alias phpunit-watch="find . -type f -not -path \"./vendor/*\" -not -path \"./bootstrap/*\" -name \"*.php\" | entr $HOME/Documents/work/web-dashboard/vendor/bin/phpunit"
 alias aws="docker run --rm -it amazon/aws-cli"
+alias aws-zsh="aws-vault exec dev --duration=1h -- zsh"
 
 function query-log() {
     tail -f /var/log/mysql/mysql.log -n 0 | grep --color=never -Po '(?<=^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d.\d{6}Z.{6} Execute\s).*'

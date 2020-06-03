@@ -237,5 +237,6 @@
       "siteId": "ee838988-cd60-4563-a11d-5a96a378969a"
     }
   ],
-  "atlascode.jira.statusbar.enabled": true
+  "atlascode.jira.statusbar.enabled": true,
+  "atlascode.jira.hover.enabled": true
 }
