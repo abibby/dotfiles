@@ -118,6 +118,8 @@ git_prompt_info () {
     fi
 }
 
+PROMPT="$PRE_PROMPT$PROMPT"
+
 # if [ "$(tty)" = "/dev/tty1" ]; then
 #     startx
 #     exit 0
@@ -195,7 +197,11 @@ alias cb='git pull && pmp && npm run watch'
 alias phpunit="$HOME/Documents/work/web-dashboard/vendor/bin/phpunit"
 alias phpunit-watch="find . -type f -not -path \"./vendor/*\" -not -path \"./bootstrap/*\" -name \"*.php\" | entr $HOME/Documents/work/web-dashboard/vendor/bin/phpunit"
 alias aws="docker run --rm -it amazon/aws-cli"
-alias aws-zsh="aws-vault exec dev --duration=1h -- zsh"
+# alias aws-zsh="aws-vault exec dev --duration=1h -- zsh"
+
+aws-zsh() {
+    PRE_PROMPT='aws ' aws-vault exec dev --duration=1h -- zsh -i
+}
 
 function query-log() {
     tail -f /var/log/mysql/mysql.log -n 0 | grep --color=never -Po '(?<=^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d.\d{6}Z.{6} Execute\s).*'
