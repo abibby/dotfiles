@@ -21,6 +21,7 @@
     "WBEA",
     "Xresources",
     "abibby",
+    "anonymize",
     "aqmdata",
     "aqmdatasim",
     "assetfs",
@@ -123,7 +124,6 @@
   "[shellscript]": {},
   "editor.formatOnSave": true,
   "workbench.sideBar.location": "left",
-  "workbench.activityBar.visible": false,
   "markdown.extension.toc.githubCompatibility": true,
   "phpstan.path": "/home/adam/.config/composer/vendor/bin/phpstan",
   "[php]": {
