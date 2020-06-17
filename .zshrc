@@ -113,12 +113,13 @@ git_prompt_info () {
     if [[ "$(command git config --get oh-my-zsh.hide-status 2>/dev/null)" != "1" ]]
     then
         ref=$(command git symbolic-ref HEAD 2> /dev/null)  || ref=$(command git rev-parse --short HEAD 2> /dev/null)  || return 0
-        ref=$(echo "$ref" | truncate 40)
+        ref=$(echo "$ref" | truncate 60)
         echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_SUFFIX"
     fi
 }
 
-PROMPT="$PRE_PROMPT$PROMPT"
+PROMPT="$PRE_PROMPT$PROMPT
+$ "
 
 # if [ "$(tty)" = "/dev/tty1" ]; then
 #     startx
@@ -187,17 +188,14 @@ alias goz="cd ~/go/src/github.com/zwzn"
 
 # work stuff
 alias work="cd ~/work/aqmdata2"
-alias gow="cd ~/go/src/gitlab.com/automac"
-alias wtime="sudo timedatectl set-timezone America/Phoenix"
-alias htime="sudo timedatectl set-timezone America/Toronto"
-alias 2flux='influx -username "admin" -password "$(pass influx.aqmdata2.ca)" -precision "rfc3339" -database "aqmdata" -host "aqmdata2.ca"'
 alias pa='php artisan'
-alias pmp='composer install && pa migrate && npm install'
+alias pmp='composer install && pa migrate:fresh --seed && npm install'
 alias cb='git pull && pmp && npm run watch'
 alias phpunit="$HOME/Documents/work/web-dashboard/vendor/bin/phpunit"
 alias phpunit-watch="find . -type f -not -path \"./vendor/*\" -not -path \"./bootstrap/*\" -name \"*.php\" | entr $HOME/Documents/work/web-dashboard/vendor/bin/phpunit"
+alias pf="phpunit --filter"
+alias pwf="phpunit-watch --filter"
 alias aws="docker run --rm -it amazon/aws-cli"
-# alias aws-zsh="aws-vault exec dev --duration=1h -- zsh"
 
 aws-zsh() {
     PRE_PROMPT='aws ' aws-vault exec dev --duration=1h -- zsh -i

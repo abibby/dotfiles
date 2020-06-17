@@ -216,7 +216,7 @@
   "window.zoomLevel": 0,
   "vetur.experimental.templateInterpolationService": true,
   "yaml.schemas": {
-    "file:///home/adam/.vscode/extensions/atlassian.atlascode-2.6.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///home/adam/.vscode/extensions/atlassian.atlascode-2.6.3/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "atlascode.bitbucket.enabled": false,
   "atlascode.jira.jqlList": [
@@ -235,8 +235,17 @@
       "name": "All incomplete issues",
       "query": "sprint in openSprints() AND status != Done ORDER BY lastViewed DESC",
       "siteId": "ee838988-cd60-4563-a11d-5a96a378969a"
+    },
+    {
+      "enabled": true,
+      "id": "4fdde5fe-329b-48fd-a82b-784a9eb67a4b",
+      "monitor": true,
+      "name": "Bugs",
+      "query": "type =Bug AND status != Done ORDER BY lastViewed DESC",
+      "siteId": "ee838988-cd60-4563-a11d-5a96a378969a"
     }
   ],
   "atlascode.jira.statusbar.enabled": true,
-  "atlascode.jira.hover.enabled": true
+  "atlascode.jira.hover.enabled": true,
+  "workbench.activityBar.visible": false
 }
