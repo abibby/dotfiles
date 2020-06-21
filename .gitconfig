@@ -7,6 +7,3 @@
 
 [url "ssh://git@gitlab.com/"]
 	insteadOf = https://gitlab.com/
-
-[init]
-	templatedir = ~/.git_template
