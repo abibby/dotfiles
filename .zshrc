@@ -195,7 +195,18 @@ alias phpunit="$HOME/Documents/work/web-dashboard/vendor/bin/phpunit"
 alias phpunit-watch="find . -type f -not -path \"./vendor/*\" -not -path \"./bootstrap/*\" -not -path \"./storage/framework/views\" -name \"*.php\" | entr $HOME/Documents/work/web-dashboard/vendor/bin/phpunit"
 alias pf="phpunit --filter"
 alias pwf="phpunit-watch --filter"
-alias aws="docker run --rm -it amazon/aws-cli"
+# aws() {
+#     docker run --rm -it \
+#         -e AWS_VAULT="$AWS_VAULT" \
+#         -e AWS_DEFAULT_REGION="$AWS_DEFAULT_REGION" \
+#         -e AWS_REGION="$AWS_REGION" \
+#         -e AWS_ACCESS_KEY_ID="$AWS_ACCESS_KEY_ID" \
+#         -e AWS_SECRET_ACCESS_KEY="$AWS_SECRET_ACCESS_KEY" \
+#         -e AWS_SESSION_TOKEN="$AWS_SESSION_TOKEN" \
+#         -e AWS_SECURITY_TOKEN="$AWS_SECURITY_TOKEN" \
+#         -e AWS_SESSION_EXPIRATION="$AWS_SESSION_EXPIRATION" \
+#         amazon/aws-cli $@
+# }
 
 aws-zsh() {
     PRE_PROMPT='aws ' aws-vault exec dev --duration=1h -- zsh -i
@@ -286,4 +297,3 @@ unset npm_config_prefix
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
