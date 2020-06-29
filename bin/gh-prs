@@ -1,0 +1,46 @@
+#!/usr/bin/env node
+const { exec } = require("child_process");
+
+const query = `query { 
+  review: search(type: ISSUE  query: "is:open is:pr review-requested:@me" first:10) {
+    nodes{
+      ... on PullRequest {
+        number
+        title
+      }
+    }
+  }
+  fix: search(type: ISSUE  query: "is:open is:pr author:@me review:changes_requested" first:10) {
+    nodes{
+      ... on PullRequest {
+        number
+        title
+      }
+    }
+  }
+}`;
+
+function printPRs(prs) {
+  for (const pr of prs) {
+    console.log(`#${pr.number}: ${pr.title}`);
+  }
+}
+
+exec(`gh api graphql -f query='${query}'`, (error, stdout, stderr) => {
+  if (error) {
+    console.log(`error: ${error.message}`);
+    process.exit(1);
+  }
+  if (stderr) {
+    console.log(`stderr: ${stderr}`);
+    process.exit(1);
+  }
+
+  const data = JSON.parse(stdout).data;
+
+  console.log("== Review ==");
+  printPRs(data.review.nodes);
+
+  console.log("\n== Fix ==");
+  printPRs(data.fix.nodes);
+});

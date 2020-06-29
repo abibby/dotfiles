@@ -105,10 +105,7 @@
   "gitlens.codeLens.enabled": false,
   "gitlens.currentLine.enabled": false,
   "diffEditor.ignoreTrimWhitespace": true,
-  "editor.rulers": [
-    80,
-    120
-  ],
+  "editor.rulers": [80, 120],
   "terminal.integrated.fontFamily": "'Fira Code', 'monospace', 'Noto Color Emoji'",
   "explorer.confirmDelete": false,
   "terminal.integrated.rendererType": "dom",
@@ -128,6 +125,7 @@
   "markdown.extension.toc.githubCompatibility": true,
   "phpstan.path": "/home/adam/.config/composer/vendor/bin/phpstan",
   "[php]": {
+    "editor.formatOnSave": false,
     "editor.defaultFormatter": "ikappas.phpcs"
   },
   "editor.renderWhitespace": "boundary",
@@ -149,9 +147,7 @@
   "workbench.colorTheme": "Nord",
   "editor.minimap.enabled": false,
   "breadcrumbs.enabled": true,
-  "go.lintFlags": [
-    "--fast"
-  ],
+  "go.lintFlags": ["--fast"],
   "editor.formatOnSaveTimeout": 5000,
   "cSpell.enabledLanguageIds": [
     "asciidoc",
@@ -188,7 +184,7 @@
   "workbench.iconTheme": "vscode-icons",
   "scssFormatter.tabWidth": 4,
   "code-runner.executorMap": {
-    "typescript": "/home/adam/.node_modules/bin/ts-node",
+    "typescript": "/home/adam/.node_modules/bin/ts-node"
   },
   "go.formatTool": "goimports",
   "vsicons.dontShowNewVersionMessage": true,
@@ -196,14 +192,12 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "[vue]": {
     // "editor.defaultFormatter": "esbenp.prettier-vscode"
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": false
   },
   "[blade]": {
     "editor.formatOnSave": false
   },
-  "cSpell.enableFiletypes": [
-    "php"
-  ],
+  "cSpell.enableFiletypes": ["php"],
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -211,9 +205,7 @@
     // "editor.defaultFormatter": "stylelint.vscode-stylelint",
     "editor.formatOnSave": false
   },
-  "prettier.disableLanguages": [
-    "vue"
-  ],
+  "prettier.disableLanguages": ["vue"],
   "window.zoomLevel": 0,
   "vetur.experimental.templateInterpolationService": true,
   "yaml.schemas": {
@@ -248,5 +240,19 @@
   ],
   "atlascode.jira.statusbar.enabled": true,
   "atlascode.jira.hover.enabled": true,
-  "workbench.activityBar.visible": false
+  "workbench.activityBar.visible": false,
+  "githubPullRequests.queries": [
+    {
+      "label": "Waiting For My Review",
+      "query": "is:open review-requested:abibby"
+    },
+    {
+      "label": "Assigned To Me",
+      "query": "is:open assignee:abibby"
+    },
+    {
+      "label": "Created By Me",
+      "query": "is:open author:abibby"
+    }
+  ]
 }
