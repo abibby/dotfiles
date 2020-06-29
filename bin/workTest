@@ -1,0 +1,8 @@
+#!/bin/sh
+
+npm run stylelint \
+    && npm run vue-type-check \
+    && npm run development \
+    && composer lint \
+    && composer analyze \
+    && composer test

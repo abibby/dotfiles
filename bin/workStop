@@ -1,7 +1,0 @@
-#!/bin/bash
-
-sudo systemctl stop mysqld
-sudo systemctl stop httpd
-sudo pkill -f "influxd"
-
-sudo pkill -f "tmux new-session"
