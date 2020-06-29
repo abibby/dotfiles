@@ -193,7 +193,7 @@ export PATH="$HOME/bin:$PATH"
 alias goz="cd ~/go/src/github.com/zwzn"
 
 # work stuff
-alias work="cd ~/work/aqmdata2"
+alias work="cd ~/Documents/work"
 alias pa='php artisan'
 alias pmp='composer install && pa migrate:fresh --seed && npm install'
 alias cb='git pull && pmp && npm run watch'

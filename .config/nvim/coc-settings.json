@@ -6,5 +6,6 @@
       "trace.server": "verbose",
       "filetypes": ["go"]
     }
-  }
+  },
+  "intelephense.licenceKey": "000EFHIRQB0AAK9"
 }
