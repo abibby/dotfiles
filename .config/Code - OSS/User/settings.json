@@ -86,7 +86,8 @@
     "*.ms": "troff",
     "dunstrc": "ini",
     "*.jmd": "markdown",
-    "*.ggo": "go"
+    "*.ggo": "go",
+    ".parcelrc": "jsonc"
   },
   "extensions.ignoreRecommendations": true,
   "explorer.confirmDragAndDrop": false,

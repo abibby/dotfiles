@@ -127,7 +127,8 @@ $ "
 # fi
 
 # export EDITOR='emacsclient -nw'
-export EDITOR='code -w --user-data-dir "/home/adam/.config/Code - OSS"'
+# export EDITOR='code -w --user-data-dir "/home/adam/.config/Code - OSS"'
+export EDITOR='nvim'
 
 # go stuff
 export PATH=$PATH:~/go/bin
