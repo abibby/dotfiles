@@ -6,6 +6,7 @@
 /home/adam/.config/compton.conf
 /home/adam/.config/dunst/*
 /home/adam/.config/i3/*
+/home/adam/.config/nvim/*
 /home/adam/.config/rofi/*
 /home/adam/.config/spotifyd/*
 /home/adam/.config/systemd/*
