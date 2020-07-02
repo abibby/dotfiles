@@ -7,5 +7,6 @@
       "filetypes": ["go"]
     }
   },
-  "intelephense.licenceKey": "000EFHIRQB0AAK9"
+  "intelephense.licenceKey": "000EFHIRQB0AAK9",
+  "coc.preferences.jumpCommand": "drop"
 }

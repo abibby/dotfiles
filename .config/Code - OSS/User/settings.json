@@ -208,7 +208,7 @@
   "window.zoomLevel": 0,
   "vetur.experimental.templateInterpolationService": true,
   "yaml.schemas": {
-    "file:///home/adam/.vscode/extensions/atlassian.atlascode-2.6.4/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///home/adam/.vscode/extensions/atlassian.atlascode-2.6.5/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "atlascode.bitbucket.enabled": false,
   "atlascode.jira.jqlList": [

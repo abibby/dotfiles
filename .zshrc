@@ -71,6 +71,7 @@ plugins=(
     archlinux
     zsh-syntax-highlighting
     docker
+    last-working-dir
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -290,3 +291,7 @@ unset npm_config_prefix
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(thefuck --alias)"
