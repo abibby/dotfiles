@@ -11,7 +11,7 @@ set rtp+=~/dev/others/base16/templates/vim/
 call plug#begin()
 
 Plug 'editorconfig/editorconfig-vim'
-" Plug 'preservim/nerdtree'
+Plug 'preservim/nerdtree'
 
 " GUI enhancements
 Plug 'itchyny/lightline.vim'
@@ -29,7 +29,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'marlonfan/coc-phpls'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 
@@ -45,6 +45,10 @@ autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 let g:lightline = {
       \ 'colorscheme': 'nord',
       \ }
+
+" Close vim when NERDTree is the only open buffer
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 " =============================================================================
 " # Settings
 " =============================================================================
@@ -137,6 +141,9 @@ inoremap <silent> <C-Down>      <Esc>10<Down>i
 noremap <silent> <C-t>          :tabe<CR>
 inoremap <silent> <C-t>         <Esc>:tabe<CR>
 vnoremap <silent> <C-t>         <Esc>:tabe<CR>
+
+noremap <C-b> :NERDTreeToggle<CR>
+inoremap <C-b> <C-o>:NERDTreeToggle<CR>
 
 " Go to tab by number
 noremap <leader>1 1gt

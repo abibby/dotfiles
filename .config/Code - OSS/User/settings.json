@@ -253,5 +253,9 @@
       "label": "Created By Me",
       "query": "is:open author:abibby"
     }
-  ]
+  ],
+  "go.useLanguageServer": true,
+  "files.exclude": {
+    "**/.cache/**": true
+  }
 }
