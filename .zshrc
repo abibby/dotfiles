@@ -203,8 +203,11 @@ alias phpunit-watch="find . -type f -not -path \"./vendor/*\" -not -path \"./boo
 alias pf="phpunit --filter"
 alias pwf="phpunit-watch --filter"
 aws-zsh() {
-    PRE_PROMPT='aws ' aws-vault exec dev --duration=1h -- zsh -i
+    PRE_PROMPT='aws ' aws-vault exec dev --duration=1h -- zsh -i < /dev/ttl
 }
+alias homeTime="sudo timedatectl set-timezone America/Toronto"
+alias ruTime="sudo timedatectl set-timezone Europe/Moscow"
+
 
 function query-log() {
     tail -f /var/log/mysql/mysql.log -n 0 | grep --color=never -Po '(?<=^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d.\d{6}Z.{6} Execute\s).*'

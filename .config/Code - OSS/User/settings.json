@@ -126,7 +126,7 @@
   "phpstan.path": "/home/adam/.config/composer/vendor/bin/phpstan",
   "[php]": {
     "editor.formatOnSave": false,
-    "editor.defaultFormatter": "ikappas.phpcs"
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
   },
   "editor.renderWhitespace": "boundary",
   "files.autoSave": "off",
@@ -134,7 +134,7 @@
     "source.fixAll.tslint": true
   },
   "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
-  "php-cs-fixer.lastDownload": 1586177904969,
+  "php-cs-fixer.lastDownload": 1596028159663,
   "rewrap.wrappingColumn": 80,
   "editor.minimap.renderCharacters": false,
   "workbench.editor.enablePreview": false,
@@ -208,7 +208,7 @@
   "window.zoomLevel": 0,
   "vetur.experimental.templateInterpolationService": true,
   "yaml.schemas": {
-    "file:///home/adam/.vscode/extensions/atlassian.atlascode-2.6.5/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///home/adam/.vscode/extensions/atlassian.atlascode-2.6.6/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "atlascode.bitbucket.enabled": false,
   "atlascode.jira.jqlList": [
@@ -257,5 +257,20 @@
   "go.useLanguageServer": true,
   "files.exclude": {
     "**/.cache/**": true
+  },
+  "intelephense.files.exclude": [
+    "**/.git/**",
+    "**/.svn/**",
+    "**/.hg/**",
+    "**/CVS/**",
+    "**/.DS_Store/**",
+    "**/node_modules/**",
+    "**/bower_components/**",
+    "**/vendor/**/{Test,test,Tests,tests}/**/*Test.php",
+    "**/.history/**",
+    "**/vendor/**/vendor/**"
+  ],
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
