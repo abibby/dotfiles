@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-cal -B 1 -A 7
+cal -n 9
 read
