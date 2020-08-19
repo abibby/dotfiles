@@ -1,3 +1,4 @@
+i3
 zsh
 go
 alacritty
@@ -12,7 +13,6 @@ feh
 picom
 network-manager-applet
 pasystray
-pollkit
 arandr
 noto-fonts-emoji
 pasystray
@@ -21,4 +21,3 @@ xclip
 ttf-font-awesome
 ttf-fira-code
 maim
-spotifyd
