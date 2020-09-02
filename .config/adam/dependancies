@@ -15,9 +15,12 @@ network-manager-applet
 pasystray
 arandr
 noto-fonts-emoji
-pasystray
 pavucontrol
 xclip
 ttf-font-awesome
 ttf-fira-code
 maim
+dunst
+libqalculate
+m4
+albert

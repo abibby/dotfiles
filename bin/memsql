@@ -1,0 +1,56 @@
+#!/bin/sh
+
+start() {
+    if [ -z "$DB_PASSWORD" ]; then
+        DB_PASSWORD=password
+    fi
+    if [ ! -z "$1" ]; then
+        if [ ! -f "$1" ]; then
+            echo "environment file '$1' does not exist."
+            exit 1
+        fi
+        echo "using environment file '$1'."
+        export $(cat "$1" | sed 's/#.*//g' | xargs)
+    fi
+
+    mkdir -p /dev/shm/mysql-test
+
+    echo 'CREATE DATABASE `mero`;' > /tmp/create-mero-db.sql
+
+    docker run \
+        --name some-mysql \
+        -e MYSQL_DATABASE=mero \
+        -e MYSQL_ROOT_PASSWORD="$DB_PASSWORD" \
+        -p 4306:3306 \
+        -v /dev/shm/mysql-test:/var/lib/mysql \
+        -v /tmp/create-mero-db.sql:/docker-entrypoint-initdb.d/create-mero-db.sql \
+        -d \
+        mysql:5.7
+}
+
+stop() {
+    docker stop some-mysql
+    docker rm some-mysql
+}
+
+help() {
+    echo "MemSQL is a MySQL server that runs 100% in memory for running tests.
+
+Usage:
+    memsql <command>
+
+Commands:
+    start [.env file]  start the server using the password from the enviroment
+                         file or 'password' if no envirment file is given
+    stop               stop and clean up the server
+    restart            shortcut for running stop then start
+    help               show this message"
+}
+
+case "$1" in
+    "start") start "$2";;
+    "stop") stop;;
+    "restart") stop;;
+    "help") help;;
+    *) help; exit 1 ;;
+esac
