@@ -1,9 +1,6 @@
 #!/bin/sh
 
 start() {
-    if [ -z "$DB_PASSWORD" ]; then
-        DB_PASSWORD=password
-    fi
     if [ ! -z "$1" ]; then
         if [ ! -f "$1" ]; then
             echo "environment file '$1' does not exist."
@@ -13,13 +10,20 @@ start() {
         export $(cat "$1" | sed 's/#.*//g' | xargs)
     fi
 
+    if [ -z "$DB_PASSWORD" ]; then
+        DB_PASSWORD=password
+    fi
+    if [ -z "$DB_DATABASE" ]; then
+        DB_DATABASE=mero
+    fi
+
     mkdir -p /dev/shm/mysql-test
 
     echo 'CREATE DATABASE `mero`;' > /tmp/create-mero-db.sql
 
     docker run \
         --name some-mysql \
-        -e MYSQL_DATABASE=mero \
+        -e MYSQL_DATABASE="$DB_DATABASE" \
         -e MYSQL_ROOT_PASSWORD="$DB_PASSWORD" \
         -p 4306:3306 \
         -v /dev/shm/mysql-test:/var/lib/mysql \
