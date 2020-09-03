@@ -16,6 +16,9 @@ start() {
     if [ -z "$DB_DATABASE" ]; then
         DB_DATABASE=mero
     fi
+    if [ -z "$DB_PORT" ]; then
+        DB_PORT=4306
+    fi
 
     mkdir -p /dev/shm/mysql-test
 
@@ -25,7 +28,7 @@ start() {
         --name some-mysql \
         -e MYSQL_DATABASE="$DB_DATABASE" \
         -e MYSQL_ROOT_PASSWORD="$DB_PASSWORD" \
-        -p 4306:3306 \
+        -p "$DB_PORT":3306 \
         -v /dev/shm/mysql-test:/var/lib/mysql \
         -v /tmp/create-mero-db.sql:/docker-entrypoint-initdb.d/create-mero-db.sql \
         -d \
@@ -44,17 +47,17 @@ Usage:
     memsql <command>
 
 Commands:
-    start [.env file]  start the server using the password from the enviroment
-                         file or 'password' if no envirment file is given
-    stop               stop and clean up the server
-    restart            shortcut for running stop then start
-    help               show this message"
+    start [.env file]    start the server using the password from the enviroment
+                           file or 'password' if no envirment file is given
+    stop                 stop and clean up the server
+    restart [.env file]  shortcut for running stop then start
+    help                 show this message"
 }
 
 case "$1" in
     "start") start "$2";;
     "stop") stop;;
-    "restart") stop;;
+    "restart") stop; start;;
     "help") help;;
     *) help; exit 1 ;;
 esac
