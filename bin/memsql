@@ -24,6 +24,8 @@ start() {
 
     echo 'CREATE DATABASE `mero`;' > /tmp/create-mero-db.sql
 
+    echo "database: '$DB_DATABASE', password: '$DB_PASSWORD', port '$DB_PORT'"
+
     docker run \
         --name some-mysql \
         -e MYSQL_DATABASE="$DB_DATABASE" \
@@ -57,7 +59,7 @@ Commands:
 case "$1" in
     "start") start "$2";;
     "stop") stop;;
-    "restart") stop; start;;
+    "restart") stop; start "$2";;
     "help") help;;
     *) help; exit 1 ;;
 esac
