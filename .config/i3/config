@@ -355,11 +355,6 @@ mode "quake math" {
     bindsym $mod+m     exec popup.sh close "$quake"
 }
 bindsym $mod+m exec popup.sh open "quake math" "$quake -e qalc"
-mode "quake php" {
-    bindsym Escape exec popup.sh close "$quake"
-    bindsym $mod+p     exec popup.sh close "$quake"
-}
-bindsym $mod+p exec popup.sh open "quake php" "$quake -e psysh"
 mode "quake js" {
     bindsym Escape exec popup.sh close "$quake"
     bindsym $mod+j     exec popup.sh close "$quake"
@@ -374,10 +369,10 @@ bindsym $mod+k exec popup.sh open "quake cal" "$quake -e calread"
 bindsym $mod+e exec emoji
 bindsym $mod+c exec $editor
 bindsym $mod+b exec $browser
-# bindsym $mod+b exec firefox
 bindsym $mod+t exec --no-startup-id $term -e htop
 # bindsym $mod+x exec $term -e ranger
 bindsym $mod+x exec nautilus
+bindsym $mod+p exec passmenu
 
 bindsym $mod+Shift+p exec maim -s --format=png /dev/stdout | xclip -selection clipboard -t image/png -i
 bindsym Print exec gnome-screenshot --window --clipboard --include-pointer

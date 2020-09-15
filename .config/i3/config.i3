@@ -143,17 +143,16 @@ include(`quake.i3')
 
 QUAKE(zsh, $mod+grave)
 QUAKE(math, $mod+m, `qalc')
-QUAKE(php, $mod+p, `psysh')
 QUAKE(js, $mod+j, `node')
 QUAKE(cal, $mod+k, `calread')
 
 bindsym $mod+e exec emoji
 bindsym $mod+c exec $editor
 bindsym $mod+b exec $browser
-# bindsym $mod+b exec firefox
 bindsym $mod+t exec --no-startup-id $term -e htop
 # bindsym $mod+x exec $term -e ranger
 bindsym $mod+x exec nautilus
+bindsym $mod+p exec passmenu
 
 bindsym $mod+Shift+p exec maim -s --format=png /dev/stdout | xclip -selection clipboard -t image/png -i
 bindsym Print exec gnome-screenshot --window --clipboard --include-pointer
@@ -183,3 +182,4 @@ exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id pasystray &
 exec --no-startup-id mailspring -b &
 exec --no-startup-id systemctl start --user polkit.service
+exec --no-startup-id dunst

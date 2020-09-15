@@ -1,5 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/adam/.oh-my-zsh"
@@ -66,7 +64,6 @@ plugins=(
     git
     npm
     golang
-    web-search
     ubuntu
     archlinux
     zsh-syntax-highlighting
@@ -199,9 +196,11 @@ alias pa='php artisan'
 alias pmp='composer install && pa migrate:fresh --seed && npm install'
 alias cb='git pull && pmp && npm run watch'
 alias phpunit="$HOME/Documents/work/web-dashboard/vendor/bin/phpunit"
-alias phpunit-watch="find . -type f -not -path \"./vendor/*\" -not -path \"./bootstrap/*\" -not -path \"./storage/framework/views\" -name \"*.php\" | entr $HOME/Documents/work/web-dashboard/vendor/bin/phpunit"
+alias find-laravel="find . -type f -not -path \"./vendor/*\" -not -path \"./bootstrap/*\" -not -path \"./storage/framework/views/*\" -name \"*.php\""
+alias phpunit-watch="find-laravel | entr $HOME/Documents/work/web-dashboard/vendor/bin/phpunit"
 alias pf="phpunit --filter"
 alias pwf="phpunit-watch --filter"
+alias phpstan-watch="find-laravel | entr -p \"$HOME/Documents/work/web-dashboard/vendor/bin/phpstan\" analyze /_"
 aws-zsh() {
     PRE_PROMPT='aws ' aws-vault exec dev --duration=1h -- zsh -i < /dev/ttl
 }

@@ -221,3 +221,7 @@
 #    summary = *twitter.com*
 #    urgency = normal
 #
+
+[notification_list]
+    summary = "*"
+    script = /home/adam/bin/notification_list.js
