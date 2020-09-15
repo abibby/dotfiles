@@ -200,6 +200,7 @@ alias find-laravel="find . -type f -not -path \"./vendor/*\" -not -path \"./boot
 alias phpunit-watch="find-laravel | entr $HOME/Documents/work/web-dashboard/vendor/bin/phpunit"
 alias pf="phpunit --filter"
 alias pwf="phpunit-watch --filter"
+alias phpstan="$HOME/Documents/work/web-dashboard/vendor/bin/phpstan"
 alias phpstan-watch="find-laravel | entr -p \"$HOME/Documents/work/web-dashboard/vendor/bin/phpstan\" analyze /_"
 aws-zsh() {
     PRE_PROMPT='aws ' aws-vault exec dev --duration=1h -- zsh -i < /dev/ttl
@@ -207,6 +208,12 @@ aws-zsh() {
 alias homeTime="sudo timedatectl set-timezone America/Toronto"
 alias ruTime="sudo timedatectl set-timezone Europe/Moscow"
 
+send-sample() {
+    curl http://default.web-dashboard.test/api/samples \
+        -X POST \
+        -H "Content-Type: application/json" \
+        -d "{ \"device_hardware_id\": \"$1\", \"sensor_reading\": $2 }"
+}
 
 function query-log() {
     tail -f /var/log/mysql/mysql.log -n 0 | grep --color=never -Po '(?<=^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d.\d{6}Z.{6} Execute\s).*'
