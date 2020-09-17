@@ -212,7 +212,8 @@ send-sample() {
     curl http://default.web-dashboard.test/api/samples \
         -X POST \
         -H "Content-Type: application/json" \
-        -d "{ \"device_hardware_id\": \"$1\", \"sensor_reading\": $2 }"
+        -H "Accept: application/json" \
+        -d "{ \"api_secret\": \"secret\", \"device_hardware_id\": \"$1\", \"sensor_reading\": $2 }"
 }
 
 function query-log() {

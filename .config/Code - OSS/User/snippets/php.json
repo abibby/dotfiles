@@ -24,5 +24,18 @@
 			"});",
 			""
 		]
-	}
+	},
+	"": {
+		"prefix": "<?php",
+		"body": [
+			"<?php declare(strict_types=1);",
+			"",
+			"namespace $TM_DIRECTORY;",
+			"",
+			"class $TM_FILENAME_BASE",
+			"{",
+			"\t",
+			"}",
+		]
+	},
 }

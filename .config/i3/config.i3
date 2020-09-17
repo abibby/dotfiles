@@ -173,6 +173,8 @@ bindsym $mod+l exec listAudioOutputs > ~/lao.log 2>&1
 bindsym $mod+Shift+minus exec changeBrightness -dec 10
 bindsym $mod+Shift+equal exec changeBrightness -inc 10
 
+bindsym $mod+Shift+m exec xmodmap /home/adam/.Xmodmap
+
 # AUTOSTART
 exec_always --no-startup-id feh --bg-fill "$(cat ~/.config/adam/wallpaper)"
 exec_always --no-startup-id comp
