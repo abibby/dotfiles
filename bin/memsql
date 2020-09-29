@@ -42,6 +42,13 @@ stop() {
     docker rm some-mysql
 }
 
+restart() {
+    stop
+    start $1
+    stop
+    start $1
+}
+
 help() {
     echo "MemSQL is a MySQL server that runs 100% in memory for running tests.
 
@@ -59,7 +66,7 @@ Commands:
 case "$1" in
     "start") start "$2";;
     "stop") stop;;
-    "restart") stop; start "$2";;
+    "restart") restart "$2";;
     "help") help;;
     *) help; exit 1 ;;
 esac

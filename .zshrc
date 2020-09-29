@@ -162,7 +162,6 @@ sudo-toucher() {
 alias p="sudo pacman"
 # alias p="sudo-toucher pacman"
 alias calc="qalc"
-alias sql="sqlectron-term"
 alias ls='ls --color -h --group-directories-first'
 alias mkd='mkdir -p'
 alias dump='hexdump -C'

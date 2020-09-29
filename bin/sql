@@ -1,0 +1,12 @@
+#!/bin/sh
+
+GIT_ROOT="$(git rev-parse --show-toplevel)"
+ENV_FILE="$GIT_ROOT/.env"
+if [[ ! -f "$ENV_FILE" ]]; then
+    echo "Could not find .env"
+    exit 1
+fi
+
+export $(cat "$ENV_FILE" | sed 's/#.*//g' | xargs)
+
+mysql -u"$DB_USERNAME" -p"$DB_PASSWORD" mero < "${1:-/dev/stdin}"
