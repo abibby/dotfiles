@@ -236,7 +236,8 @@ function cfgadd() {
     
     # add all the files using the .dotfiles.list file
     IFS=$'\n'       # make newlines the only separator
-    for i in $(cat < "$HOME/.config/adam/dotfiles.list"); do
+    for i in $(cat "$HOME/.config/adam/dotfiles.list"); do
+        echo add $i
         config add "$i"
     done
 }
