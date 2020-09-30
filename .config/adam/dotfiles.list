@@ -6,6 +6,8 @@
 /home/adam/.config/compton.conf
 /home/adam/.config/dunst/*
 /home/adam/.config/i3/*
+/home/adam/.config/kritadisplayrc
+/home/adam/.config/kritarc
 /home/adam/.config/nvim/*
 /home/adam/.config/rofi/*
 /home/adam/.config/spotifyd/*
