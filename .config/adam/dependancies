@@ -1,4 +1,4 @@
-i3
+i3-gaps
 zsh
 go
 alacritty
@@ -24,3 +24,7 @@ dunst
 libqalculate
 m4
 albert
+passff-host
+firefox-extension-passff
+browserpass
+browserpass-chromium
