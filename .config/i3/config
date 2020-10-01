@@ -18,7 +18,8 @@ set $mod Mod4
 
 # set $term xst
 set $term alacritty
-set $browser "chromium || chromium-browser"
+# set $browser "chromium || chromium-browser"
+set $browser "firefox"
 set $editor code
 
 gaps inner 10
@@ -368,7 +369,17 @@ bindsym $mod+k exec popup.sh open "quake cal" "$quake -e calread"
 
 bindsym $mod+e exec emoji
 bindsym $mod+c exec $editor
-bindsym $mod+b exec $browser
+# bindsym $mod+b exec $browser
+set $mode_launcher Browser: b:Home g:Work
+bindsym $mod+b mode "$mode_launcher"
+
+mode "$mode_launcher" {
+    bindsym b exec firefox -p Home && i3-msg 'mode "default"'
+    bindsym g exec firefox -p Work && i3-msg 'mode "default"'
+
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
 bindsym $mod+t exec --no-startup-id $term -e htop
 # bindsym $mod+x exec $term -e ranger
 bindsym $mod+x exec nautilus
