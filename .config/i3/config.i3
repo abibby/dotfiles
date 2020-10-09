@@ -154,8 +154,8 @@ set $mode_launcher Browser: b:Home g:Work
 bindsym $mod+b mode "$mode_launcher"
 
 mode "$mode_launcher" {
-    bindsym b exec i3-msg 'mode "default"' &&  firefox -p Home
-    bindsym g exec i3-msg 'mode "default"' &&  firefox -p Work
+    bindsym b mode "default"; exec firefox -p Home
+    bindsym g mode "default"; exec firefox -p Work
 
     bindsym Escape mode "default"
     bindsym Return mode "default"

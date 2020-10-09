@@ -88,7 +88,8 @@
     "dunstrc": "ini",
     "*.jmd": "markdown",
     "*.ggo": "go",
-    ".parcelrc": "jsonc"
+    ".parcelrc": "jsonc",
+    "*.stub": "php"
   },
   "extensions.ignoreRecommendations": true,
   "explorer.confirmDragAndDrop": false,
@@ -192,7 +193,8 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "[vue]": {
     // "editor.defaultFormatter": "esbenp.prettier-vscode"
-    "editor.formatOnSave": false
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[blade]": {
     "editor.formatOnSave": false

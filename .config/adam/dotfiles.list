@@ -13,6 +13,7 @@
 /home/adam/.config/spotifyd/*
 /home/adam/.config/systemd/*
 /home/adam/.gitconfig
+/home/adam/.local/share/applications
 /home/adam/.profile
 /home/adam/.ssh/config
 /home/adam/.Xmodmap

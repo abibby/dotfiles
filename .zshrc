@@ -200,7 +200,8 @@ alias phpunit-watch="find-laravel | entr $HOME/Documents/work/web-dashboard/vend
 alias pf="phpunit --filter"
 alias pwf="phpunit-watch --filter"
 alias phpstan="$HOME/Documents/work/web-dashboard/vendor/bin/phpstan"
-alias phpstan-watch="find-laravel | entr -p \"$HOME/Documents/work/web-dashboard/vendor/bin/phpstan\" analyze /_"
+alias phpstan-watch-file="find-laravel | entr -p \"$HOME/Documents/work/web-dashboard/vendor/bin/phpstan\" analyze /_"
+alias phpstan-watch="find-laravel | entr \"$HOME/Documents/work/web-dashboard/vendor/bin/phpstan\" analyze"
 aws-zsh() {
     PRE_PROMPT='aws ' aws-vault exec dev --duration=1h -- zsh -i < /dev/ttl
 }

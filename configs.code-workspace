@@ -38,6 +38,12 @@
     },
     {
       "path": ".config/spotifyd"
+    },
+    {
+      "path": ".config/mutt"
+    },
+    {
+      "path": ".config/offlineimap"
     }
   ],
   "settings": {}
