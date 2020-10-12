@@ -196,3 +196,4 @@ exec --no-startup-id pasystray &
 exec --no-startup-id mailspring -b &
 exec --no-startup-id systemctl start --user polkit.service
 exec --no-startup-id dunst
+exec --no-startup-id lxsession

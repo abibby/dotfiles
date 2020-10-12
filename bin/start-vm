@@ -1,0 +1,42 @@
+#!/bin/bash
+
+vfiobind() {
+    dev="$1"
+    vendor=$(cat /sys/bus/pci/devices/$dev/vendor)
+    device=$(cat /sys/bus/pci/devices/$dev/device)
+    if [ -e /sys/bus/pci/devices/$dev/driver/module/drivers/pci\:vfio-pci ]; then
+        echo "Skipping $dev because it is already using the vfio-pci driver"
+        continue;
+    fi
+    if [ -e /sys/bus/pci/devices/$dev/driver ]; then
+        echo "Unbinding $dev"
+        echo $dev > /sys/bus/pci/devices/$dev/driver/unbind
+        echo "Unbound $dev"
+    fi
+    echo "Plugging $dev into vfio-pci"
+    echo $vendor $device > /sys/bus/pci/drivers/vfio-pci/new_id
+    echo "Plugged $dev into vfio-pci"
+
+
+modprobe vfio-pci
+
+vfiobind 0000:04:00.0
+vfiobind 0000:04:00.1
+
+qemu-system-x86_64 \
+    -enable-kvm \
+    -M q35 \
+    -m 16384 \
+    -cpu host,kvm=off \
+    -smp 8,sockets=1,cores=4,threads=2 \
+    -vga none \
+    -nographic \
+    -nodefaults \
+    -device ioh3420,bus=pcie.0,addr=1c.0,multifunction=on,port=1,chassis=1,id=root.1 \
+    -device vfio-pci,host=04:00.0,x-vga=on \
+    -device vfio-pci,host=04:00.1 \
+    -device virtio-scsi-pci,id=scsi \
+    -drive file=/home/adam/win10.qcow2,id=disk,format=qcow2,if=none -device scsi-hd,drive=disk \
+    -boot strict=on
+ 
+exit 0

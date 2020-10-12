@@ -29,3 +29,5 @@ firefox-extension-passff
 browserpass
 browserpass-chromium
 playerctl
+polkit
+lxsession

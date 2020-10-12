@@ -1,8 +1,0 @@
-[Unit]
-Description=Polkit authentication agents
-
-[Service]
-ExecStart=/usr/lib/polkit-1/polkit-agent-helper-1
-
-[Install]
-WantedBy=multi-user.target
