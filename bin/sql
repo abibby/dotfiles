@@ -7,6 +7,6 @@ if [[ ! -f "$ENV_FILE" ]]; then
     exit 1
 fi
 
-export $(cat "$ENV_FILE" | sed 's/#.*//g' | xargs)
+export $(cat "$ENV_FILE" | grep '^DB_' | xargs)
 
-mysql -u"$DB_USERNAME" -p"$DB_PASSWORD" mero < "${1:-/dev/stdin}"
+mysql -u"$DB_USERNAME" -p"$DB_PASSWORD" -h"$DB_HOST" mero < "${1:-/dev/stdin}"
