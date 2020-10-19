@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+
+LEVEL=8
+
+TEMP_PREFIX=/tmp/stan-temp-files
+BASELINE_FILE="$TEMP_PREFIX-phpstan-baseline.neon"
+
+GIT_ROOT="$(git rev-parse --show-toplevel 2> /dev/null || echo '.')"
+
+PHPSTAN_BIN="$GIT_ROOT/vendor/bin/phpstan"
+if [[ ! -f "$PHPSTAN_BIN" ]]; then
+    echo "Could not find phpstan binary"
+    exit 1
+fi
+
+help() {
+    echo "stan is a simple phpstan wrapper.
+
+Usage:
+    stan <command>
+
+Commands:
+    baseline  Generate a baseline file at the given level
+    run       Run phpstan alalyze at level 8 with the generated baseline file
+    watch     Watch the app directory for changes and run stan run when there
+                are new changes
+    help      Show this message"
+}
+
+baseline() {
+    $PHPSTAN_BIN analyse \
+        --level $LEVEL \
+        --configuration "$GIT_ROOT/phpstan.neon" \
+        "$GIT_ROOT/app/" \
+        --generate-baseline
+    
+    mv "$GIT_ROOT/phpstan-baseline.neon" "$BASELINE_FILE"
+}
+
+run() {
+    config="$GIT_ROOT/phpstan.neon"
+    oldConfig="/tmp/phpstan.neon.old"
+
+    mv "$config" "$oldConfig"
+    cp "$BASELINE_FILE" "$GIT_ROOT/phpstan-baseline.neon"
+    
+    cat "$oldConfig" | sed "s@includes:@includes:\n    - ./phpstan-baseline.neon@g" > "$config"
+
+    $PHPSTAN_BIN analyse \
+        --level $LEVEL \
+        "$GIT_ROOT/app/"
+
+    rm "$config"
+    mv "$oldConfig" "$config"
+    rm "$GIT_ROOT/phpstan-baseline.neon"
+}
+
+watch() {
+    find "$GIT_ROOT/app" -type f  -name '*.php' | entr stan run
+}
+
+case "$1" in
+    "baseline") baseline;;
+    "run") run;;
+    "watch") watch;;
+    "help") help;;
+    *) help; exit 1 ;;
+esac

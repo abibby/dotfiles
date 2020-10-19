@@ -17,6 +17,7 @@ Plug 'preservim/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'arcticicestudio/nord-vim'
+Plug 'ap/vim-buftabline'
 
 " Fuzzy finder
 Plug 'airblade/vim-rooter'
@@ -146,13 +147,18 @@ noremap <C-b> :NERDTreeToggle<CR>
 inoremap <C-b> <C-o>:NERDTreeToggle<CR>
 
 " Go to tab by number
-noremap <leader>1 1gt
-noremap <leader>2 2gt
-noremap <leader>3 3gt
-noremap <leader>4 4gt
-noremap <leader>5 5gt
-noremap <leader>6 6gt
-noremap <leader>7 7gt
-noremap <leader>8 8gt
-noremap <leader>9 9gt
-noremap <leader>0 :tablast<cr>
+noremap <leader>1 :b 1<CR>
+noremap <leader>2 :b 2<CR>
+noremap <leader>3 :b 3<CR>
+noremap <leader>4 :b 4<CR>
+noremap <leader>5 :b 5<CR>
+noremap <leader>6 :b 6<CR>
+noremap <leader>7 :b 7<CR>
+noremap <leader>8 :b 8<CR>
+noremap <leader>9 :b 9<CR>
+noremap <leader>0 :b 10<cr>
+
+noremap <silent> <C-Q> :bw<CR>
+noremap <silent> <C-Tab> :bnext<CR>
+noremap <silent> <C-S-Tab> :bprevious<CR>
+
