@@ -1,0 +1,7 @@
+#!/bin/sh
+BW="bw --session `pass work/bitwarden-session`"
+RESULT=`$BW get item 'All qa users'`
+HOST=`echo $RESULT | jq '.fields[0].value' -r`
+USER=`echo $RESULT | jq '.fields[1].value' -r`
+PASS=`echo $RESULT | jq '.fields[2].value' -r`
+mysqldump -h"$HOST" -u"$USER"  -p"$PASS" mero

@@ -8,10 +8,18 @@ let mapleader = "\<Space>"
 set nocompatible
 filetype off
 set rtp+=~/dev/others/base16/templates/vim/
+
+let g:VM_maps = {}
+let g:VM_maps['Find Under']         = '<C-d>'
+let g:VM_maps['Find Subword Under'] = '<C-d>'
+let g:VM_maps["Select Cursor Down"] = '<C-S-Down>'
+let g:VM_maps["Select Cursor Up"]   = '<C-S-Up>'
+
 call plug#begin()
 
 Plug 'editorconfig/editorconfig-vim'
 Plug 'preservim/nerdtree'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 " GUI enhancements
 Plug 'itchyny/lightline.vim'
@@ -79,6 +87,12 @@ set noshowmode
 " =============================================================================
 " # Key Bindings
 " =============================================================================
+
+command Q q
+command W w
+command WQ wq
+command Wq wq
+
 nnoremap ; :
 
 noremap <silent> <C-Z>          ui

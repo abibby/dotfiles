@@ -192,7 +192,7 @@ alias goz="cd ~/go/src/github.com/zwzn"
 # work stuff
 alias work="cd ~/Documents/work"
 alias pa='php artisan'
-alias pmp='composer install && pa migrate:fresh --seed && npm install'
+alias pmp='composer install && pa migrate && npm install'
 alias cb='git pull && pmp && npm run watch'
 alias phpunit="$HOME/Documents/work/web-dashboard/vendor/bin/phpunit"
 alias find-laravel="find . -type f -not -path \"./vendor/*\" -not -path \"./bootstrap/*\" -not -path \"./storage/framework/views/*\" -name \"*.php\""
@@ -202,6 +202,7 @@ alias pwf="phpunit-watch --filter"
 alias phpstan="$HOME/Documents/work/web-dashboard/vendor/bin/phpstan"
 alias phpstan-watch-file="find-laravel | entr -p \"$HOME/Documents/work/web-dashboard/vendor/bin/phpstan\" analyze /_"
 alias phpstan-watch="find-laravel | entr \"$HOME/Documents/work/web-dashboard/vendor/bin/phpstan\" analyze"
+alias bw='bw --session `pass work/bitwarden-session`'
 aws-zsh() {
     PRE_PROMPT='aws ' aws-vault exec dev --duration=1h -- zsh -i < /dev/ttl
 }
@@ -225,6 +226,7 @@ function  schedule-run () {
         sleep 60
     done
 }
+
 
 PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 
