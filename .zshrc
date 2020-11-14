@@ -146,6 +146,8 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
+eval $(ssh-agent -s | head -n 2)
+ssh-add 2> /dev/null
 
 mkdir -p $HOME/.config/adam/touch
 toucher() {
@@ -192,7 +194,8 @@ alias goz="cd ~/go/src/github.com/zwzn"
 # work stuff
 alias work="cd ~/Documents/work"
 alias pa='php artisan'
-alias pmp='composer install && pa migrate && npm install'
+alias npmClean="sed -i -e 's/http:\/\//https:\/\//g' package-lock.json"
+alias pmp='composer install && composer dumpautoload && pa migrate && npm install && npmClean'
 alias cb='git pull && pmp && npm run watch'
 alias phpunit="$HOME/Documents/work/web-dashboard/vendor/bin/phpunit"
 alias find-laravel="find . -type f -not -path \"./vendor/*\" -not -path \"./bootstrap/*\" -not -path \"./storage/framework/views/*\" -name \"*.php\""

@@ -1,6 +1,8 @@
 #!/bin/sh
 
-npm run stylelint \
+composer lint-fix \
+    && npm run stylelint-fix \
+    && npm run stylelint \
     && npm run vue-type-check \
     && npm run development \
     && composer lint \

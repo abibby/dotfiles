@@ -8,6 +8,7 @@
     "Automac",
     "Bibby",
     "Dompdf",
+    "Jira",
     "Kochan",
     "Laravel",
     "Mutex",
@@ -88,8 +89,7 @@
     "dunstrc": "ini",
     "*.jmd": "markdown",
     "*.ggo": "go",
-    ".parcelrc": "jsonc",
-    "*.stub": "php"
+    ".parcelrc": "jsonc"
   },
   "extensions.ignoreRecommendations": true,
   "explorer.confirmDragAndDrop": false,
@@ -133,7 +133,9 @@
   "editor.renderWhitespace": "boundary",
   "files.autoSave": "off",
   "editor.codeActionsOnSave": {
-    "source.fixAll.tslint": true
+    "source.fixAll.tslint": true,
+    "source.fixAll": true,
+    "source.organizeImports": true
   },
   "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
   "php-cs-fixer.lastDownload": 1597062231032,
