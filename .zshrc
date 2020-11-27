@@ -213,7 +213,7 @@ alias homeTime="sudo timedatectl set-timezone America/Toronto"
 alias ruTime="sudo timedatectl set-timezone Europe/Moscow"
 
 send-sample() {
-    curl http://default.mero.test:8000/api/samples \
+    curl http://crown.qa.mero.test:8000/api/samples \
         -X POST \
         -H "Content-Type: application/json" \
         -H "Accept: application/json" \
