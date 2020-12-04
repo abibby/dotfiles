@@ -212,14 +212,6 @@ aws-zsh() {
 alias homeTime="sudo timedatectl set-timezone America/Toronto"
 alias ruTime="sudo timedatectl set-timezone Europe/Moscow"
 
-send-sample() {
-    curl http://crown.qa.mero.test:8000/api/samples \
-        -X POST \
-        -H "Content-Type: application/json" \
-        -H "Accept: application/json" \
-        -d "{ \"api_secret\": \"secret\", \"device_hardware_id\": \"$1\", \"sensor_reading\": $2 }"
-}
-
 function query-log() {
     tail -f /var/log/mysql/mysql.log -n 0 | grep --color=never -Po '(?<=^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d.\d{6}Z.{6} Execute\s).*'
 }
