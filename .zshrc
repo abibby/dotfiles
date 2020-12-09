@@ -192,6 +192,7 @@ export PATH="$HOME/bin:$PATH"
 alias goz="cd ~/go/src/github.com/zwzn"
 
 # work stuff
+export AWS_VAULT_BACKEND=pass
 alias work="cd ~/Documents/work"
 alias pa='php artisan'
 alias npmClean="sed -i -e 's/http:\/\//https:\/\//g' package-lock.json"
@@ -207,7 +208,7 @@ alias phpstan-watch-file="find-laravel | entr -p \"$HOME/Documents/work/web-dash
 alias phpstan-watch="find-laravel | entr \"$HOME/Documents/work/web-dashboard/vendor/bin/phpstan\" analyze"
 alias bw='bw --session `pass work/bitwarden-session`'
 aws-zsh() {
-    PRE_PROMPT='aws ' aws-vault exec dev --duration=1h -- zsh -i < /dev/ttl
+    PRE_PROMPT='aws ' aws-vault exec dev --duration=1h -- zsh -i
 }
 alias homeTime="sudo timedatectl set-timezone America/Toronto"
 alias ruTime="sudo timedatectl set-timezone Europe/Moscow"

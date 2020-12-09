@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-curl http://default.mero.test/api/samples \
+curl http://crown.qa.mero.test/api/samples \
     -X POST \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
