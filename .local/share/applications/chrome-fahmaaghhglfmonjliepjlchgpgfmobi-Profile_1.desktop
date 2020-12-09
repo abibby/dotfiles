@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Google Play Music
+Exec=/usr/bin/chromium-browser "--profile-directory=Profile 1" --app-id=fahmaaghhglfmonjliepjlchgpgfmobi
+Icon=chrome-fahmaaghhglfmonjliepjlchgpgfmobi-Profile_1
+StartupWMClass=crx_fahmaaghhglfmonjliepjlchgpgfmobi
