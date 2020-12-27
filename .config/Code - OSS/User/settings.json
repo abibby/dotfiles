@@ -106,7 +106,7 @@
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.codeLens.enabled": false,
   "gitlens.currentLine.enabled": false,
-  "diffEditor.ignoreTrimWhitespace": true,
+  "diffEditor.ignoreTrimWhitespace": false,
   "editor.rulers": [80, 120],
   "terminal.integrated.fontFamily": "'Fira Code', 'monospace', 'Noto Color Emoji'",
   "explorer.confirmDelete": false,

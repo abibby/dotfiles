@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=Discord
-Comment=Discord on firefox
-Exec=firefox -p Home --ssb https://discord.com/channels/@me
-Terminal=false
-Type=Application
