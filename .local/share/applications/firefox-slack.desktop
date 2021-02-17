@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=Slack
-Comment=Slack on firefox
-Exec=firefox -p Work --ssb https://app.slack.com/client
-Terminal=false
-Type=Application
