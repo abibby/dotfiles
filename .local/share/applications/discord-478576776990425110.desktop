@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Game 478576776990425110
-Exec=/usr/bin/parsecd[ %u
+Exec=/usr/bin/parsecd %u
 Type=Application
 NoDisplay=true
 Categories=Discord;Games;

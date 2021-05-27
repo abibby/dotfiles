@@ -209,8 +209,9 @@
     // "editor.defaultFormatter": "stylelint.vscode-stylelint",
     "editor.formatOnSave": false
   },
-  "prettier.disableLanguages": ["vue"],
-  "window.zoomLevel": 0,
+  "prettier.disableLanguages": [
+    "vue"
+  ],
   "vetur.experimental.templateInterpolationService": true,
   "yaml.schemas": {
     "file:///home/adam/.vscode/extensions/atlassian.atlascode-2.6.6/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
@@ -277,5 +278,10 @@
   ],
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.zoomLevel": -1,
+  "go.toolsManagement.autoUpdate": true
 }

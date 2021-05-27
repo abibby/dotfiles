@@ -6,4 +6,13 @@ HOST=`echo $RESULT | jq '.fields[0].value' -r`
 USER=`echo $RESULT | jq '.fields[1].value' -r`
 PASS=`echo $RESULT | jq '.fields[2].value' -r`
 
-mysqldump -h"$HOST" -u"$USER"  -p"$PASS" mero
+mysqldump \
+    -h"$HOST" -u"$USER"  -p"$PASS" \
+    --ignore-table-data='mero.samples' \
+    --ignore-table-data='mero.samples_invalid' \
+    --ignore-table-data='mero.jobs' \
+    --ignore-table-data='mero.failed_jobs' \
+    --ignore-table-data='mero.notifications' \
+    --ignore-table-data='mero.beacon_pings' \
+    --ignore-table-data='mero.beacon_pings_invalid' \
+    mero

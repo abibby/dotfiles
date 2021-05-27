@@ -1,6 +1,6 @@
 #!/bin/sh
 
-GIT_ROOT="$(git rev-parse --show-toplevel)"
+GIT_ROOT="$(git rev-parse --show-toplevel || echo '.')"
 ENV_FILE="$GIT_ROOT/.env"
 if [[ ! -f "$ENV_FILE" ]]; then
     echo "Could not find .env"

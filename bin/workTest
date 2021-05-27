@@ -8,4 +8,5 @@ npm run stylelint \
     && npm run development \
     && composer lint \
     && composer analyze \
+    && composer openapi \
     && composer test

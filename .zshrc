@@ -126,6 +126,7 @@ $ "
 # export EDITOR='emacsclient -nw'
 # export EDITOR='code -w --user-data-dir "/home/adam/.config/Code - OSS"'
 export EDITOR='nvim'
+export VISUAL='nvim'
 
 # go stuff
 export PATH=$PATH:~/go/bin
@@ -177,6 +178,7 @@ alias paste="xclip -out -selection clipboard"
 alias mountFrank="sudo mount -o hard,nolock 192.168.0.17:/mnt/volume1/Public /mnt/frank"
 alias umountFrank="sudo umount /mnt/frank"
 alias say="espeak"
+alias jcurl='curl -H "Accept: application/json"'
 function gbo() {
     gb $1
     gco $1

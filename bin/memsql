@@ -34,7 +34,7 @@ start() {
         -v /dev/shm/mysql-test:/var/lib/mysql \
         -v /tmp/create-mero-db.sql:/docker-entrypoint-initdb.d/create-mero-db.sql \
         -d \
-        mysql:5.7
+        mysql:8
 }
 
 stop() {

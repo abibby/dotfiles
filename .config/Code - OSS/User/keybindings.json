@@ -183,5 +183,9 @@
   {
     "key": "ctrl+j",
     "command": "atlascode.jira.searchIssues"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "-editor.action.toggleTabFocusMode"
   }
 ]
