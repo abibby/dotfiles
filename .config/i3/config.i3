@@ -150,7 +150,7 @@ QUAKE(cal, $mod+k, `calread')
 bindsym $mod+e exec emoji
 bindsym $mod+c exec $editor
 # bindsym $mod+b exec $browser
-set $mode_launcher Browser: b:Home g:Work
+set $mode_launcher Browser: b:Home g:Work c:Chromium p:Profile
 bindsym $mod+b mode "$mode_launcher"
 
 mode "$mode_launcher" {

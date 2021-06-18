@@ -1,6 +1,6 @@
 #!/bin/sh
 
-start() {
+env_file() {
     if [ ! -z "$1" ]; then
         if [ ! -f "$1" ]; then
             echo "environment file '$1' does not exist."
@@ -9,6 +9,10 @@ start() {
         echo "using environment file '$1'."
         export $(cat "$1" | sed 's/#.*//g' | xargs)
     fi
+}
+
+start_mysql() {
+    # source env_file $1
 
     if [ -z "$DB_PASSWORD" ]; then
         DB_PASSWORD=password
@@ -22,31 +26,74 @@ start() {
 
     mkdir -p /dev/shm/mysql-test
 
-    echo 'CREATE DATABASE `mero`;' > /tmp/create-mero-db.sql
+    echo 'DROP DATABASE IF EXISTS `mero_test`; CREATE DATABASE `mero_test`;' > /tmp/create-mero-db.sql
 
-    echo "database: '$DB_DATABASE', password: '$DB_PASSWORD', port '$DB_PORT'"
+    echo "mysql database: '$DB_DATABASE', password: '$DB_PASSWORD', port '$DB_PORT'"
 
     docker run \
-        --name some-mysql \
+        --name memsql-mysql \
         -e MYSQL_DATABASE="$DB_DATABASE" \
         -e MYSQL_ROOT_PASSWORD="$DB_PASSWORD" \
         -p "$DB_PORT":3306 \
-        -v /dev/shm/mysql-test:/var/lib/mysql \
+        -v /dev/shm/memsql-mysql:/var/lib/mysql \
         -v /tmp/create-mero-db.sql:/docker-entrypoint-initdb.d/create-mero-db.sql \
         -d \
         mysql:8
 }
 
-stop() {
-    docker stop some-mysql
-    docker rm some-mysql
+stop_mysql() {
+    docker stop memsql-mysql
+    docker rm memsql-mysql
 }
 
-restart() {
-    stop
-    start $1
-    stop
-    start $1
+restart_mysql() {
+    stop_mysql
+    start_mysql $1
+    stop_mysql
+    start_mysql $1
+}
+
+start_timescale() {
+    # source env_file $1
+
+    if [ -z "$TIMESCALE_DB_PASSWORD" ]; then
+        TIMESCALE_DB_PASSWORD=password
+    fi
+    if [ -z "$TIMESCALE_DB_DATABASE" ]; then
+        TIMESCALE_DB_DATABASE=mero
+    fi
+    if [ -z "$TIMESCALE_DB_PORT" ]; then
+        TIMESCALE_DB_PORT=6432
+    fi
+    if [ -z "$TIMESCALE_DB_USERNAME" ]; then
+        TIMESCALE_DB_USERNAME=mero
+    fi
+
+    mkdir -p /dev/shm/mysql-test
+
+    echo "timescale database: '$TIMESCALE_DB_DATABASE', password: '$TIMESCALE_DB_PASSWORD', port '$TIMESCALE_DB_PORT'"
+
+    docker run \
+        --name memsql-timescale \
+        -e POSTGRES_DB="$TIMESCALE_DB_DATABASE" \
+        -e POSTGRES_PASSWORD="$TIMESCALE_DB_PASSWORD" \
+        -e POSTGRES_USER="$TIMESCALE_DB_USERNAME"
+        -p "$TIMESCALE_DB_PORT":5432 \
+        -v /dev/shm/memsql-timescale:/var/lib/postgresql/data \
+        -d \
+        timescale/timescaledb:latest-pg13
+}
+
+stop_timescale() {
+    docker stop memsql-timescale
+    docker rm memsql-timescale
+}
+
+restart_timescale() {
+    stop_timescale
+    start_timescale $1
+    stop_timescale
+    start_timescale $1
 }
 
 help() {
@@ -64,9 +111,18 @@ Commands:
 }
 
 case "$1" in
-    "start") start "$2";;
-    "stop") stop;;
-    "restart") restart "$2";;
+    "start-mysql") start_mysql "$2";;
+    "stop-mysql") stop_mysql;;
+    "restart-mysql") restart_mysql "$2";;
+
+    "start-timescale") start_timescale "$2";;
+    "stop-timescale") stop_timescale;;
+    "restart-timescale") restart_timescale "$2";;
+
+    "start") start_mysql "$2"; start_timescale "$2";;
+    "stop") stop_mysql; stop_timescale;;
+    "restart") restart_mysql "$2"; restart_timescale "$2";;
+
     "help") help;;
     *) help; exit 1 ;;
 esac
