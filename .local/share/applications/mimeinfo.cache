@@ -1,3 +1,5 @@
 [MIME Cache]
 x-scheme-handler/discord-478576776990425110=discord-478576776990425110.desktop;
 x-scheme-handler/discord-712465656758665259=discord-712465656758665259.desktop;
+x-scheme-handler/eclipse+command=_usr_lib_dbeaver_.desktop;
+x-scheme-handler/vsls=vsls-launcher.desktop;

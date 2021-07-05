@@ -60,7 +60,7 @@ start_timescale() {
         TIMESCALE_DB_PASSWORD=password
     fi
     if [ -z "$TIMESCALE_DB_DATABASE" ]; then
-        TIMESCALE_DB_DATABASE=mero
+        TIMESCALE_DB_DATABASE=mero_test
     fi
     if [ -z "$TIMESCALE_DB_PORT" ]; then
         TIMESCALE_DB_PORT=6432
@@ -69,7 +69,7 @@ start_timescale() {
         TIMESCALE_DB_USERNAME=mero
     fi
 
-    mkdir -p /dev/shm/mysql-test
+    mkdir -p /dev/shm/memsql-timescale
 
     echo "timescale database: '$TIMESCALE_DB_DATABASE', password: '$TIMESCALE_DB_PASSWORD', port '$TIMESCALE_DB_PORT'"
 
@@ -77,7 +77,7 @@ start_timescale() {
         --name memsql-timescale \
         -e POSTGRES_DB="$TIMESCALE_DB_DATABASE" \
         -e POSTGRES_PASSWORD="$TIMESCALE_DB_PASSWORD" \
-        -e POSTGRES_USER="$TIMESCALE_DB_USERNAME"
+        -e POSTGRES_USER="$TIMESCALE_DB_USERNAME" \
         -p "$TIMESCALE_DB_PORT":5432 \
         -v /dev/shm/memsql-timescale:/var/lib/postgresql/data \
         -d \
