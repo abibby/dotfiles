@@ -1,10 +1,13 @@
 #!/bin/sh
-BW="bw --session `pass work/bitwarden-session`"
-$BW sync > /dev/null || exit 1
-RESULT=`$BW get item 'All qa users'`
-HOST=`echo $RESULT | jq '.fields[0].value' -r`
-USER=`echo $RESULT | jq '.fields[1].value' -r`
-PASS=`echo $RESULT | jq '.fields[2].value' -r`
+export BW_SESSION="$(pass work/bitwarden-session)"
+
+# bw sync > /dev/null || exit 1
+RESULT=$(bw get item 'All qa users' | tr --delete '\n')
+
+HOST="$(echo $RESULT | tr --delete '\n' | jq '.fields[0].value' -r | cut -c 8- | sed 's/.$//')"
+USER="$(echo $RESULT | tr --delete '\n' | jq '.fields[2].value' -r)"
+PASS="$(echo $RESULT | tr --delete '\n' | jq '.fields[3].value' -r)"
+# echo $RESULT | tr --delete '\n' | jq '.fields'
 
 mysqldump \
     -h"$HOST" -u"$USER"  -p"$PASS" \

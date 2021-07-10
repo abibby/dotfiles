@@ -149,7 +149,6 @@
     "editor.quickSuggestions": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.colorTheme": "Nord",
   "editor.minimap.enabled": false,
   "breadcrumbs.enabled": true,
   "go.lintFlags": ["--fast"],
@@ -287,5 +286,8 @@
   "liveServer.settings.donotVerifyTags": true,
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "workbench.colorTheme": "Nord",
+  "terminal.integrated.sendKeybindingsToShell": true,
+  "security.workspace.trust.untrustedFiles": "open"
 }
