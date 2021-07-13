@@ -119,7 +119,6 @@ bindsym $mod+q layout toggle split
 include(`workspace.i3')
 
 # reload the configuration file
-bindsym $mod+Shift+c exec "make -C ~/.config/i3 && i3-msg reload"
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r exec "make -C ~/.config/i3 && i3-msg restart"
 # exit i3 (logs you out of your X session)
@@ -149,6 +148,7 @@ QUAKE(cal, $mod+k, `calread')
 
 bindsym $mod+e exec emoji
 bindsym $mod+c exec $editor
+bindsym $mod+Shift+c exec $editor $(code-recents.js | dmenu)
 # bindsym $mod+b exec $browser
 set $mode_launcher Browser: b:Home g:Work c:Chromium p:Profile
 bindsym $mod+b mode "$mode_launcher"
