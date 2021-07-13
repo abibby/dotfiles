@@ -16,9 +16,9 @@ set $ws10 "10"
 set $ws11 "11"
 set $ws12 "12"
 
-set $leftMonitor   HDMI-1-3  eDP-1 eDP1 eDP-1
+set $leftMonitor   DVI-D-1-1 eDP-1 eDP1 eDP-1
 set $centerMonitor DVI-D-1-1 DP-2  eDP1 eDP-1
-set $rightMonitor  HDMI1     DP-1  eDP1 eDP-1
+set $rightMonitor  HDMI-1    DP-1  eDP1 eDP-1
 
 workspace $ws1  output $leftMonitor
 workspace $ws2  output $leftMonitor
